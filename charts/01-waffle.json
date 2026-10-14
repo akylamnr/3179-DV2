@@ -1,0 +1,129 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 360,
+  "height": 360,
+  "title": {
+    "text": "Flowers, nurseries and turf represent about 17% of horticulture value",
+    "subtitle": "Australia, 2024–25 • A$19.54bn across the five summary categories, farm-gate value"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/akylamnrr/3179-DV2/main/data/waffle_squares.csv"
+  },
+  "params": [
+    {
+      "name": "category_hover",
+      "select": {
+        "type": "point",
+        "fields": [
+          "category"
+        ],
+        "on": "pointerover",
+        "clear": "pointerout"
+      }
+    }
+  ],
+  "mark": {
+    "type": "rect",
+    "cornerRadius": 3,
+    "stroke": "#FFF7F8",
+    "strokeWidth": 2
+  },
+  "encoding": {
+    "x": {
+      "field": "col",
+      "type": "ordinal",
+      "sort": "ascending",
+      "axis": null,
+      "scale": {
+        "paddingInner": 0.12,
+        "paddingOuter": 0.03
+      }
+    },
+    "y": {
+      "field": "row",
+      "type": "ordinal",
+      "sort": "descending",
+      "axis": null,
+      "scale": {
+        "paddingInner": 0.12,
+        "paddingOuter": 0.03
+      }
+    },
+    "color": {
+      "field": "category",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Cut flowers, nurseries and turf",
+          "Fruit (excluding wine grapes)",
+          "Vegetables",
+          "Nuts",
+          "Wine grapes"
+        ],
+        "range": [
+          "#79A99A",
+          "#DAD7D3",
+          "#C7D0CA",
+          "#E9E5DF",
+          "#AEBBB4"
+        ]
+      },
+      "legend": {
+        "title": null,
+        "orient": "bottom",
+        "columns": 2,
+        "labelLimit": 260
+      }
+    },
+    "opacity": {
+      "condition": {
+        "param": "category_hover",
+        "value": 1
+      },
+      "value": 0.3
+    },
+    "tooltip": [
+      {
+        "field": "category",
+        "type": "nominal",
+        "title": "Horticulture category"
+      },
+      {
+        "field": "farm_gate_value_aud_billion",
+        "type": "quantitative",
+        "title": "Farm-gate value (A$ billion)",
+        "format": ".2f"
+      },
+      {
+        "field": "share_of_listed_categories_percent",
+        "type": "quantitative",
+        "title": "Share of five categories (%)",
+        "format": ".1f"
+      },
+      {
+        "field": "year",
+        "type": "nominal",
+        "title": "Financial year"
+      }
+    ]
+  },
+  "config": {
+    "background": "#FFF7F8",
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "font": "Newsreader",
+      "fontSize": 22,
+      "anchor": "start",
+      "subtitleFont": "Inter",
+      "subtitleFontSize": 13,
+      "subtitleColor": "#74686D"
+    },
+    "legend": {
+      "labelFont": "Inter",
+      "labelFontSize": 12
+    }
+  }
+}
