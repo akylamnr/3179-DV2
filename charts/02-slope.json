@@ -2,59 +2,66 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Farm-gate value changed unevenly",
-    "subtitle": "2020-21 to 2024-25 · A$ million, not adjusted for inflation"
+    "subtitle": "2020–21 to 2024–25 · A$ million, not adjusted for inflation"
   },
-  "width": 740,
-  "height": 380,
+  "width": 680,
+  "height": 360,
   "background": "#FFFFFF",
   "data": {
     "url": "data/horticulture_value_trends.csv",
-    "format": {
-      "type": "csv"
-    }
+    "format": { "type": "csv" }
   },
   "layer": [
     {
       "mark": {
         "type": "line",
         "strokeWidth": 3,
-        "point": {
-          "filled": true,
-          "size": 95
-        }
+        "point": { "filled": true, "size": 95 }
       },
       "encoding": {
         "x": {
           "field": "period",
           "type": "ordinal",
-          "sort": [
-            "2020-21",
-            "2024-25"
-          ],
+          "sort": ["2020–21", "2024–25"],
           "title": "Financial year",
-          "scale": {
-            "padding": 0.45
-          },
+          "scale": { "padding": 0.32 },
           "axis": {
+            "orient": "bottom",
             "labelAngle": 0,
+            "labelFontSize": 13,
+            "labelPadding": 8,
+            "titlePadding": 12,
             "grid": false,
-            "labelFontSize": 13
+            "domain": true,
+            "ticks": true,
+            "labelOverlap": false,
+            "labelColor": "#5B4E49",
+            "titleColor": "#5B4E49",
+            "domainColor": "#BFB3AA",
+            "tickColor": "#BFB3AA"
           }
         },
         "y": {
           "field": "value_m",
           "type": "quantitative",
           "title": "Farm-gate value (A$ million)",
-          "scale": {
-            "domain": [
-              0,
-              8200
-            ]
-          },
+          "scale": { "domain": [0, 8200], "nice": false, "zero": true },
           "axis": {
-            "gridColor": "#EEE8E9",
-            "tickCount": 5,
-            "format": ",.0f"
+            "orient": "left",
+            "values": [0, 2000, 4000, 6000, 8000],
+            "format": ",.0f",
+            "tickSize": 5,
+            "labelPadding": 6,
+            "titlePadding": 12,
+            "grid": true,
+            "gridColor": "#E8DFDB",
+            "gridOpacity": 1,
+            "domain": true,
+            "ticks": true,
+            "labelColor": "#5B4E49",
+            "titleColor": "#5B4E49",
+            "domainColor": "#BFB3AA",
+            "tickColor": "#BFB3AA"
           }
         },
         "color": {
@@ -68,58 +75,25 @@
               "Nuts",
               "Wine grapes"
             ],
-            "range": [
-              "#D6538A",
-              "#315F49",
-              "#329481",
-              "#B695C9",
-              "#D6A53A"
-            ]
+            "range": ["#D6538A", "#315F49", "#329481", "#B695C9", "#D6A53A"]
           },
           "legend": null
         },
-        "detail": {
-          "field": "category"
-        },
+        "detail": { "field": "category" },
         "order": {
           "field": "period",
-          "sort": [
-            "2020-21",
-            "2024-25"
-          ]
+          "sort": ["2020–21", "2024–25"]
         },
         "tooltip": [
-          {
-            "field": "category",
-            "type": "nominal",
-            "title": "Category"
-          },
-          {
-            "field": "period",
-            "type": "ordinal",
-            "title": "Financial year"
-          },
-          {
-            "field": "value_m",
-            "type": "quantitative",
-            "title": "Farm-gate value (A$ million)",
-            "format": ",.1f"
-          },
-          {
-            "field": "change_percent",
-            "type": "quantitative",
-            "title": "Change since 2020-21 (%)",
-            "format": "+.1f"
-          }
+          { "field": "category", "type": "nominal", "title": "Category" },
+          { "field": "period", "type": "ordinal", "title": "Financial year" },
+          { "field": "value_m", "type": "quantitative", "title": "Farm-gate value (A$ million)", "format": ",.1f" },
+          { "field": "change_percent", "type": "quantitative", "title": "Change since 2020–21 (%)", "format": "+.1f" }
         ]
       }
     },
     {
-      "transform": [
-        {
-          "filter": "datum.period === '2024-25'"
-        }
-      ],
+      "transform": [{ "filter": "datum.period === '2024–25' && datum.end_label != null && datum.end_label !== ''" }],
       "mark": {
         "type": "text",
         "align": "left",
@@ -133,30 +107,17 @@
         "x": {
           "field": "period",
           "type": "ordinal",
-          "sort": [
-            "2020-21",
-            "2024-25"
-          ],
-          "scale": {
-            "padding": 0.45
-          },
+          "sort": ["2020–21", "2024–25"],
+          "scale": { "padding": 0.32 },
           "axis": null
         },
         "y": {
           "field": "value_m",
           "type": "quantitative",
-          "scale": {
-            "domain": [
-              0,
-              8200
-            ]
-          },
+          "scale": { "domain": [0, 8200], "nice": false, "zero": true },
           "axis": null
         },
-        "text": {
-          "field": "end_label",
-          "type": "nominal"
-        },
+        "text": { "field": "end_label", "type": "nominal" },
         "color": {
           "field": "category",
           "type": "nominal",
@@ -168,13 +129,7 @@
               "Nuts",
               "Wine grapes"
             ],
-            "range": [
-              "#D6538A",
-              "#315F49",
-              "#329481",
-              "#B695C9",
-              "#D6A53A"
-            ]
+            "range": ["#D6538A", "#315F49", "#329481", "#B695C9", "#D6A53A"]
           },
           "legend": null
         }
@@ -183,9 +138,7 @@
   ],
   "config": {
     "font": "Inter",
-    "view": {
-      "stroke": null
-    },
+    "view": { "stroke": null },
     "title": {
       "font": "Newsreader",
       "fontSize": 21,
@@ -199,8 +152,8 @@
       "titleFont": "Inter",
       "labelFontSize": 12,
       "titleFontSize": 12,
-      "domainColor": "#D8CFD2",
-      "tickColor": "#D8CFD2"
+      "labelColor": "#5B4E49",
+      "titleColor": "#5B4E49"
     }
   }
 }
