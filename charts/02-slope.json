@@ -1,0 +1,206 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Farm-gate value changed unevenly",
+    "subtitle": "2020-21 to 2024-25 · A$ million, not adjusted for inflation"
+  },
+  "width": 740,
+  "height": 380,
+  "background": "#FFFFFF",
+  "data": {
+    "url": "data/horticulture_value_trends.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 3,
+        "point": {
+          "filled": true,
+          "size": 95
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "period",
+          "type": "ordinal",
+          "sort": [
+            "2020-21",
+            "2024-25"
+          ],
+          "title": "Financial year",
+          "scale": {
+            "padding": 0.45
+          },
+          "axis": {
+            "labelAngle": 0,
+            "grid": false,
+            "labelFontSize": 13
+          }
+        },
+        "y": {
+          "field": "value_m",
+          "type": "quantitative",
+          "title": "Farm-gate value (A$ million)",
+          "scale": {
+            "domain": [
+              0,
+              8200
+            ]
+          },
+          "axis": {
+            "gridColor": "#EEE8E9",
+            "tickCount": 5,
+            "format": ",.0f"
+          }
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Cut flowers, nurseries and turf",
+              "Fruit (excluding wine grapes)",
+              "Vegetables",
+              "Nuts",
+              "Wine grapes"
+            ],
+            "range": [
+              "#D6538A",
+              "#315F49",
+              "#329481",
+              "#B695C9",
+              "#D6A53A"
+            ]
+          },
+          "legend": null
+        },
+        "detail": {
+          "field": "category"
+        },
+        "order": {
+          "field": "period",
+          "sort": [
+            "2020-21",
+            "2024-25"
+          ]
+        },
+        "tooltip": [
+          {
+            "field": "category",
+            "type": "nominal",
+            "title": "Category"
+          },
+          {
+            "field": "period",
+            "type": "ordinal",
+            "title": "Financial year"
+          },
+          {
+            "field": "value_m",
+            "type": "quantitative",
+            "title": "Farm-gate value (A$ million)",
+            "format": ",.1f"
+          },
+          {
+            "field": "change_percent",
+            "type": "quantitative",
+            "title": "Change since 2020-21 (%)",
+            "format": "+.1f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.period === '2024-25'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 9,
+        "font": "Inter",
+        "fontSize": 12,
+        "fontWeight": 600
+      },
+      "encoding": {
+        "x": {
+          "field": "period",
+          "type": "ordinal",
+          "sort": [
+            "2020-21",
+            "2024-25"
+          ],
+          "scale": {
+            "padding": 0.45
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "value_m",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              8200
+            ]
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "end_label",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Cut flowers, nurseries and turf",
+              "Fruit (excluding wine grapes)",
+              "Vegetables",
+              "Nuts",
+              "Wine grapes"
+            ],
+            "range": [
+              "#D6538A",
+              "#315F49",
+              "#329481",
+              "#B695C9",
+              "#D6A53A"
+            ]
+          },
+          "legend": null
+        }
+      }
+    }
+  ],
+  "config": {
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "font": "Newsreader",
+      "fontSize": 21,
+      "anchor": "start",
+      "subtitleFont": "Inter",
+      "subtitleFontSize": 13,
+      "subtitleColor": "#74686D"
+    },
+    "axis": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "domainColor": "#D8CFD2",
+      "tickColor": "#D8CFD2"
+    }
+  }
+}

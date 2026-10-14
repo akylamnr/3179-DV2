@@ -267,3 +267,23 @@ footer a {
     max-width: none;
   }
 }
+
+.story-intro {
+  max-width: 720px;
+  margin-bottom: 20px;
+}
+
+.insight-note {
+  margin-top: 24px;
+  padding-left: 18px;
+  border-left: 3px solid var(--pink);
+  color: var(--text);
+}
+
+.insight-note p {
+  max-width: 760px;
+}
+
+.insight-note strong {
+  color: var(--forest);
+}
