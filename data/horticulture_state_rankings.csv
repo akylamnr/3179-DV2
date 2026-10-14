@@ -1,0 +1,36 @@
+state,state_label,period,value_m,rank,latest_label
+New South Wales,NSW,2020–21,906.2,2,
+Victoria,Victoria,2020–21,940.8,1,
+Queensland,Queensland,2020–21,860.2,3,
+South Australia,SA,2020–21,55.8,5,
+Western Australia,WA,2020–21,247.0,4,
+Tasmania,Tasmania,2020–21,19.5,7,
+Northern Territory,NT,2020–21,37.3,6,
+New South Wales,NSW,2021–22,970.8,2,
+Victoria,Victoria,2021–22,943.6,3,
+Queensland,Queensland,2021–22,1016.8,1,
+South Australia,SA,2021–22,117.6,5,
+Western Australia,WA,2021–22,318.2,4,
+Tasmania,Tasmania,2021–22,25.8,7,
+Northern Territory,NT,2021–22,36.8,6,
+New South Wales,NSW,2022–23,959.4,2,
+Victoria,Victoria,2022–23,949.8,3,
+Queensland,Queensland,2022–23,1003.9,1,
+South Australia,SA,2022–23,106.1,5,
+Western Australia,WA,2022–23,299.2,4,
+Tasmania,Tasmania,2022–23,25.3,7,
+Northern Territory,NT,2022–23,36.1,6,
+New South Wales,NSW,2023–24,920.2,2,
+Victoria,Victoria,2023–24,908.7,3,
+Queensland,Queensland,2023–24,963.9,1,
+South Australia,SA,2023–24,102.1,5,
+Western Australia,WA,2023–24,286.0,4,
+Tasmania,Tasmania,2023–24,24.0,7,
+Northern Territory,NT,2023–24,34.4,6,
+New South Wales,NSW,2024–25,957.0,2,NSW
+Victoria,Victoria,2024–25,918.8,3,Victoria
+Queensland,Queensland,2024–25,1003.0,1,Queensland
+South Australia,SA,2024–25,107.5,5,SA
+Western Australia,WA,2024–25,302.2,4,WA
+Tasmania,Tasmania,2024–25,57.8,6,Tasmania
+Northern Territory,NT,2024–25,35.9,7,NT
