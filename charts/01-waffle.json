@@ -1,442 +1,149 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "#FFFFFF",
-  "spacing": 28,
-  "hconcat": [
+  "width": 320,
+  "height": 340,
+  "data": {
+    "url": "https://raw.githubusercontent.com/akylamnrr/3179-DV2/main/data/waffle_squares.csv"
+  },
+  "transform": [
     {
-      "width": 330,
-      "height": 460,
-      "layer": [
-        {
-          "data": {
-            "values": [
-              {
-                "x": 4,
-                "y": 34,
-                "text": "Flowers are one part"
-              },
-              {
-                "x": 4,
-                "y": 66,
-                "text": "of a much bigger industry"
-              }
-            ]
-          },
-          "mark": {
-            "type": "text",
-            "align": "left",
-            "baseline": "top",
-            "font": "Newsreader",
-            "fontSize": 26,
-            "fontWeight": "bold",
-            "color": "#28483D"
-          },
-          "encoding": {
-            "x": {
-              "field": "x",
-              "type": "quantitative",
-              "scale": {
-                "domain": [
-                  0,
-                  330
-                ]
-              },
-              "axis": null
-            },
-            "y": {
-              "field": "y",
-              "type": "quantitative",
-              "scale": {
-                "domain": [
-                  440,
-                  0
-                ]
-              },
-              "axis": null
-            },
-            "text": {
-              "field": "text",
-              "type": "nominal"
-            }
-          }
-        },
-        {
-          "data": {
-            "values": [
-              {
-                "x": 4,
-                "y": 132,
-                "text": "Horticulture spans fruit, vegetables,"
-              },
-              {
-                "x": 4,
-                "y": 157,
-                "text": "nuts, wine grapes and a flower-related"
-              },
-              {
-                "x": 4,
-                "y": 182,
-                "text": "group. Each square represents about 1%"
-              },
-              {
-                "x": 4,
-                "y": 207,
-                "text": "of the combined value. The ABS groups"
-              },
-              {
-                "x": 4,
-                "y": 232,
-                "text": "cut flowers, nurseries and turf here,"
-              },
-              {
-                "x": 4,
-                "y": 257,
-                "text": "so this is not a flower-only estimate."
-              }
-            ]
-          },
-          "mark": {
-            "type": "text",
-            "align": "left",
-            "baseline": "top",
-            "font": "Inter",
-            "fontSize": 15,
-            "color": "#40363A"
-          },
-          "encoding": {
-            "x": {
-              "field": "x",
-              "type": "quantitative",
-              "scale": {
-                "domain": [
-                  0,
-                  330
-                ]
-              },
-              "axis": null
-            },
-            "y": {
-              "field": "y",
-              "type": "quantitative",
-              "scale": {
-                "domain": [
-                  440,
-                  0
-                ]
-              },
-              "axis": null
-            },
-            "text": {
-              "field": "text",
-              "type": "nominal"
-            }
-          }
-        },
-        {
-          "data": {
-            "values": [
-              {
-                "x": 4,
-                "y": 310,
-                "text": "17.3%"
-              }
-            ]
-          },
-          "mark": {
-            "type": "text",
-            "align": "left",
-            "baseline": "top",
-            "font": "Inter",
-            "fontSize": 38,
-            "fontWeight": "bold",
-            "color": "#D6538A"
-          },
-          "encoding": {
-            "x": {
-              "field": "x",
-              "type": "quantitative",
-              "scale": {
-                "domain": [
-                  0,
-                  330
-                ]
-              },
-              "axis": null
-            },
-            "y": {
-              "field": "y",
-              "type": "quantitative",
-              "scale": {
-                "domain": [
-                  440,
-                  0
-                ]
-              },
-              "axis": null
-            },
-            "text": {
-              "field": "text",
-              "type": "nominal"
-            }
-          }
-        },
-        {
-          "data": {
-            "values": [
-              {
-                "x": 122,
-                "y": 321,
-                "text": "of the combined value"
-              },
-              {
-                "x": 122,
-                "y": 345,
-                "text": "across the five categories."
-              }
-            ]
-          },
-          "mark": {
-            "type": "text",
-            "align": "left",
-            "baseline": "top",
-            "font": "Inter",
-            "fontSize": 14,
-            "color": "#5F5358"
-          },
-          "encoding": {
-            "x": {
-              "field": "x",
-              "type": "quantitative",
-              "scale": {
-                "domain": [
-                  0,
-                  330
-                ]
-              },
-              "axis": null
-            },
-            "y": {
-              "field": "y",
-              "type": "quantitative",
-              "scale": {
-                "domain": [
-                  440,
-                  0
-                ]
-              },
-              "axis": null
-            },
-            "text": {
-              "field": "text",
-              "type": "nominal"
-            }
-          }
-        },
-        {
-          "data": {
-            "values": [
-              {
-                "x": 4,
-                "y": 397,
-                "text": "Click a category in the legend to"
-              },
-              {
-                "x": 4,
-                "y": 420,
-                "text": "highlight its squares."
-              }
-            ]
-          },
-          "mark": {
-            "type": "text",
-            "align": "left",
-            "baseline": "top",
-            "font": "Inter",
-            "fontSize": 14,
-            "color": "#74686D"
-          },
-          "encoding": {
-            "x": {
-              "field": "x",
-              "type": "quantitative",
-              "scale": {
-                "domain": [
-                  0,
-                  330
-                ]
-              },
-              "axis": null
-            },
-            "y": {
-              "field": "y",
-              "type": "quantitative",
-              "scale": {
-                "domain": [
-                  440,
-                  0
-                ]
-              },
-              "axis": null
-            },
-            "text": {
-              "field": "text",
-              "type": "nominal"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "width": 300,
-      "height": 340,
-      "data": {
-        "url": "https://raw.githubusercontent.com/akylamnrr/3179-DV2/main/data/waffle_squares.csv"
-      },
-      "params": [
-        {
-          "name": "category_highlight",
-          "select": {
-            "type": "point",
-            "fields": [
-              "legend_category"
-            ]
-          },
-          "bind": "legend"
-        }
-      ],
-      "mark": {
-        "type": "rect",
-        "cornerRadius": 2,
-        "stroke": "#FFFFFF",
-        "strokeWidth": 2
-      },
-      "encoding": {
-        "x": {
-          "field": "col",
-          "type": "ordinal",
-          "sort": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8,
-            9,
-            10
-          ],
-          "axis": null,
-          "scale": {
-            "paddingInner": 0.14,
-            "paddingOuter": 0.03
-          }
-        },
-        "y": {
-          "field": "row",
-          "type": "ordinal",
-          "sort": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8,
-            9,
-            10
-          ],
-          "axis": null,
-          "scale": {
-            "paddingInner": 0.14,
-            "paddingOuter": 0.03
-          }
-        },
-        "color": {
-          "field": "legend_category",
-          "type": "nominal",
-          "sort": [
-            "Cut flowers, nursery & turf",
-            "Fruit",
-            "Vegetables",
-            "Nuts",
-            "Wine grapes"
-          ],
-          "scale": {
-            "domain": [
-              "Cut flowers, nursery & turf",
-              "Fruit",
-              "Vegetables",
-              "Nuts",
-              "Wine grapes"
-            ],
-            "range": [
-              "#D6538A",
-              "#315F49",
-              "#329481",
-              "#B695C9",
-              "#D6A53A"
-            ]
-          },
-          "legend": {
-            "title": "Category",
-            "orient": "right",
-            "direction": "vertical",
-            "labelLimit": 220,
-            "labelFont": "Inter",
-            "labelFontSize": 12,
-            "symbolSize": 120,
-            "symbolType": "square",
-            "padding": 4,
-            "titleFont": "Inter",
-            "titleFontSize": 12
-          }
-        },
-        "opacity": {
-          "condition": {
-            "param": "category_highlight",
-            "value": 1
-          },
-          "value": 0.9
-        },
-        "tooltip": [
-          {
-            "field": "category",
-            "type": "nominal",
-            "title": "Horticulture category"
-          },
-          {
-            "field": "local_value_aud_billion",
-            "type": "quantitative",
-            "title": "Farm-gate value (A$ billion)",
-            "format": ".2f"
-          },
-          {
-            "field": "share_of_listed_categories_percent",
-            "type": "quantitative",
-            "title": "Share of five categories (%)",
-            "format": ".1f"
-          },
-          {
-            "field": "year",
-            "type": "nominal",
-            "title": "Financial year"
-          }
-        ]
-      },
-      "transform": [
-        {
-          "calculate": "datum.category === 'Cut flowers, nurseries and turf' ? 'Cut flowers, nursery & turf' : datum.category === 'Fruit (excluding wine grapes)' ? 'Fruit' : datum.category",
-          "as": "legend_category"
-        }
-      ]
+      "calculate": "datum.category === 'Cut flowers, nurseries and turf' ? 'Cut flowers, nursery & turf' : datum.category === 'Fruit (excluding wine grapes)' ? 'Fruit' : datum.category",
+      "as": "legend_category"
     }
   ],
-  "resolve": {
-    "scale": {
-      "color": "independent"
+  "params": [
+    {
+      "name": "category_highlight",
+      "select": {
+        "type": "point",
+        "fields": [
+          "legend_category"
+        ]
+      },
+      "bind": "legend"
     }
+  ],
+  "mark": {
+    "type": "rect",
+    "cornerRadius": 2,
+    "stroke": "#FFFFFF",
+    "strokeWidth": 2
+  },
+  "encoding": {
+    "x": {
+      "field": "col",
+      "type": "ordinal",
+      "sort": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "axis": null,
+      "scale": {
+        "paddingInner": 0.14,
+        "paddingOuter": 0.03
+      }
+    },
+    "y": {
+      "field": "row",
+      "type": "ordinal",
+      "sort": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "axis": null,
+      "scale": {
+        "paddingInner": 0.14,
+        "paddingOuter": 0.03
+      }
+    },
+    "color": {
+      "field": "legend_category",
+      "type": "nominal",
+      "sort": [
+        "Cut flowers, nursery & turf",
+        "Fruit",
+        "Vegetables",
+        "Nuts",
+        "Wine grapes"
+      ],
+      "scale": {
+        "domain": [
+          "Cut flowers, nursery & turf",
+          "Fruit",
+          "Vegetables",
+          "Nuts",
+          "Wine grapes"
+        ],
+        "range": [
+          "#D6538A",
+          "#315F49",
+          "#329481",
+          "#B695C9",
+          "#D6A53A"
+        ]
+      },
+      "legend": {
+        "title": "Category",
+        "orient": "right",
+        "direction": "vertical",
+        "labelLimit": 220,
+        "labelFont": "Inter",
+        "labelFontSize": 12,
+        "symbolSize": 120,
+        "symbolType": "square",
+        "padding": 4,
+        "titleFont": "Inter",
+        "titleFontSize": 12
+      }
+    },
+    "opacity": {
+      "condition": {
+        "param": "category_highlight",
+        "value": 1
+      },
+      "value": 0.9
+    },
+    "tooltip": [
+      {
+        "field": "category",
+        "type": "nominal",
+        "title": "Horticulture category"
+      },
+      {
+        "field": "local_value_aud_billion",
+        "type": "quantitative",
+        "title": "Farm-gate value (A$ billion)",
+        "format": ".2f"
+      },
+      {
+        "field": "share_of_listed_categories_percent",
+        "type": "quantitative",
+        "title": "Share of five categories (%)",
+        "format": ".1f"
+      },
+      {
+        "field": "year",
+        "type": "nominal",
+        "title": "Financial year"
+      }
+    ]
   },
   "config": {
     "background": "#FFFFFF",

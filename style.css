@@ -205,3 +205,65 @@ footer a {
     padding: 16px;
   }
 }
+
+/* Chart 1: narrative beside the waffle chart */
+
+.waffle-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.25fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.waffle-story h3 {
+  font-family: "Newsreader", Georgia, serif;
+  color: var(--forest);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  line-height: 1.25;
+  margin-top: 0;
+}
+
+.waffle-story p {
+  max-width: 440px;
+}
+
+.waffle-chart {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.statistic {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 28px 0;
+}
+
+.statistic strong {
+  color: #D6538A;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: clamp(2.4rem, 4vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.statistic span {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Stack the text and chart on smaller screens */
+@media (max-width: 700px) {
+  .waffle-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .waffle-story p {
+    max-width: none;
+  }
+}
