@@ -70,14 +70,7 @@ vegaEmbed("#chart03", "charts/03-australia-map.json", {
   handleChartError("#chart03", "charts/03-australia-map.json", error)
 );
 
-// Chart 4: State ranking bump chart
-vegaEmbed("#chart04", "charts/04-bump.json", {
-  actions: false,
-  renderer: "svg",
-  config: sharedConfig
-}).catch(error =>
-  handleChartError("#chart04", "charts/04-bump.json", error)
-);
+
 
 // Chart 5: International flower trade flow map
 vegaEmbed("#chart05", "charts/05-flow-map.json", {
