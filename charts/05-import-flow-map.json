@@ -125,22 +125,17 @@
           "type": "quantitative",
           "title": "Import value (US$ million)",
           "scale": {
-            "domain": [
-              0,
-              20
-            ],
             "range": [
-              24,
-              1000
-            ],
-            "clamp": true
+              1,
+              8
+            ]
           },
           "legend": {
-            "orient": "bottom",
-            "symbolFillColor": "#D98B35",
-            "title": "Import value (US$ million)",
-            "format": ".1f"
-          },
+            "orient": "bottom-left",
+            "symbolType": "stroke",
+            "symbolStrokeColor": "#D98B35"
+          }
+        },
         "tooltip": [
           {
             "field": "country",
@@ -208,15 +203,11 @@
           "field": "import_value_usd_m",
           "type": "quantitative",
           "scale": {
-            "domain": [
-              0,
-              20
-            ],
+            "type": "sqrt",
             "range": [
-              40,
-              400
-            ],
-            "clamp": true
+              60,
+              1600
+            ]
           },
           "legend": null
         },
