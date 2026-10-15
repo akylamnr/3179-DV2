@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Farm-gate value changed unevenly",
+    "text": "Farm-Gate Value of Australia's Horticulture (2020-21, 2024-25)",
     "subtitle": "2020-21 to 2024-25 · A$ million, not adjusted for inflation",
     "font": "Inter",
     "fontSize": 16,
