@@ -2,10 +2,16 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Farm-gate value changed unevenly",
-    "subtitle": "2020–21 to 2024–25 · A$ million, not adjusted for inflation"
+    "subtitle": "2020-21 to 2024-25 · A$ million, not adjusted for inflation",
+    "font": "Inter",
+    "fontSize": 16,
+    "anchor": "start",
+    "subtitleFont": "Inter",
+    "subtitleFontSize": 11,
+    "subtitleColor": "#74686D"
   },
-  "width": 730,
-  "height": 360,
+  "width": 350,
+  "height": 275,
   "background": "#FFFFFF",
   "data": {
     "url": "data/horticulture_value_trends.csv",
@@ -17,10 +23,10 @@
     {
       "mark": {
         "type": "line",
-        "strokeWidth": 3,
+        "strokeWidth": 2.8,
         "point": {
           "filled": true,
-          "size": 95
+          "size": 72
         }
       },
       "encoding": {
@@ -28,33 +34,38 @@
           "field": "period",
           "type": "ordinal",
           "sort": [
-            "2020–21",
-            "2024–25"
+            "2020-21",
+            "2024-25"
           ],
-          "title": "Financial year",
           "scale": {
-            "padding": 0.32
+            "padding": 0.16
           },
+          "title": "Financial year",
           "axis": {
             "orient": "bottom",
             "labelAngle": 0,
-            "labelFontSize": 13,
-            "labelPadding": 8,
-            "titlePadding": 12,
+            "labelFont": "Inter",
+            "labelFontSize": 10,
+            "labelPadding": 5,
+            "title": "Financial year",
+            "titleFont": "Inter",
+            "titleFontSize": 10,
+            "titlePadding": 7,
             "grid": false,
             "domain": true,
+            "domainColor": "#8E8078",
+            "domainWidth": 1.5,
             "ticks": true,
-            "labelOverlap": false,
+            "tickSize": 5,
+            "tickColor": "#8E8078",
             "labelColor": "#5B4E49",
             "titleColor": "#5B4E49",
-            "domainColor": "#BFB3AA",
-            "tickColor": "#BFB3AA"
+            "labelOverlap": false
           }
         },
         "y": {
           "field": "value_m",
           "type": "quantitative",
-          "title": "Farm-gate value (A$ million)",
           "scale": {
             "domain": [
               0,
@@ -63,6 +74,7 @@
             "nice": false,
             "zero": true
           },
+          "title": "Farm-gate value (A$ million)",
           "axis": {
             "orient": "left",
             "values": [
@@ -73,18 +85,24 @@
               8000
             ],
             "format": ",.0f",
-            "tickSize": 5,
-            "labelPadding": 6,
-            "titlePadding": 12,
+            "labelFont": "Inter",
+            "labelFontSize": 10,
+            "labelPadding": 4,
+            "title": "Farm-gate value (A$ million)",
+            "titleFont": "Inter",
+            "titleFontSize": 10,
+            "titlePadding": 7,
             "grid": true,
             "gridColor": "#E8DFDB",
             "gridOpacity": 1,
             "domain": true,
+            "domainColor": "#8E8078",
+            "domainWidth": 1.5,
             "ticks": true,
+            "tickSize": 4,
+            "tickColor": "#8E8078",
             "labelColor": "#5B4E49",
-            "titleColor": "#5B4E49",
-            "domainColor": "#BFB3AA",
-            "tickColor": "#BFB3AA"
+            "titleColor": "#5B4E49"
           }
         },
         "color": {
@@ -114,8 +132,8 @@
         "order": {
           "field": "period",
           "sort": [
-            "2020–21",
-            "2024–25"
+            "2020-21",
+            "2024-25"
           ]
         },
         "tooltip": [
@@ -138,7 +156,7 @@
           {
             "field": "change_percent",
             "type": "quantitative",
-            "title": "Change since 2020–21 (%)",
+            "title": "Change since 2020-21 (%)",
             "format": "+.1f"
           }
         ]
@@ -147,117 +165,30 @@
     {
       "transform": [
         {
-          "filter": "datum.period === '2020–21'"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "align": "right",
-        "baseline": "middle",
-        "dx": -9,
-        "font": "Inter",
-        "fontSize": 12,
-        "fontWeight": 600
-      },
-      "encoding": {
-        "x": {
-          "field": "period",
-          "type": "ordinal",
-          "sort": [
-            "2020–21",
-            "2024–25"
-          ],
-          "scale": {
-            "padding": 0.32
-          },
-          "axis": null
-        },
-        "y": {
-          "field": "value_m",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0,
-              8200
-            ],
-            "nice": false,
-            "zero": true
-          },
-          "axis": null
-        },
-        "text": {
-          "field": "value_m",
-          "type": "quantitative",
-          "format": ",.0f"
-        },
-        "color": {
-          "field": "category",
-          "type": "nominal",
-          "scale": {
-            "domain": [
-              "Cut flowers, nurseries and turf",
-              "Fruit (excluding wine grapes)",
-              "Vegetables",
-              "Nuts",
-              "Wine grapes"
-            ],
-            "range": [
-              "#D6538A",
-              "#315F49",
-              "#329481",
-              "#B695C9",
-              "#D6A53A"
-            ]
-          },
-          "legend": null
-        },
-        "tooltip": [
-          {
-            "field": "category",
-            "type": "nominal",
-            "title": "Category"
-          },
-          {
-            "field": "period",
-            "type": "ordinal",
-            "title": "Financial year"
-          },
-          {
-            "field": "value_m",
-            "type": "quantitative",
-            "title": "Farm-gate value (A$ million)",
-            "format": ",.1f"
-          }
-        ]
-      }
-    },
-    {
-      "transform": [
-        {
-          "filter": "datum.period === '2024–25' && datum.end_label != null && datum.end_label !== ''"
+          "filter": "datum.period === '2024-25' && datum.end_label != null && datum.end_label !== ''"
         }
       ],
       "mark": {
         "type": "text",
         "align": "left",
         "baseline": "middle",
-        "dx": 9,
+        "dx": 5,
         "font": "Inter",
-        "fontSize": 12,
-        "fontWeight": 600
+        "fontSize": 9,
+        "fontWeight": 600,
+        "clip": false
       },
       "encoding": {
         "x": {
           "field": "period",
           "type": "ordinal",
           "sort": [
-            "2020–21",
-            "2024–25"
+            "2020-21",
+            "2024-25"
           ],
           "scale": {
-            "padding": 0.32
-          },
-          "axis": null
+            "padding": 0.16
+          }
         },
         "y": {
           "field": "value_m",
@@ -269,8 +200,7 @@
             ],
             "nice": false,
             "zero": true
-          },
-          "axis": null
+          }
         },
         "text": {
           "field": "end_label",
@@ -307,17 +237,17 @@
     },
     "title": {
       "font": "Inter",
-      "fontSize": 21,
+      "fontSize": 16,
       "anchor": "start",
       "subtitleFont": "Inter",
-      "subtitleFontSize": 13,
+      "subtitleFontSize": 11,
       "subtitleColor": "#74686D"
     },
     "axis": {
       "labelFont": "Inter",
       "titleFont": "Inter",
-      "labelFontSize": 12,
-      "titleFontSize": 12,
+      "labelFontSize": 10,
+      "titleFontSize": 10,
       "labelColor": "#5B4E49",
       "titleColor": "#5B4E49"
     }

@@ -2,90 +2,170 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Victoria leads Australia's cut-flower sector",
-    "subtitle": "2024-25 · Farm-gate value, A$ million"
+    "subtitle": "2024\u201325 \u00b7 Farm-gate value, A$ million"
   },
-  "description": "State-level choropleth of reported cut-flower farm-gate values. States without a matching value in the ABS Table 5 extract are shown in grey as no data, not zero.",
+  "description": "State-level choropleth of reported cut-flower farm-gate values. States without a matching value in the ABS Table 5 extract are shown in grey as no data, not zero. State abbreviations are overlaid as labels.",
   "width": 680,
   "height": 455,
   "background": "#FFFFFF",
-  "data": {
-    "url": "maps/australia_states.topojson",
-    "format": {
-      "type": "topojson",
-      "feature": "australia_states"
-    }
+  "projection": {
+    "type": "equalEarth"
   },
-  "transform": [
+  "layer": [
     {
-      "lookup": "properties.STE_NAME21",
-      "from": {
-        "data": {
-          "url": "data/cut_flower_value_by_state.csv",
-          "format": {
-            "type": "csv"
+      "data": {
+        "url": "maps/australia_states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "australia_states"
+        }
+      },
+      "transform": [
+        {
+          "lookup": "properties.STE_NAME21",
+          "from": {
+            "data": {
+              "url": "data/cut_flower_value_by_state.csv",
+              "format": {
+                "type": "csv"
+              }
+            },
+            "key": "state",
+            "fields": [
+              "value_m",
+              "year",
+              "commodity",
+              "measure"
+            ]
           }
         },
-        "key": "state",
-        "fields": [
-          "value_m",
-          "year",
-          "commodity",
-          "measure"
+        {
+          "calculate": "isValid(datum.value_m) ? format(datum.value_m, '.1f') + ' million AUD' : 'No cut-flower value reported in Table 5'",
+          "as": "value_label"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "color": {
+          "condition": {
+            "test": "isValid(datum.value_m)",
+            "field": "value_m",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                0,
+                115
+              ],
+              "range": [
+                "#FCEAF1",
+                "#A64470"
+              ],
+              "clamp": true
+            },
+            "legend": {
+              "title": "Farm-gate value (A$ million)",
+              "format": ".0f",
+              "orient": "bottom",
+              "gradientLength": 220
+            }
+          },
+          "value": "#D8D3D5"
+        },
+        "tooltip": [
+          {
+            "field": "properties.STE_NAME21",
+            "type": "nominal",
+            "title": "State or territory"
+          },
+          {
+            "field": "value_label",
+            "type": "nominal",
+            "title": "Cut-flower value"
+          }
         ]
       }
     },
     {
-      "calculate": "isValid(datum.value_m) ? format(datum.value_m, '.1f') + ' million AUD' : 'No cut-flower value reported in Table 5'",
-      "as": "value_label"
+      "data": {
+        "values": [
+          {
+            "state": "WA",
+            "longitude": 121.5,
+            "latitude": -25.0
+          },
+          {
+            "state": "NT",
+            "longitude": 133.5,
+            "latitude": -19.0
+          },
+          {
+            "state": "SA",
+            "longitude": 135.5,
+            "latitude": -30.0
+          },
+          {
+            "state": "QLD",
+            "longitude": 145.5,
+            "latitude": -22.0
+          },
+          {
+            "state": "NSW",
+            "longitude": 147.0,
+            "latitude": -32.5
+          },
+          {
+            "state": "VIC",
+            "longitude": 145.2,
+            "latitude": -36.5
+          },
+          {
+            "state": "TAS",
+            "longitude": 146.5,
+            "latitude": -42.0
+          },
+          {
+            "state": "ACT",
+            "longitude": 150.3,
+            "latitude": -35.4
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "font": "Inter",
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "fill": "#653649",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 2,
+        "strokeJoin": "round",
+        "dy": 0
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "state",
+          "type": "nominal"
+        },
+        "tooltip": {
+          "field": "state",
+          "type": "nominal",
+          "title": "State or territory"
+        }
+      }
     }
   ],
-  "projection": {
-    "type": "equalEarth"
-  },
-  "mark": {
-    "type": "geoshape",
-    "stroke": "#FFFFFF",
-    "strokeWidth": 1.2
-  },
-  "encoding": {
-    "color": {
-      "condition": {
-        "test": "isValid(datum.value_m)",
-        "field": "value_m",
-        "type": "quantitative",
-        "scale": {
-          "domain": [
-            0,
-            115
-          ],
-          "range": [
-            "#E4F1ED",
-            "#176B63"
-          ],
-          "clamp": true
-        },
-        "legend": {
-          "title": "Farm-gate value (A$ million)",
-          "format": ".0f",
-          "orient": "bottom",
-          "gradientLength": 220
-        }
-      },
-      "value": "#E9E5DF"
-    },
-    "tooltip": [
-      {
-        "field": "properties.STE_NAME21",
-        "type": "nominal",
-        "title": "State or territory"
-      },
-      {
-        "field": "value_label",
-        "type": "nominal",
-        "title": "Cut-flower value"
-      }
-    ]
-  },
   "config": {
     "font": "Inter",
     "view": {
@@ -107,7 +187,7 @@
     },
     "geoshape": {
       "stroke": "#FFFFFF",
-      "strokeWidth": 1.2
+      "strokeWidth": 1.5
     }
   }
 }
