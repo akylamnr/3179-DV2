@@ -136,7 +136,18 @@
           "as": "country_label"
         }
       ],
-  
+      "mark": {
+        "type": "text",
+        "font": "Inter",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "fill": "#394150",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 3,
+        "strokeJoin": "round",
+        "align": "center",
+        "baseline": "middle"
+      },
       "encoding": {
         "longitude": {
           "field": "label_longitude",
