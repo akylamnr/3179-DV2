@@ -5,225 +5,69 @@
   "height": 450,
   "title": {
     "text": "Australia's cut-flower imports (2024)",
-    "subtitle": "Top six suppliers accounted for about 91% of reported value"
+    "subtitle": "The top six suppliers made up about 91% of reported value."
   },
-  "projection": {
-    "type": "equalEarth"
-  },
+  "projection": {"type": "equalEarth", "rotate": [-150, 0, 0]},
+  "resolve": {"scale": {"size": "independent"}},
   "layer": [
     {
       "data": {
         "url": "maps/world_countries.topojson",
-        "format": {
-          "type": "topojson",
-          "feature": "world_countries"
-        }
+        "format": {"type": "topojson", "feature": "world_countries"}
       },
-      "mark": {
-        "type": "geoshape",
-        "fill": "#F1EEE9",
-        "stroke": "#FFFFFF",
-        "strokeWidth": 0.55
-      }
+      "mark": {"type": "geoshape", "fill": "#F1EEE9", "stroke": "#FFFFFF", "strokeWidth": 0.55}
     },
     {
-      "data": {
-        "url": "data/flower_import_flows.csv",
-        "format": {
-          "type": "csv"
-        }
-      },
-      "mark": {
-        "type": "line",
-        "opacity": 0.7,
-        "stroke": "#D98B35"
-      },
+      "data": {"url": "data/flower_import_flows.csv", "format": {"type": "csv"}},
+      "mark": {"type": "line", "color": "#D98B35", "opacity": 0.7, "strokeCap": "round"},
       "encoding": {
-        "longitude": {
-          "field": "longitude",
-          "type": "quantitative"
-        },
-        "latitude": {
-          "field": "latitude",
-          "type": "quantitative"
-        },
-        "detail": {
-          "field": "route",
-          "type": "nominal"
-        },
-        "order": {
-          "field": "sequence",
-          "type": "quantitative"
-        },
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "detail": {"field": "route", "type": "nominal"},
+        "order": {"field": "sequence", "type": "quantitative"},
         "size": {
           "field": "import_value_usd_m",
           "type": "quantitative",
           "title": "Import value (US$ million)",
-          "scale": {
-            "domain": [
-              0,
-              20
-            ],
-            "range": [
-              0.8,
-              5.5
-            ],
-            "clamp": true
-          }
+          "scale": {"domain": [0, 20], "range": [0.8, 5.5], "clamp": true}
         },
         "tooltip": [
-          {
-            "field": "country",
-            "type": "nominal",
-            "title": "Supplier"
-          },
-          {
-            "field": "import_value_usd_m",
-            "type": "quantitative",
-            "title": "Import value (US$ million)",
-            "format": ".2f"
-          },
-          {
-            "field": "quantity_kg",
-            "type": "quantitative",
-            "title": "Quantity (kg)",
-            "format": ","
-          },
-          {
-            "field": "share_of_reported_total_pct",
-            "type": "quantitative",
-            "title": "Share of total (%)",
-            "format": ".1f"
-          }
+          {"field": "country", "type": "nominal", "title": "Supplier"},
+          {"field": "import_value_usd_m", "type": "quantitative", "title": "Import value (US$ million)", "format": ".2f"},
+          {"field": "quantity_kg", "type": "quantitative", "title": "Quantity (kg)", "format": ","},
+          {"field": "share_of_reported_total_pct", "type": "quantitative", "title": "Share of total (%)", "format": ".1f"}
         ]
       }
     },
     {
-      "data": {
-        "url": "data/flower_import_flows.csv",
-        "format": {
-          "type": "csv"
-        }
-      },
-      "transform": [
-        {
-          "filter": "datum.sequence == 0"
-        }
-      ],
-      "mark": {
-        "type": "circle",
-        "filled": true,
-        "color": "#D98B35",
-        "stroke": "#FFFFFF",
-        "strokeWidth": 1.2,
-        "opacity": 0.92
-      },
+      "data": {"url": "data/flower_import_flows.csv", "format": {"type": "csv"}},
+      "transform": [{"filter": "datum.sequence == 0"}],
+      "mark": {"type": "circle", "color": "#D98B35", "stroke": "#FFFFFF", "strokeWidth": 1.2, "opacity": 0.92},
       "encoding": {
-        "longitude": {
-          "field": "longitude",
-          "type": "quantitative"
-        },
-        "latitude": {
-          "field": "latitude",
-          "type": "quantitative"
-        },
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
         "size": {
           "field": "import_value_usd_m",
           "type": "quantitative",
-          "title": "Import value (US$ million)",
-          "scale": {
-            "domain": [
-              0,
-              20
-            ],
-            "range": [
-              30,
-              500
-            ],
-            "clamp": true
-          },
+          "scale": {"domain": [0, 20], "range": [30, 500], "clamp": true},
           "legend": null
         },
         "tooltip": [
-          {
-            "field": "country",
-            "type": "nominal",
-            "title": "Supplier"
-          },
-          {
-            "field": "import_value_usd_m",
-            "type": "quantitative",
-            "title": "Import value (US$ million)",
-            "format": ".2f"
-          },
-          {
-            "field": "quantity_kg",
-            "type": "quantitative",
-            "title": "Quantity (kg)",
-            "format": ","
-          },
-          {
-            "field": "share_of_reported_total_pct",
-            "type": "quantitative",
-            "title": "Share of total (%)",
-            "format": ".1f"
-          }
+          {"field": "country", "type": "nominal", "title": "Supplier"},
+          {"field": "import_value_usd_m", "type": "quantitative", "title": "Import value (US$ million)", "format": ".2f"},
+          {"field": "quantity_kg", "type": "quantitative", "title": "Quantity (kg)", "format": ","},
+          {"field": "share_of_reported_total_pct", "type": "quantitative", "title": "Share of total (%)", "format": ".1f"}
         ]
       }
     },
     {
-      "data": {
-        "values": [
-          {
-            "country": "Australia",
-            "longitude": 149.13,
-            "latitude": -35.28
-          }
-        ]
-      },
-      "mark": {
-        "type": "point",
-        "shape": "diamond",
-        "filled": true,
-        "size": 180,
-        "color": "#176B63",
-        "stroke": "#FFFFFF",
-        "strokeWidth": 1.5
-      },
+      "data": {"values": [{"country": "Australia", "longitude": 149.13, "latitude": -35.28}]},
+      "mark": {"type": "point", "shape": "diamond", "filled": true, "size": 180, "color": "#176B63", "stroke": "#FFFFFF", "strokeWidth": 1.5},
       "encoding": {
-        "longitude": {
-          "field": "longitude",
-          "type": "quantitative"
-        },
-        "latitude": {
-          "field": "latitude",
-          "type": "quantitative"
-        },
-        "tooltip": {
-          "field": "country",
-          "type": "nominal"
-        }
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "tooltip": {"field": "country", "type": "nominal"}
       }
     }
-  ],
-  "config": {
-    "font": "Inter",
-    "view": {
-      "stroke": null
-    },
-    "title": {
-      "font": "Inter",
-      "fontSize": 21,
-      "anchor": "start",
-      "subtitleFont": "Inter",
-      "subtitleFontSize": 13,
-      "subtitleColor": "#74686D"
-    },
-    "legend": {
-      "labelFont": "Inter",
-      "titleFont": "Inter",
-      "labelFontSize": 12,
-      "titleFontSize": 12
-    }
-  }
+  ]
 }
