@@ -9,7 +9,7 @@
   "height": 455,
   "background": "#FFFFFF",
   "projection": {
-    "type": "equalEarth"
+    "type": "equirectangular"
   },
   "layer": [
     {
@@ -89,51 +89,8 @@
         ]
       }
     },
+    
     {
-      "data": {
-        "values": [
-          {
-            "state": "WA",
-            "longitude": 121.5,
-            "latitude": -25.0
-          },
-          {
-            "state": "NT",
-            "longitude": 133.5,
-            "latitude": -19.0
-          },
-          {
-            "state": "SA",
-            "longitude": 135.5,
-            "latitude": -30.0
-          },
-          {
-            "state": "QLD",
-            "longitude": 145.5,
-            "latitude": -22.0
-          },
-          {
-            "state": "NSW",
-            "longitude": 147.0,
-            "latitude": -32.5
-          },
-          {
-            "state": "VIC",
-            "longitude": 145.2,
-            "latitude": -36.5
-          },
-          {
-            "state": "TAS",
-            "longitude": 146.5,
-            "latitude": -42.0
-          },
-          {
-            "state": "ACT",
-            "longitude": 150.3,
-            "latitude": -35.4
-          }
-        ]
-      },
       "mark": {
         "type": "text",
         "font": "Inter",
