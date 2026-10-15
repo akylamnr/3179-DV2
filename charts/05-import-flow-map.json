@@ -5,7 +5,7 @@
   "height": 450,
   "title": {
     "text": "Most imported flowers arrive from six countries",
-    "subtitle": "Australia's cut-flower imports, 2024 · Line width shows value; the six leading suppliers account for about 91% of reported value."
+    "subtitle": "Australia's cut-flower imports, 2024. Arc width shows value. The top six suppliers made up about 91% of reported value."
   },
   "projection": {
     "type": "equalEarth",
@@ -125,23 +125,15 @@
           "type": "quantitative",
           "title": "Import value (US$ million)",
           "scale": {
-            "domain": [0, 20],
-            "range": [1.2, 6.2],
-            "clamp": true
+            "range": [
+              1,
+              8
+            ]
           },
           "legend": {
-            "orient": "bottom",
-            "direction": "horizontal",
-            "values": [5, 10, 15, 20],
-            "format": ".0f",
+            "orient": "bottom-left",
             "symbolType": "stroke",
-            "symbolStrokeColor": "#D98B35",
-            "title": "Import value (US$ million)",
-            "labelFont": "Inter",
-            "titleFont": "Inter",
-            "labelFontSize": 11,
-            "titleFontSize": 11,
-            "padding": 6
+            "symbolStrokeColor": "#D98B35"
           }
         },
         "tooltip": [
@@ -193,6 +185,7 @@
       ],
       "mark": {
         "type": "circle",
+        "color": "#D98B35",
         "stroke": "#FFFFFF",
         "strokeWidth": 1.2,
         "opacity": 0.95
@@ -211,15 +204,10 @@
           "type": "quantitative",
           "scale": {
             "type": "sqrt",
-            "domain": [
-              0,
-              20
-            ],
             "range": [
               60,
-              1100
-            ],
-            "clamp": true
+              1600
+            ]
           },
           "legend": null
         },
@@ -235,23 +223,7 @@
             "title": "Import value (US$ million)",
             "format": ".2f"
           }
-        ],
-        "color": {
-          "field": "import_value_usd_m",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0,
-              20
-            ],
-            "range": [
-              "#F7DDBB",
-              "#B85C16"
-            ],
-            "clamp": true
-          },
-          "legend": null
-        }
+        ]
       }
     },
     {
@@ -272,22 +244,14 @@
       "transform": [
         {
           "filter": "datum.sequence == 0"
-        },
-        {
-          "calculate": "datum.country === 'Colombia' ? datum.latitude + 6 : datum.country === 'Ecuador' ? datum.latitude - 4 : datum.latitude",
-          "as": "label_latitude"
         }
       ],
       "mark": {
         "type": "text",
         "dy": -14,
-        "fontSize": 11,
+        "fontSize": 12,
         "fontWeight": 600,
-        "color": "#1B2B26",
-        "font": "Inter",
-        "stroke": "#FFFFFF",
-        "strokeWidth": 2,
-        "strokeJoin": "round"
+        "color": "#1B2B26"
       },
       "encoding": {
         "longitude": {
@@ -295,7 +259,7 @@
           "type": "quantitative"
         },
         "latitude": {
-          "field": "label_latitude",
+          "field": "latitude",
           "type": "quantitative"
         },
         "text": {
@@ -371,29 +335,5 @@
         }
       }
     }
-  ],
-  "config": {
-    "font": "Inter",
-    "background": "#FFFFFF",
-    "view": {
-      "stroke": null
-    },
-    "title": {
-      "font": "Inter",
-      "fontSize": 21,
-      "fontWeight": "bold",
-      "anchor": "start",
-      "subtitleFont": "Inter",
-      "subtitleFontSize": 12,
-      "subtitleColor": "#74686D",
-      "offset": 12
-    },
-    "legend": {
-      "labelFont": "Inter",
-      "titleFont": "Inter",
-      "labelFontSize": 11,
-      "titleFontSize": 11,
-      "padding": 5
-    }
-  }
+  ]
 }
