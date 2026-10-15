@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Farm-Gate Value of Cut-Flowers by State (2024-25)",
+    "text": "Value of Cut-Flowers by State (2024-25)",
     "subtitle": "2024\u201325 \u00b7 Farm-gate value, A$ million"
   },
   "description": "State-level choropleth of reported cut-flower farm-gate values. States without a matching value in the ABS Table 5 extract are shown in grey as no data, not zero. State abbreviations are overlaid as labels.",
