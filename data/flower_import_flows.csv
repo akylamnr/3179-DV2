@@ -1,0 +1,13 @@
+country,import_value_1000usd,import_value_usd_m,quantity_kg,share_of_reported_total_pct,year,hs_code,route,sequence,location,longitude,latitude,point_role
+Malaysia,19363.71,19.36371,2867710,22.138,2024,0603,Malaysia → Australia,0,Malaysia,102.0721,3.8329,supplier
+Malaysia,19363.71,19.36371,2867710,22.138,2024,0603,Malaysia → Australia,1,Australia,149.13,-35.28,destination
+Kenya,17433.68,17.43368,1970040,19.931,2024,0603,Kenya → Australia,0,Kenya,37.513,0.3124,supplier
+Kenya,17433.68,17.43368,1970040,19.931,2024,0603,Kenya → Australia,1,Australia,149.13,-35.28,destination
+Ecuador,13390.31,13.39031,1495830,15.309,2024,0603,Ecuador → Australia,0,Ecuador,-78.2787,-1.7633,supplier
+Ecuador,13390.31,13.39031,1495830,15.309,2024,0603,Ecuador → Australia,1,Australia,149.13,-35.28,destination
+Vietnam,11480.58,11.48058,1628160,13.125,2024,0603,Vietnam → Australia,0,Vietnam,107.7769,15.9941,supplier
+Vietnam,11480.58,11.48058,1628160,13.125,2024,0603,Vietnam → Australia,1,Australia,149.13,-35.28,destination
+Colombia,9028.35,9.02835,1235450,10.322,2024,0603,Colombia → Australia,0,Colombia,-72.4865,3.9686,supplier
+Colombia,9028.35,9.02835,1235450,10.322,2024,0603,Colombia → Australia,1,Australia,149.13,-35.28,destination
+China,9026.3,9.0263,996626,10.319,2024,0603,China → Australia,0,China,98.7696,36.7987,supplier
+China,9026.3,9.0263,996626,10.319,2024,0603,China → Australia,1,Australia,149.13,-35.28,destination
