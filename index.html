@@ -1,142 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Grown Here, Flown In: Australia's Flower Paradox</title>
-<meta name="description" content="Australia grows distinctive flowers, but many blooms sold here are imported. Follow the evidence from local production to international flower trade and import unit values.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-<script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
-<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
-<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Australia's Flowers and Horticulture</title>
+
+  <!-- Vega-Lite libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.4.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+
+  <!-- Our own styling -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
-<header class="hero wrap">
-  <p class="eyebrow">Australia's flower industry</p>
-  <h1>Grown here, flown in</h1>
-  <p class="lede">Australia grows some of the world's most distinctive flowers. So why are so many of the flowers we buy grown overseas?</p>
-  <p class="intro">Follow the flowers from Australian farms to the supermarket bucket: how big the industry is, where it grows, where imports come from, and what those imports cost.</p>
-</header>
+  <header class="hero">
+    <p class="eyebrow">FIT3179</p>
 
-<main class="wrap">
+    <h1>Australia's Flowers and Horticulture</h1>
 
-<!-- 01. THE BIG PICTURE -->
-<section id="big-picture" class="local">
-  <p class="eyebrow">01 · The big picture</p>
-  <h2>Flowers are one slice of a much bigger industry</h2>
-  <p>Before looking at imports, it helps to understand the scale of local horticulture. Horticulture spans crops grown on farms and in nurseries, including fruit, vegetables, nuts, wine grapes, flowers, nursery plants and turf.</p>
-  <figure class="vis-card">
-    <h3>Flowers are a small part of horticulture's value</h3>
-    <div class="vis" data-spec="specs/01-waffle.json"></div>
-    <figcaption>Source: Australian Bureau of Statistics (ABS), <a href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release" target="_blank" rel="noopener">Australian Agriculture: Horticulture, 2024-25</a>.</figcaption>
-  </figure>
-  <p><strong>What stands out:</strong> Cut flowers, nurseries and turf account for about 17.3% of the combined value of the five main horticulture groups shown in 2024-25. Fruit and vegetables contribute much larger shares.</p>
-  <p class="source"><strong>A note on scope:</strong> The ABS groups cut flowers, nurseries and turf together, so this is not a flower-only estimate.</p>
-</section>
+    <p class="subtitle">A closer look at Australia's flower and horticulture industry.</p>
 
-<!-- 02. GROWING FLOWERS AT HOME -->
-<section id="growing" class="local">
-  <p class="eyebrow">02 · Growing flowers at home</p>
-  <h2>Local production is concentrated - and barely growing</h2>
-  <p>Australian flower growing is concentrated in a few places. The state map shows where reported cut-flower value is highest; the trend chart then puts the wider flower-related group in context alongside other horticulture categories.</p>
+    <p class="intro">
+      Australia has a flower-growing industry of its own.
+      So where do the flowers we buy actually come from?
+      Explore local production, international suppliers
+      and the changing flower trade.
+    </p>
+  </header>
 
-  <figure class="vis-card">
-    <h3>Where are cut flowers grown?</h3>
-    <div class="vis" data-spec="specs/03-choropleth.json"></div>
-    <figcaption>Source: ABS, <a href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release" target="_blank" rel="noopener">Australian Agriculture: Horticulture, 2024-25</a>. Read the measure and units from the map's legend.</figcaption>
-  </figure>
-  <p><strong>What stands out:</strong> Victoria leads the state map, with reported cut-flower value of about A$114.4 million. Cut flowers are grown year-round, with Victoria the leading producing state. <a href="https://www.agriculture.gov.au/biosecurity/risk-analysis/plant/cut-flowers" target="_blank" rel="noopener">Australia's Department of Agriculture</a> also describes the sector's year-round production and seasonal peaks.</p>
+  <main>
 
-  <figure class="vis-card">
-    <h3>A second geographic view</h3>
-    <div class="vis" data-spec="specs/04-proportional.json"></div>
-    <figcaption>Read this map's title and legend for its specific measure and units. Circle size encodes a value, so interpret it using the displayed scale rather than the colour shading in the map above.</figcaption>
-  </figure>
+    <!-- SECTION 1 -->
+    <section>
+      <p class="eyebrow">01 - THE BIG PICTURE</p>
 
-  <figure class="vis-card">
-    <h3>The wider flower-related group has barely changed</h3>
-    <div class="vis" data-spec="specs/02-slope.json"></div>
-    <figcaption>Source: ABS, Australian Agriculture: Horticulture, 2020-21 to 2024-25. Values are nominal farm-gate values, not adjusted for inflation.</figcaption>
-  </figure>
-  <p><strong>What stands out:</strong> The combined value of flowers, nurseries and turf rose by just 1.4% from 2020-21 to 2024-25. Over the same period, nuts grew by 38.5%, fruit by about 25.3% and vegetables by about 22.9%, while wine grapes fell by 27.5%.</p>
-  <p class="bridge">If local flower-related value is barely changing, who supplies the flowers sold here? Flower Industry Australia estimates that about half of the flowers sold in Australia are imported.</p>
-</section>
+      <h2>Flowers in the bigger picture</h2>
 
-<!-- 03. FLOWERS ON THE MOVE -->
-<section id="imports" class="imported">
-  <p class="eyebrow">03 · Flowers on the move</p>
-  <h2>Most imported flowers come from a handful of countries</h2>
-  <p>Imported flowers arrive from several continents, but the trade is concentrated. In the 2024 data shown here, six supplier countries account for about 91% of the reported value of Australian imports of fresh-cut flowers and buds.</p>
+      <p>
+        Before looking at imports, let's examine the place of
+        flowers and related industries within Australian horticulture.
+      </p>
 
-  <figure class="vis-card">
-    <h3>Which countries supply the most flowers?</h3>
-    <div class="vis" data-spec="specs/05-import-flow-map-arcs.json"></div>
-    <figcaption>Source: UN Comtrade, HS 0603 (fresh-cut flowers and buds), calendar year 2024. Values are in US dollars.</figcaption>
-  </figure>
-  <p><strong>What stands out:</strong> Malaysia, Vietnam and China are in Asia; Kenya is in Africa; Ecuador and Colombia are in South America. The arcs show that import value is not evenly spread across suppliers.</p>
+      
+      <article class="chart-card">
 
-  <figure class="vis-card">
-    <h3>How have import values changed over time?</h3>
-    <div class="vis" data-spec="specs/06-import-heatmap.json"></div>
-    <figcaption>Source: UN Comtrade, HS 060310 time series, 2017-2024. Values are in US$ million. This code's scope differs from the broader HS 0603 flow map above.</figcaption>
-  </figure>
-  <p><strong>What stands out:</strong> Malaysia's reported import value peaked at about US$24.0 million in 2022. Vietnam's value then rose from about US$6.2 million in 2023 to US$11.5 million in 2024. Darker cells indicate higher reported import value.</p>
+        <div class="waffle-layout">
 
-  <figure class="vis-card">
-    <h3>Malaysia overtakes Kenya as the leading supplier</h3>
-    <div class="vis" data-spec="specs/07-import-bump-chart.json"></div>
-    <figcaption>Source: UN Comtrade, HS 060310, 2017-2024. Rankings compare the six supplier countries included in the dataset.</figcaption>
-  </figure>
-  <p>The heatmap shows how much was imported; the bump chart shows who ranked first. Kenya led in the earlier years, but Malaysia moved ahead in 2021 and remained the largest supplier among these six countries through 2024.</p>
-</section>
+          <div class="waffle-story">
 
-<!-- 04. THE BIG QUESTION -->
-<section id="the-big-question" class="imported">
-  <p class="eyebrow">04 · The big question</p>
-  <h2>Price helps explain why imports compete</h2>
-  <p>Geography tells us where the flowers come from; import unit values give another clue to how they compete in the market. Dividing trade value by weight provides a rough value per kilogram.</p>
-  <figure class="vis-card">
-    <h3>What do imported flowers cost per kilogram?</h3>
-    <div class="vis" data-spec="specs/08-price-per-kg.json"></div>
-    <figcaption>Source: UN Comtrade, HS 0603, calendar year 2024. Unit value is import value divided by reported weight.</figcaption>
-  </figure>
-  <p>Across the suppliers shown, import unit values are roughly US$7-US$9 per kilogram. These are trade unit values, not supermarket prices. The chart does not include a comparable Australian-grown price, so it cannot prove the price gap by itself. Flower Industry Australia points to lower labour and production costs overseas as one reason imports can compete on price.</p>
-  <p>Peak occasions such as Valentine's Day and Mother's Day also create sharp demand, while Australian production has seasonal patterns of its own. At the same time, supermarkets are not generally required to display country-of-origin labels for cut flowers, which can make it difficult for shoppers to tell where a bunch was grown.</p>
-</section>
+            <h3>Flowers are one part of a much bigger industry</h3>
 
-<!-- CONCLUSION -->
-<section id="conclusion" class="local">
-  <p class="eyebrow">The takeaway</p>
-  <h2>So why do so many flowers fly in?</h2>
-  <p>The evidence points to three parts of the paradox:</p>
-  <ul>
-    <li><strong>Local production is concentrated and the wider flower-related group is barely growing.</strong> Its combined farm-gate value rose only 1.4% in four years, far below growth in nuts, fruit and vegetables.</li>
-    <li><strong>A handful of overseas suppliers fill a large share of the market.</strong> Six countries account for about 91% of the reported value in the 2024 fresh-cut flower trade data, and Malaysia overtook Kenya in the selected supplier rankings.</li>
-    <li><strong>Price, peak demand and limited origin information shape the choice.</strong> Overseas suppliers compete on production costs, demand rises around major gifting days, and origin is often not clearly labelled at the point of sale.</li>
-  </ul>
-  <p class="closing-line">Australia can grow flowers the world wants, but imports remain a major part of the bouquets we buy, and shoppers may not always know where the stems were grown.</p>
-  <p><strong>What you can do:</strong> Ask your florist or supermarket where the flowers were grown, and look for Australian-grown labels.</p>
-</section>
+            <p>
+              Horticulture spans fruit, vegetables, nuts, wine grapes
+              and a flower-related group. Each square represents
+              approximately 1% of the combined value across these five
+              categories. The ABS groups cut flowers, nurseries and
+              turf together, so this is not a flower-only estimate.
+            </p>
 
-<section id="about-data" class="local">
-  <h2>About this data</h2>
-  <p>The ABS groups cut flowers, nurseries and turf together in the horticulture charts, so those charts are not flower-only estimates. The state map, sector trend chart and international trade charts also use different measures and periods.</p>
-  <p>Horticulture farm-gate values are in Australian dollars; trade values are in US dollars. They cover different scopes and should not be compared as if they were the same measure. The import unit value is calculated from reported import value divided by weight and reflects each supplier's mix of flowers. It is not a retail price. Farm-gate values are nominal and have not been adjusted for inflation.</p>
-</section>
+            <div class="statistic">
+              <strong>17.3%</strong>
+              <span>
+                of the combined farm-gate value across the five
+                categories in 2024-25.
+              </span>
+            </div>
 
-</main>
+            <p class="hint">
+              Select a category in the legend to highlight its squares.
+            </p>
 
-<footer class="wrap">
-  <p>Created by Akyla Mounira Irwan · 15 October 2026 · FIT3179 Data Visualisation 2, Monash University Malaysia.</p>
-  <p>Data sources: <a href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release" target="_blank" rel="noopener">ABS, Australian Agriculture: Horticulture, 2024-25</a>; <a href="https://comtradeplus.un.org/TradeFlow" target="_blank" rel="noopener">UN Comtrade</a>; <a href="https://www.agriculture.gov.au/biosecurity/risk-analysis/plant/cut-flowers" target="_blank" rel="noopener">Australian Department of Agriculture, Cut flowers and foliage</a>.</p>
-  <p>Context: <a href="https://www.flowerindustryaustralia.com.au/" target="_blank" rel="noopener">Flower Industry Australia</a>; <a href="https://www.abc.net.au/news/2025-02-14/imported-flowers-country-of-origin-labelling-laws/104926548" target="_blank" rel="noopener">ABC News, 14 February 2025</a>.</p>
-  <p>AI acknowledgement: AI tools were used to help plan the storyline, troubleshoot Vega-Lite code and edit explanatory text. The author reviewed and adapted the final page.</p>
-</footer>
+          </div>
 
-<script src="js/main.js"></script>
+          <div id="chart01" class="vis waffle-chart"></div>
+
+        </div>
+
+        <p class="source">
+          Source: ABS, 
+          <a
+            href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Table 1: Horticulture summary estimates by Australia, state and territory (2024-25)</a>.
+        </p>
+
+      </article>
+      
+
+    </section>
+
+    <!-- SECTION 2 -->
+    
+    <section>
+      <p class="eyebrow">02 - WHERE FLOWERS GROW</p>
+
+      <h2>Growing flowers at home</h2>
+
+      <p>
+        Australia's flower production is spread across different
+        states and regions. Where is production concentrated,
+        and have those patterns changed?
+      </p>
+
+      
+
+        <!-- CHART 2: CHOROPLETH MAP -->
+        
+        <!-- ONE WHITE BOX CONTAINING BOTH CHARTS -->
+        <article class="chart-card chart-pair-card">
+
+          <div class="chart-pair">
+
+            <!-- LEFT: CHART 2 - CHOROPLETH MAP -->
+            <div class="chart-column">
+              <div id="chart02" class="vis"></div>
+
+              <p class="source">
+                Data:
+                <a
+                  href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >ABS Australian Agriculture: Horticulture, 2024-25</a>.
+
+                Boundaries:
+                <a
+                  href="https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >ABS State and Territory Boundaries</a>.
+              </p>
+            </div>
+
+            <!-- RIGHT: CHART 3 - SLOPE CHART -->
+            <div class="chart-column">
+              <div id="chart03" class="vis"></div>
+
+              <div class="insight-note">
+                <p>
+                  <strong>The flower-related category barely changed.</strong>
+                  Its combined farm-gate value rose by 1.4% between
+                  2020-21 and 2024-25, while nuts grew by 38.5%
+                  and wine grapes declined by 27.5%.
+                </p>
+
+                <p class="annotation-caveat">
+                  These are nominal values, not adjusted for inflation,
+                  and measure farm-gate value rather than physical production.
+                </p>
+              </div>
+
+              <p class="source">
+                Source:
+                <a
+                  href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >ABS Australian Agriculture: Horticulture, 2024-25 - Table 1</a>.
+              </p>
+            </div>
+
+          </div>
+        </article>
+    </section>
+
+
+    <!-- SECTION 3 -->
+    <section>
+      <p class="eyebrow">03 - FLOWERS ON THE MOVE</p>
+
+      <h2>Flowers that travel the world</h2>
+
+      <p>
+        Imported flowers connect Australia to growers around
+        the world. Which countries supply them, and what kinds
+        of flowers arrive?
+      </p>
+
+      <article class="chart-card">
+        <h3>Which countries supply the most flowers?</h3>
+        <div id="chart04" class="vis"></div>
+        <div id="chart05" class="vis"></div>
+        <p class="source">Source: International merchandise trade statistics.</p>
+      </article>
+
+      <article class="chart-card">
+        <div id="chart09" class="vis"></div>
+        <p class="source">Source: International merchandise trade statistics.</p>
+      </article>
+
+      <article class="chart-card">
+        <h3>Why are people choosing imports?</h3>
+        <div id="chart08" class="vis"></div>
+        <p class="source">Source: International merchandise trade statistics.</p>
+      </article>
+
+      <article class="chart-card">
+        <h3>How have Australia's import sources changed?</h3>
+        <div id="chart07" class="vis"></div>
+        <p class="source">Source: International merchandise trade statistics.</p>
+      </article>
+    </section>
+
+    <!-- SECTION 4: TO COMPLETE LATER -->
+    <section>
+      <p class="eyebrow">04 - THE BIG QUESTION</p>
+
+      <h2>What does the future hold?</h2>
+
+      <p>
+        The final section will bring local production, imports
+        and exports together to examine the changing balance
+        of Australia's flower industry.
+      </p>
+
+      <p class="source">
+        Further charts and conclusions will be added as the
+        remaining datasets are verified.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Grown Here, Flown In - Australia's Flower Paradox</p>
+    <p>Data sources and AI acknowledgement to be completed.</p>
+  </footer>
+
+  <!-- Load our chart specifications -->
+  <script src="main.js"></script>
+
 </body>
 </html>
