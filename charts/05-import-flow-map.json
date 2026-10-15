@@ -123,31 +123,20 @@
         "size": {
           "field": "import_value_usd_m",
           "type": "quantitative",
-          "title": "Import value (US$M)",
+          "title": "Import value (US$ million)",
           "scale": {
-            "domain": [
-              0,
-              20
-            ],
-            "range": [
-              1.2,
-              6.2
-            ],
+            "domain": [0, 20],
+            "range": [1.2, 6.2],
             "clamp": true
           },
           "legend": {
             "orient": "bottom",
             "direction": "horizontal",
-            "values": [
-              5,
-              10,
-              15,
-              20
-            ],
+            "values": [5, 10, 15, 20],
             "format": ".0f",
             "symbolType": "stroke",
             "symbolStrokeColor": "#D98B35",
-            "title": "Import value (US$M)",
+            "title": "Import value (US$ million)",
             "labelFont": "Inter",
             "titleFont": "Inter",
             "labelFontSize": 11,
