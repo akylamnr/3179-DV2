@@ -4,7 +4,7 @@
    ===================================== */
 
 :root {
-  --cream: #FFF7F8;
+  --cream: #e5ebdd;
   --forest: #28483D;
   --teal: #79A99A;       /* Australian-grown */
   --blush-pink: #F2B9CC; /* Imported flowers */
@@ -319,3 +319,4 @@ footer a {
     grid-template-columns: 1fr;
   }
 
+}
