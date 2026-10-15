@@ -410,3 +410,44 @@ footer a {
     gap: 32px;
   }
 }
+
+/* FIX: let the combined chart card use the full page width */
+
+.chart-card.chart-pair-card {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  margin: 24px 0;
+}
+
+/* Keep the two charts side by side inside one white card */
+
+.chart-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  width: 100%;
+  align-items: start;
+  box-sizing: border-box;
+}
+
+.chart-column {
+  min-width: 0;
+}
+
+.chart-column .vis {
+  width: 100%;
+  min-width: 0;
+}
+
+.chart-column .source {
+  overflow-wrap: anywhere;
+}
+
+/* Stack them only on smaller screens */
+
+@media (max-width: 760px) {
+  .chart-pair {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
