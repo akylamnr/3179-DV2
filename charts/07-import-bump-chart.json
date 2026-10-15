@@ -45,7 +45,9 @@
           "order": "descending"
         }
       ],
-      "groupby": ["year"]
+      "groupby": [
+        "year"
+      ]
     },
     {
       "joinaggregate": [
@@ -57,22 +59,20 @@
       ]
     }
   ],
-  "params": [
-    {
-      "name": "hl",
-      "select": {
-        "type": "point",
-        "fields": ["country"],
-        "on": "pointerover",
-        "clear": "pointerout"
-      }
-    }
-  ],
   "encoding": {
     "x": {
       "field": "year",
       "type": "ordinal",
-      "sort": [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+      "sort": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
       "title": "Year",
       "axis": {
         "labelAngle": 0,
@@ -99,13 +99,23 @@
       "type": "quantitative",
       "title": "Rank (1 = largest supplier)",
       "scale": {
-        "domain": [1, 6],
+        "domain": [
+          0.6,
+          6.4
+        ],
         "reverse": true,
         "nice": false,
         "zero": false
       },
       "axis": {
-        "values": [1, 2, 3, 4, 5, 6],
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
         "format": ".0f",
         "labelFont": "Inter",
         "labelFontSize": 10,
@@ -130,8 +140,22 @@
       "field": "country",
       "type": "nominal",
       "scale": {
-        "domain": ["Malaysia", "Kenya", "Ecuador", "Colombia", "China", "Vietnam"],
-        "range": ["#176B63", "#D98B35", "#329481", "#C0562B", "#7E8DA6", "#8D7770"]
+        "domain": [
+          "Malaysia",
+          "Kenya",
+          "Ecuador",
+          "Colombia",
+          "China",
+          "Vietnam"
+        ],
+        "range": [
+          "#176B63",
+          "#D98B35",
+          "#329481",
+          "#C0562B",
+          "#7E8DA6",
+          "#8D7770"
+        ]
       },
       "legend": null
     },
@@ -140,7 +164,16 @@
     },
     "order": {
       "field": "year",
-      "sort": [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+      "sort": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
     },
     "opacity": {
       "condition": {
@@ -192,7 +225,20 @@
             "format": ",.2f"
           }
         ]
-      }
+      },
+      "params": [
+        {
+          "name": "hl",
+          "select": {
+            "type": "point",
+            "fields": [
+              "country"
+            ],
+            "on": "pointerover",
+            "clear": "pointerout"
+          }
+        }
+      ]
     },
     {
       "transform": [

@@ -5,7 +5,7 @@
   "height": 450,
   "title": {
     "text": "Most imported flowers arrive from six countries",
-    "subtitle": "Australia's cut-flower imports, 2024. Arc width shows value. The top six suppliers made up about 91% of reported value."
+    "subtitle": "Australia's cut-flower imports, 2024 · Line width shows value; the six leading suppliers account for about 91% of reported value."
   },
   "projection": {
     "type": "equalEarth",
@@ -120,22 +120,6 @@
           "field": "step",
           "type": "quantitative"
         },
-        "size": {
-          "field": "import_value_usd_m",
-          "type": "quantitative",
-          "title": "Import value (US$ million)",
-          "scale": {
-            "range": [
-              1,
-              8
-            ]
-          },
-          "legend": {
-            "orient": "bottom-left",
-            "symbolType": "stroke",
-            "symbolStrokeColor": "#D98B35"
-          }
-        },
         "tooltip": [
           {
             "field": "country",
@@ -160,7 +144,43 @@
             "title": "Share of total (%)",
             "format": ".1f"
           }
-        ]
+        ],
+        "strokeWidth": {
+          "field": "import_value_usd_m",
+          "type": "quantitative",
+          "title": "Import value (US$ million)",
+          "scale": {
+            "domain": [
+              0,
+              20
+            ],
+            "range": [
+              1.2,
+              6.2
+            ],
+            "clamp": true
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "values": [
+              5,
+              10,
+              15,
+              20
+            ],
+            "format": ".0f",
+            "symbolType": "stroke",
+            "symbolStrokeColor": "#D98B35",
+            "symbolStrokeWidth": 1.5,
+            "title": "Import value (US$ million)",
+            "labelFont": "Inter",
+            "titleFont": "Inter",
+            "labelFontSize": 11,
+            "titleFontSize": 11,
+            "padding": 6
+          }
+        }
       }
     },
     {
@@ -185,7 +205,6 @@
       ],
       "mark": {
         "type": "circle",
-        "color": "#D98B35",
         "stroke": "#FFFFFF",
         "strokeWidth": 1.2,
         "opacity": 0.95
@@ -204,10 +223,15 @@
           "type": "quantitative",
           "scale": {
             "type": "sqrt",
+            "domain": [
+              0,
+              20
+            ],
             "range": [
               60,
-              1600
-            ]
+              1100
+            ],
+            "clamp": true
           },
           "legend": null
         },
@@ -223,7 +247,23 @@
             "title": "Import value (US$ million)",
             "format": ".2f"
           }
-        ]
+        ],
+        "color": {
+          "field": "import_value_usd_m",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              20
+            ],
+            "range": [
+              "#F7DDBB",
+              "#B85C16"
+            ],
+            "clamp": true
+          },
+          "legend": null
+        }
       }
     },
     {
@@ -244,14 +284,22 @@
       "transform": [
         {
           "filter": "datum.sequence == 0"
+        },
+        {
+          "calculate": "datum.country === 'Colombia' ? datum.latitude + 6 : datum.country === 'Ecuador' ? datum.latitude - 4 : datum.latitude",
+          "as": "label_latitude"
         }
       ],
       "mark": {
         "type": "text",
         "dy": -14,
-        "fontSize": 12,
+        "fontSize": 11,
         "fontWeight": 600,
-        "color": "#1B2B26"
+        "color": "#1B2B26",
+        "font": "Inter",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 2,
+        "strokeJoin": "round"
       },
       "encoding": {
         "longitude": {
@@ -259,7 +307,7 @@
           "type": "quantitative"
         },
         "latitude": {
-          "field": "latitude",
+          "field": "label_latitude",
           "type": "quantitative"
         },
         "text": {
@@ -335,5 +383,29 @@
         }
       }
     }
-  ]
+  ],
+  "config": {
+    "font": "Inter",
+    "background": "#FFFFFF",
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "font": "Inter",
+      "fontSize": 21,
+      "fontWeight": "bold",
+      "anchor": "start",
+      "subtitleFont": "Inter",
+      "subtitleFontSize": 12,
+      "subtitleColor": "#74686D",
+      "offset": 12
+    },
+    "legend": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "padding": 5
+    }
+  }
 }
