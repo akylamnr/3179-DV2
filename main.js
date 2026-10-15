@@ -70,6 +70,16 @@ vegaEmbed("#chart03", "charts/03-slope.json", {
   handleChartError("#chart03", "charts/03-slope.json", error)
 );
 
+// Chart 4: Where Australia's imported cut flowers come from — proportional symbol map
+vegaEmbed("#chart04", "charts/04-supplier-map.json", {
+  actions: false,
+  renderer: "svg",
+  config: sharedConfig
+}).catch(error =>
+  handleChartError("#chart04", "charts/04-supplier-map.json", error)
+);
+
+
 // Chart 5: International flower trade flow map
 vegaEmbed("#chart05", "charts/05-flow-map.json", {
   actions: false,

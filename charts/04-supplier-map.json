@@ -1,0 +1,140 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Proportional-symbol map of Australia's reported imports of cut flowers and flower buds (HS 0603) by partner country, calendar year 2024. Circle size represents trade value.",
+  "width": 820,
+  "height": 450,
+  "title": {
+    "text": "Where do Australia's imported flowers come from?",
+    "subtitle": "Cut flowers and buds (HS 0603) \u00b7 2024 \u00b7 Import value in US$ million"
+  },
+  "projection": {
+    "type": "equalEarth"
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "maps/world_countries.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "world_countries"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#F1EEE9",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.55
+      }
+    },
+    {
+      "data": {
+        "url": "data/flower_imports_by_country.csv",
+        "format": {
+          "type": "csv"
+        }
+      },
+      "mark": {
+        "type": "circle",
+        "filled": true,
+        "opacity": 0.84,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.8,
+        "tooltip": true
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "import_value_usd_m",
+          "type": "quantitative",
+          "title": "Import value (US$ million)",
+          "scale": {
+            "domain": [
+              0,
+              20
+            ],
+            "range": [
+              18,
+              1700
+            ],
+            "clamp": true
+          },
+          "legend": {
+            "orient": "bottom",
+            "symbolFillColor": "#D98B35",
+            "title": "Import value (US$ million)",
+            "format": ".1f"
+          }
+        },
+        "color": {
+          "value": "#D98B35"
+        },
+        "tooltip": [
+          {
+            "field": "country",
+            "type": "nominal",
+            "title": "Partner country"
+          },
+          {
+            "field": "import_value_usd_m",
+            "type": "quantitative",
+            "title": "Import value (US$ million)",
+            "format": ".2f"
+          },
+          {
+            "field": "quantity_kg",
+            "type": "quantitative",
+            "title": "Quantity (kg)",
+            "format": ","
+          },
+          {
+            "field": "share_of_reported_total_pct",
+            "type": "quantitative",
+            "title": "Share of reported total (%)",
+            "format": ".2f"
+          },
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "hs_code",
+            "type": "nominal",
+            "title": "HS code"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "font": "Inter",
+    "background": "#FFFFFF",
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "font": "Inter",
+      "fontSize": 22,
+      "fontWeight": "bold",
+      "anchor": "start",
+      "subtitleFont": "Inter",
+      "subtitleFontSize": 13,
+      "subtitleColor": "#74686D",
+      "offset": 14
+    },
+    "legend": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "padding": 5
+    }
+  }
+}
