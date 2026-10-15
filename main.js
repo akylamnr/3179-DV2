@@ -106,10 +106,10 @@ vegaEmbed("#chart07", "charts/07-treemap.json", {
 );
 
 // Chart 8: Import source heatmap
-vegaEmbed("#chart08", "charts/09-import-heatmap.json", {
+vegaEmbed("#chart09", "charts/09-import-heatmap.json", {
   actions: false,
   renderer: "svg",
   config: sharedConfig
 }).catch((error) =>
-  handleChartError("#chart09", "charts/08-import-heatmap.json", error)
+  handleChartError("#chart09", "charts/09-import-heatmap.json", error)
 );
