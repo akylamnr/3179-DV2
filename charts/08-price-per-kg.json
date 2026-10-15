@@ -24,7 +24,7 @@
   ],
   "layer": [
     {
-      "mark": {"type": "rule", "color": "#D98B35", "strokeWidth": 3},
+      "mark": {"type": "rule", "color": "#2F65A7", "strokeWidth": 3},
       "encoding": {
         "y": {"field": "country", "type": "nominal", "sort": "-x", "title": null, "axis": {"domain": false, "ticks": false, "labelFontSize": 13}},
         "x": {"field": "usd_per_kg", "type": "quantitative", "title": "Import price (US$ per kg)", "axis": {"format": "$.0f", "grid": false}},
@@ -32,7 +32,7 @@
       }
     },
     {
-      "mark": {"type": "circle", "color": "#D98B35", "size": 190, "opacity": 1},
+      "mark": {"type": "circle", "color": "#2F65A7", "size": 190, "opacity": 1},
       "encoding": {
         "y": {"field": "country", "type": "nominal", "sort": "-x"},
         "x": {"field": "usd_per_kg", "type": "quantitative"},
