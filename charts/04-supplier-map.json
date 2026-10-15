@@ -1,11 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Proportional-symbol map of Australia's reported imports of cut flowers and flower buds (HS 0603) by partner country, calendar year 2024. Circle size represents trade value.",
+  "description": "Proportional-symbol map of Australia's reported imports of cut flowers and flower buds (HS 0603) by partner country, calendar year 2024. Circle size represents trade value. The six highest-value reported supplier countries are labeled directly; hover over the other circles for details.",
   "width": 820,
   "height": 450,
   "title": {
     "text": "Where do Australia's imported flowers come from?",
-    "subtitle": "Cut flowers and buds (HS 0603) \u00b7 2024 \u00b7 Import value in US$ million"
+    "subtitle": "Cut flowers and buds (HS 0603) · 2024 · Import value in US$ million"
   },
   "projection": {
     "type": "equalEarth"
@@ -36,7 +36,7 @@
       "mark": {
         "type": "circle",
         "filled": true,
-        "opacity": 0.84,
+        "opacity": 0.78,
         "stroke": "#FFFFFF",
         "strokeWidth": 0.8,
         "tooltip": true
@@ -60,8 +60,8 @@
               20
             ],
             "range": [
-              18,
-              1700
+              24,
+              1000
             ],
             "clamp": true
           },
@@ -108,6 +108,70 @@
             "field": "hs_code",
             "type": "nominal",
             "title": "HS code"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/flower_imports_by_country.csv",
+        "format": {
+          "type": "csv"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.import_value_usd_m >= 9"
+        },
+        {
+          "calculate": "datum.country === 'Malaysia' ? 119 : datum.country === 'Kenya' ? 25 : datum.country === 'Ecuador' ? -94 : datum.country === 'Vietnam' ? 122 : datum.country === 'Colombia' ? -86 : datum.country === 'China' ? 105 : datum.longitude",
+          "as": "label_longitude"
+        },
+        {
+          "calculate": "datum.country === 'Malaysia' ? 8 : datum.country === 'Kenya' ? 7 : datum.country === 'Ecuador' ? 5 : datum.country === 'Vietnam' ? 21 : datum.country === 'Colombia' ? 11 : datum.country === 'China' ? 44 : datum.latitude",
+          "as": "label_latitude"
+        },
+        {
+          "calculate": "datum.country + '  $' + format(datum.import_value_usd_m, '.1f') + 'm'",
+          "as": "country_label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "font": "Inter",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "fill": "#394150",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 3,
+        "strokeJoin": "round",
+        "align": "center",
+        "baseline": "middle"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "label_longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "label_latitude",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "country_label",
+          "type": "nominal"
+        },
+        "tooltip": [
+          {
+            "field": "country",
+            "type": "nominal",
+            "title": "Partner country"
+          },
+          {
+            "field": "import_value_usd_m",
+            "type": "quantitative",
+            "title": "Import value (US$ million)",
+            "format": ".2f"
           }
         ]
       }
