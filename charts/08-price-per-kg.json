@@ -5,7 +5,7 @@
   "height": 260,
   "title": {
     "text": "What each supplier's flowers cost per kilogram",
-    "subtitle": "Import value divided by weight, 2024. Prices depend on each country's mix of flowers, so treat this as a rough guide."
+    "subtitle": "Import value divided by weight, 2024."
   },
   "data": {
     "url": "data/flower_import_flows.csv",
