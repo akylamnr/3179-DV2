@@ -95,14 +95,20 @@ vegaEmbed("#chart06", "charts/06-supplier-map.json", {
 }).catch((error) =>
   handleChartError("#chart06", "charts/06-supplier-map.json", error)
 );
-
-// Chart 7: Imported flower varieties treemap
-vegaEmbed("#chart07", "charts/07-treemap.json", {
+vegaEmbed("#chart07", "charts/07-import-streamgraph.json", {
   actions: false,
   renderer: "svg",
   config: sharedConfig
 }).catch((error) =>
-  handleChartError("#chart07", "charts/07-treemap.json", error)
+  handleChartError("#chart07", "charts/07-import-streamgraph.json", error)
+);
+
+vegaEmbed("#chart08", "charts/08-price-per-kg.json", {
+  actions: false,
+  renderer: "svg",
+  config: sharedConfig
+}).catch((error) =>
+  handleChartError("#chart08", "charts/08-price-per-kg.json", error)
 );
 
 // Chart 8: Import source heatmap
