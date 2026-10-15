@@ -93,10 +93,7 @@
           0,
           25
         ],
-        "range": [
-          "#F7E8D7",
-          "#C66A24"
-        ]
+        "range": ["#E3F1ED", "#176B63"]
       },
       "legend": {
         "orient": "bottom",
