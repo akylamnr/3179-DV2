@@ -125,10 +125,7 @@
           "type": "quantitative",
           "title": "Import value (US$ million)",
           "scale": {
-            "domain": [
-              0,
-              20
-            ],
+            "domain": [40, 1600],
             "range": [
               1,
               7
