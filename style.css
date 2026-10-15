@@ -296,27 +296,67 @@ footer a {
   color: var(--forest);
 }
 
-/* Two charts displayed horizontally */
+
+/* Map and slope chart displayed side by side */
+
 .chart-pair {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
   align-items: start;
+  width: 100%;
 }
 
 .chart-pair .chart-card {
   min-width: 0;
   margin: 0;
+  padding: 20px;
 }
 
 .chart-pair .vis {
   width: 100%;
   min-width: 0;
+  margin: 0 auto;
 }
 
-@media (max-width: 700px) {
-  .chart-pair {
-    grid-template-columns: 1fr;
-  }
+.chart-pair .vega-embed {
+  max-width: 100%;
+}
 
+.chart-pair .source {
+  overflow-wrap: anywhere;
+  font-size: 0.78rem;
+}
+
+.section-intro {
+  max-width: 48ch;
+  margin-bottom: 24px;
+}
+
+.insight-note {
+  margin-top: 20px;
+  padding-left: 14px;
+  border-left: 3px solid var(--pink);
+  line-height: 1.65;
+}
+
+.insight-note p {
+  max-width: 48ch;
+  margin-bottom: 12px;
+}
+
+.insight-note strong {
+  color: var(--forest);
+}
+
+.annotation-caveat {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Stack charts on narrow screens */
+@media (max-width: 760px) {
+  .chart-pair {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

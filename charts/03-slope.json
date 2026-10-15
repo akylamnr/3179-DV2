@@ -10,8 +10,8 @@
     "subtitleFontSize": 11,
     "subtitleColor": "#74686D"
   },
-  "width": 350,
-  "height": 275,
+  "width": 430,
+  "height": 340,
   "background": "#FFFFFF",
   "data": {
     "url": "data/horticulture_value_trends.csv",
