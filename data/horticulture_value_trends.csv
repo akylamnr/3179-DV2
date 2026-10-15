@@ -1,11 +1,11 @@
 category,period,value_m,change_m,change_percent,end_label
 Fruit (excluding wine grapes),2020–21,5855.2,1481.1,25.3,
-Fruit (excluding wine grapes),2024–25,7336.3,1481.1,25.3,Fruit +25%
-Wine grapes,2020–21,1560.0,-428.9,-27.5,
-Wine grapes,2024–25,1131.1,-428.9,-27.5,Wine grapes −28%
+Fruit (excluding wine grapes),2024–25,7336.3,1481.1,25.3,Fruit +25.3%
 Vegetables,2020–21,4908.0,1123.8,22.9,
-Vegetables,2024–25,6031.8,1123.8,22.9,Vegetables +23%
-Nuts,2020–21,1195.2,460.5,38.5,
-Nuts,2024–25,1655.7,460.5,38.5,Nuts +39%
+Vegetables,2024–25,6031.8,1123.8,22.9,Vegetables +22.9%
 "Cut flowers, nurseries and turf",2020–21,3336.3,46.2,1.4,
-"Cut flowers, nurseries and turf",2024–25,3382.5,46.2,1.4,Flower-related +1%
+"Cut flowers, nurseries and turf",2024–25,3382.5,46.2,1.4,"Flowers, nursery & turf +1.4%"
+Nuts,2020–21,1195.2,460.5,38.5,
+Nuts,2024–25,1655.7,460.5,38.5,Nuts +38.5%
+Wine grapes,2020–21,1560.0,-428.9,-27.5,
+Wine grapes,2024–25,1131.1,-428.9,-27.5,Wine grapes −27.5%
