@@ -319,3 +319,8 @@ footer a {
     grid-template-columns: 1fr;
   }
 }
+/* Chart titles are sans-serif; main section headings can remain serif. */
+h3,
+.waffle-story h3 {
+  font-family: "Inter", Arial, sans-serif;
+}

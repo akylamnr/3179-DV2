@@ -43,25 +43,25 @@ function handleChartError(id, file, error) {
   }
 }
 
-// Chart 1: Horticulture waffle chart
+// Chart 1: Horticulture waffle 
 vegaEmbed("#chart01", "charts/01-waffle.json", {
   actions: false,
   renderer: "svg",
   config: sharedConfig
-}).catch((error) =>
+}).catch(error =>
   handleChartError("#chart01", "charts/01-waffle.json", error)
 );
 
-// Chart 2: Where Australian cut flowers are grown (choropleth)
+// Chart 2: Australian cut-flower choropleth 
 vegaEmbed("#chart02", "charts/02-choropleth.json", {
   actions: false,
   renderer: "svg",
   config: sharedConfig
-}).catch((error) =>
-  reportChartError("#chart02", "charts/02-choropleth.json", error)
+}).catch(error =>
+  handleChartError("#chart02", "charts/02-choropleth.json", error)
 );
 
-// Chart 3: Horticulture value changes slope chart 
+// Chart 3: Horticulture slope chart 
 vegaEmbed("#chart03", "charts/03-slope.json", {
   actions: false,
   renderer: "svg",
