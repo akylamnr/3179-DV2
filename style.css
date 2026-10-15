@@ -451,3 +451,58 @@ footer a {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Side-by-side chart and explanation inside one white card */
+.chart-with-story {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.9fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.chart-visual {
+  min-width: 0;
+}
+
+.chart-visual .vis {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.chart-story {
+  min-width: 0;
+  color: #30272B;
+}
+
+.chart-story h3 {
+  margin: 0 0 14px;
+  color: #28483D;
+  font-size: 1.4rem;
+  line-height: 1.3;
+}
+
+.chart-story p {
+  max-width: none;
+  margin: 0 0 14px;
+  color: #30272B;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.chart-story strong {
+  color: #1F352E;
+}
+
+.chart-with-story .source {
+  color: #51464A;
+  font-size: 0.82rem;
+}
+
+/* Stack the chart and text on smaller screens */
+@media (max-width: 760px) {
+  .chart-with-story {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+}

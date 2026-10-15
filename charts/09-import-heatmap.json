@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Heatmap of Australia's imports of fresh-cut flowers and buds by partner country from 2017 to 2024. Values use HS code 060310 under HS 1988/92 and are reported in US$ million.",
-  "width": 620,
+  "width": 500,
   "height": 270,
   "background": "#FFFFFF",
   "title": {
