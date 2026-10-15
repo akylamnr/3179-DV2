@@ -112,54 +112,69 @@
         and have those patterns changed?
       </p>
 
-
+      
       <div class="chart-pair">
 
         <!-- CHART 2: CHOROPLETH MAP -->
-        <article class="chart-card">
-          <div id="chart02" class="vis"></div>
+        
+        <!-- ONE WHITE BOX CONTAINING BOTH CHARTS -->
+        <article class="chart-card chart-pair-card">
 
-          <p class="source">
-            Data: ABS,
-            <a
-              href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Australian Agriculture: Horticulture, 2024–25</a>.
-            Geographic boundaries:
-            <a
-              href="https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files"
-              target="_blank"
-              rel="noopener noreferrer"
-            >ABS ASGS Edition 3, States and Territories boundaries</a>.
-          </p>
-       
-          <div id="chart03" class="vis"></div>
+          <div class="chart-pair">
 
-          <div class="insight-note">
-            <p>
-              Between 2020–21 and 2024–25, the combined farm-gate value
-              of cut flowers, nurseries and turf rose by just 1.4%, while nuts grew by 38.5% and wine grapes
-              declined by 27.5%. Although Australia's economy gains millions from the flower industry,
-              the true growth is minisucule. Much of Australia's consumed flowers come from imports.
-            </p>
+            <!-- LEFT: CHART 2 — CHOROPLETH MAP -->
+            <div class="chart-column">
+              <div id="chart02" class="vis"></div>
 
-            <p class="annotation-caveat">
-              These are nominal values, not adjusted for inflation,
-              and measure farm-gate value rather than physical
-              production.
-            </p>
+              <p class="source">
+                Data:
+                <a
+                  href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >ABS Australian Agriculture: Horticulture, 2024–25</a>.
+
+                Boundaries:
+                <a
+                  href="https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >ABS State and Territory Boundaries</a>.
+              </p>
+            </div>
+
+            <!-- RIGHT: CHART 3 — SLOPE CHART -->
+            <div class="chart-column">
+              <div id="chart03" class="vis"></div>
+
+              <div class="insight-note">
+                <p>
+                  <strong>The flower-related category barely changed.</strong>
+                  Its combined farm-gate value rose by 1.4% between
+                  2020–21 and 2024–25, while nuts grew by 38.5%
+                  and wine grapes declined by 27.5%.
+                </p>
+
+                <p class="annotation-caveat">
+                  These are nominal values, not adjusted for inflation,
+                  and measure farm-gate value rather than physical production.
+                </p>
+              </div>
+
+              <p class="source">
+                Source:
+                <a
+                  href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >ABS Australian Agriculture: Horticulture, 2024–25 — Table 1</a>.
+              </p>
+            </div>
+
           </div>
 
-          <p class="source">
-            Source: ABS,
-            <a
-              href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Australian Agriculture: Horticulture, 2024–25, Table 1</a>.
-          </p>
         </article>
+
 
       </div>
     </section>

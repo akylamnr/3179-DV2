@@ -360,3 +360,53 @@ footer a {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+
+/* One white card containing two side-by-side charts */
+.chart-pair-card {
+  background: #FFFFFF;
+  border: 1px solid #F0E3E8;
+  border-radius: 18px;
+  padding: 28px;
+}
+
+.chart-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  align-items: start;
+  width: 100%;
+}
+
+.chart-column {
+  min-width: 0;
+}
+
+.chart-column .vis {
+  width: 100%;
+  min-width: 0;
+  margin: 0 auto;
+}
+
+.chart-column .vega-embed {
+  max-width: 100%;
+}
+
+.chart-column .source {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  font-size: 0.78rem;
+  margin-top: 20px;
+}
+
+.chart-column .insight-note {
+  margin-top: 18px;
+}
+
+/* Stack on small screens only */
+@media (max-width: 760px) {
+  .chart-pair {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
