@@ -1,24 +1,33 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Bump chart of Australia's cut-flower suppliers, ranked each year by import value. Rank 1 is the biggest supplier.",
-  "width": 720,
-  "height": 320,
+  "description": "Bump chart ranking Australia's six selected fresh-cut flower suppliers by annual import value. Rank 1 is the largest supplier.",
+  "title": {
+    "text": "Malaysia overtakes Kenya as Australia's leading supplier",
+    "subtitle": "Annual import value for fresh-cut flowers and buds (HS 060310) · 2017–2024 · Rank 1 = largest",
+    "font": "Inter",
+    "fontSize": 16,
+    "anchor": "start",
+    "subtitleFont": "Inter",
+    "subtitleFontSize": 10,
+    "subtitleColor": "#74686D",
+    "offset": 10
+  },
+  "width": 650,
+  "height": 300,
   "padding": {
     "left": 10,
-    "right": 110,
-    "top": 10,
-    "bottom": 10
+    "right": 105,
+    "top": 8,
+    "bottom": 8
   },
-  "title": {
-    "text": "Who is our biggest flower supplier, year by year",
-    "subtitle": "Each supplier's rank by import value per year (1 = biggest). Hover a line to follow one country."
-  },
+  "background": "#FFFFFF",
   "data": {
     "url": "data/flower_imports_by_country_year.csv",
     "format": {
       "type": "csv",
       "parse": {
-        "value_usd_m": "number"
+        "year": "number",
+        "import_value_usd_m": "number"
       }
     }
   },
@@ -32,13 +41,11 @@
       ],
       "sort": [
         {
-          "field": "value_usd_m",
+          "field": "import_value_usd_m",
           "order": "descending"
         }
       ],
-      "groupby": [
-        "year"
-      ]
+      "groupby": ["year"]
     },
     {
       "joinaggregate": [
@@ -50,69 +57,114 @@
       ]
     }
   ],
+  "params": [
+    {
+      "name": "hl",
+      "select": {
+        "type": "point",
+        "fields": ["country"],
+        "on": "pointerover",
+        "clear": "pointerout"
+      }
+    }
+  ],
   "encoding": {
     "x": {
       "field": "year",
       "type": "ordinal",
-      "title": null,
+      "sort": [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+      "title": "Year",
       "axis": {
-        "grid": false,
-        "domain": false,
         "labelAngle": 0,
-        "labelOverlap": "parity"
+        "labelFont": "Inter",
+        "labelFontSize": 9,
+        "labelPadding": 4,
+        "titleFont": "Inter",
+        "titleFontSize": 10,
+        "titlePadding": 7,
+        "grid": false,
+        "domain": true,
+        "domainColor": "#8E8078",
+        "domainWidth": 1.5,
+        "ticks": true,
+        "tickSize": 4,
+        "tickColor": "#8E8078",
+        "labelColor": "#5B4E49",
+        "titleColor": "#5B4E49",
+        "labelOverlap": false
       }
     },
     "y": {
       "field": "rank",
       "type": "quantitative",
+      "title": "Rank (1 = largest supplier)",
       "scale": {
+        "domain": [1, 6],
         "reverse": true,
-        "zero": false,
-        "nice": false
+        "nice": false,
+        "zero": false
       },
       "axis": {
-        "title": "Rank (1 = biggest supplier)",
-        "tickMinStep": 1,
-        "grid": false,
-        "domain": false,
-        "tickCount": 6
+        "values": [1, 2, 3, 4, 5, 6],
+        "format": ".0f",
+        "labelFont": "Inter",
+        "labelFontSize": 10,
+        "labelPadding": 4,
+        "titleFont": "Inter",
+        "titleFontSize": 10,
+        "titlePadding": 7,
+        "grid": true,
+        "gridColor": "#E8DFDB",
+        "gridOpacity": 1,
+        "domain": true,
+        "domainColor": "#8E8078",
+        "domainWidth": 1.5,
+        "ticks": true,
+        "tickSize": 4,
+        "tickColor": "#8E8078",
+        "labelColor": "#5B4E49",
+        "titleColor": "#5B4E49"
       }
     },
     "color": {
       "field": "country",
       "type": "nominal",
-      "legend": null,
       "scale": {
-        "range": [
-          "#8C4A0F",
-          "#D98B35",
-          "#176B63",
-          "#9AA5A0",
-          "#C0562B",
-          "#5E6B65",
-          "#EBA95C"
-        ]
-      }
+        "domain": ["Malaysia", "Kenya", "Ecuador", "Colombia", "China", "Vietnam"],
+        "range": ["#176B63", "#D98B35", "#329481", "#C0562B", "#7E8DA6", "#8D7770"]
+      },
+      "legend": null
+    },
+    "detail": {
+      "field": "country"
+    },
+    "order": {
+      "field": "year",
+      "sort": [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
     },
     "opacity": {
       "condition": {
         "param": "hl",
         "value": 1
       },
-      "value": 0.2
+      "value": 0.18
     }
   },
   "layer": [
     {
       "mark": {
         "type": "line",
-        "strokeWidth": 3
+        "strokeWidth": 2.4,
+        "clip": false
       }
     },
     {
       "mark": {
         "type": "circle",
-        "size": 150
+        "size": 65,
+        "filled": true,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.8
       },
       "encoding": {
         "tooltip": [
@@ -124,47 +176,39 @@
           {
             "field": "year",
             "type": "ordinal",
-            "title": "Year"
+            "title": "Year",
+            "format": "d"
           },
           {
             "field": "rank",
             "type": "quantitative",
-            "title": "Rank"
+            "title": "Rank",
+            "format": ".0f"
           },
           {
-            "field": "value_usd_m",
+            "field": "import_value_usd_m",
             "type": "quantitative",
             "title": "Import value (US$ million)",
-            "format": ".2f"
+            "format": ",.2f"
           }
         ]
-      },
-      "params": [
-        {
-          "name": "hl",
-          "select": {
-            "type": "point",
-            "fields": [
-              "country"
-            ],
-            "on": "pointerover",
-            "clear": "pointerout"
-          }
-        }
-      ]
+      }
     },
     {
       "transform": [
         {
-          "filter": "datum.year == datum.last_year"
+          "filter": "datum.year === datum.last_year"
         }
       ],
       "mark": {
         "type": "text",
         "align": "left",
-        "dx": 12,
-        "fontSize": 13,
-        "fontWeight": 600
+        "baseline": "middle",
+        "dx": 7,
+        "font": "Inter",
+        "fontSize": 10,
+        "fontWeight": 600,
+        "clip": false
       },
       "encoding": {
         "text": {
@@ -173,5 +217,27 @@
         }
       }
     }
-  ]
+  ],
+  "config": {
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "font": "Inter",
+      "fontSize": 16,
+      "anchor": "start",
+      "subtitleFont": "Inter",
+      "subtitleFontSize": 10,
+      "subtitleColor": "#74686D"
+    },
+    "axis": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelFontSize": 9,
+      "titleFontSize": 10,
+      "labelColor": "#5B4E49",
+      "titleColor": "#5B4E49"
+    }
+  }
 }
