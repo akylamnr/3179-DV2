@@ -95,12 +95,12 @@ vegaEmbed("#chart06", "charts/06-supplier-map.json", {
 }).catch((error) =>
   handleChartError("#chart06", "charts/06-supplier-map.json", error)
 );
-vegaEmbed("#chart07", "charts/07-import-streamgraph.json", {
+vegaEmbed("#chart07", "charts/07-import-bump-chart.json", {
   actions: false,
   renderer: "svg",
   config: sharedConfig
 }).catch((error) =>
-  handleChartError("#chart07", "charts/07-import-streamgraph.json", error)
+  handleChartError("#chart07", "charts/07-import-bump-chart.json", error)
 );
 
 vegaEmbed("#chart08", "charts/08-price-per-kg.json", {

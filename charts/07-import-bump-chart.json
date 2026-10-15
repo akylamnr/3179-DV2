@@ -1,0 +1,177 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Bump chart of Australia's cut-flower suppliers, ranked each year by import value. Rank 1 is the biggest supplier.",
+  "width": 720,
+  "height": 320,
+  "padding": {
+    "left": 10,
+    "right": 110,
+    "top": 10,
+    "bottom": 10
+  },
+  "title": {
+    "text": "Who is our biggest flower supplier, year by year",
+    "subtitle": "Each supplier's rank by import value per year (1 = biggest). Hover a line to follow one country."
+  },
+  "data": {
+    "url": "data/flower_imports_by_country_year.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "value_usd_m": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "window": [
+        {
+          "op": "rank",
+          "as": "rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "value_usd_m",
+          "order": "descending"
+        }
+      ],
+      "groupby": [
+        "year"
+      ]
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "max",
+          "field": "year",
+          "as": "last_year"
+        }
+      ]
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": null,
+      "axis": {
+        "grid": false,
+        "domain": false,
+        "labelAngle": 0,
+        "labelOverlap": "parity"
+      }
+    },
+    "y": {
+      "field": "rank",
+      "type": "quantitative",
+      "scale": {
+        "reverse": true,
+        "zero": false,
+        "nice": false
+      },
+      "axis": {
+        "title": "Rank (1 = biggest supplier)",
+        "tickMinStep": 1,
+        "grid": false,
+        "domain": false,
+        "tickCount": 6
+      }
+    },
+    "color": {
+      "field": "country",
+      "type": "nominal",
+      "legend": null,
+      "scale": {
+        "range": [
+          "#8C4A0F",
+          "#D98B35",
+          "#176B63",
+          "#9AA5A0",
+          "#C0562B",
+          "#5E6B65",
+          "#EBA95C"
+        ]
+      }
+    },
+    "opacity": {
+      "condition": {
+        "param": "hl",
+        "value": 1
+      },
+      "value": 0.2
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 3
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 150
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "country",
+            "type": "nominal",
+            "title": "Supplier"
+          },
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "rank",
+            "type": "quantitative",
+            "title": "Rank"
+          },
+          {
+            "field": "value_usd_m",
+            "type": "quantitative",
+            "title": "Import value (US$ million)",
+            "format": ".2f"
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "hl",
+          "select": {
+            "type": "point",
+            "fields": [
+              "country"
+            ],
+            "on": "pointerover",
+            "clear": "pointerout"
+          }
+        }
+      ]
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.year == datum.last_year"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 12,
+        "fontSize": 13,
+        "fontWeight": 600
+      },
+      "encoding": {
+        "text": {
+          "field": "country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}
