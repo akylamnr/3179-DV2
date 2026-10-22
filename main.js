@@ -112,10 +112,10 @@ vegaEmbed("#chart08", "charts/08-price-per-kg.json", {
 );
 
 // Chart 8: Import source heatmap
-vegaEmbed("#chart09", "charts/09-import-heatmap.json", {
+vegaEmbed("#chart09", "charts/09-line.json", {
   actions: false,
   renderer: "svg",
   config: sharedConfig
 }).catch((error) =>
-  handleChartError("#chart09", "charts/09-import-heatmap.json", error)
+  handleChartError("#chart09", "charts/09-line.json", error)
 );
