@@ -1,10 +1,11 @@
+
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Value of Cut-Flowers by State (2024-25)",
-    "subtitle": "2024\u201325 \u00b7 Farm-gate value, A$ million"
+    "text": "Where are cut flowers most important?",
+    "subtitle": "2024-25 · Cut-flower farm-gate value as a share of reported horticulture value"
   },
-  "description": "State-level choropleth of reported cut-flower farm-gate values. States without a matching value in the ABS Table 5 extract are shown in grey as no data, not zero. State abbreviations are overlaid as labels.",
+  "description": "The percentage is cut-flower farm-gate value from ABS Table 5 divided by the sum of the five horticulture summary categories reported for each state in ABS Table 1. The Northern Territory and Australian Capital Territory are shown as no data because a complete state denominator is not available in Table 1.",
   "width": 430,
   "height": 340,
   "background": "#FFFFFF",
@@ -25,23 +26,18 @@
           "lookup": "properties.STE_NAME21",
           "from": {
             "data": {
-              "url": "data/cut_flower_value_by_state.csv",
+              "url": "data/flower_share_by_state.csv",
               "format": {
                 "type": "csv"
               }
             },
             "key": "state",
             "fields": [
-              "value_m",
-              "year",
-              "commodity",
-              "measure"
+              "cut_flower_value_m",
+              "total_horticulture_value_m",
+              "flower_share_pct"
             ]
           }
-        },
-        {
-          "calculate": "isValid(datum.value_m) ? format(datum.value_m, '.1f') + ' million AUD' : 'No cut-flower value reported in Table 5'",
-          "as": "value_label"
         }
       ],
       "mark": {
@@ -52,23 +48,17 @@
       "encoding": {
         "color": {
           "condition": {
-            "test": "isValid(datum.value_m)",
-            "field": "value_m",
+            "test": "isValid(datum.flower_share_pct)",
+            "field": "flower_share_pct",
             "type": "quantitative",
             "scale": {
-              "domain": [
-                0,
-                115
-              ],
-              "range": [
-                "#FCEAF1",
-                "#A64470"
-              ],
+              "domain": [0, 5.5],
+              "range": ["#FCEAF1", "#A64470"],
               "clamp": true
             },
             "legend": {
-              "title": "Farm-gate value (A$ million)",
-              "format": ".0f",
+              "title": "Cut-flower share (%)",
+              "format": ".1f",
               "orient": "bottom",
               "gradientLength": 220
             }
@@ -82,43 +72,86 @@
             "title": "State or territory"
           },
           {
-            "field": "value_label",
-            "type": "nominal",
-            "title": "Cut-flower value"
+            "field": "cut_flower_value_m",
+            "type": "quantitative",
+            "title": "Cut-flower value (A$ million)",
+            "format": ".1f"
+          },
+          {
+            "field": "total_horticulture_value_m",
+            "type": "quantitative",
+            "title": "Total horticulture value (A$ million)",
+            "format": ",.1f"
+          },
+          {
+            "field": "flower_share_pct",
+            "type": "quantitative",
+            "title": "Cut-flower share (%)",
+            "format": ".2f"
           }
         ]
       }
     },
-    
     {
+      "data": {
+        "values": [
+          {
+            "Name": "Western Australia",
+            "lon": 122.3,
+            "lat": -25.5
+          },
+          {
+            "Name": "Northern Territory",
+            "lon": 133.4,
+            "lat": -19.5
+          },
+          {
+            "Name": "South Australia",
+            "lon": 135.2,
+            "lat": -30.0
+          },
+          {
+            "Name": "Queensland",
+            "lon": 144.5,
+            "lat": -22.5
+          },
+          {
+            "Name": "New South Wales",
+            "lon": 146.3,
+            "lat": -32.3
+          },
+          {
+            "Name": "Victoria",
+            "lon": 144.0,
+            "lat": -36.9
+          },
+          {
+            "Name": "Tasmania",
+            "lon": 146.6,
+            "lat": -44.4
+          }
+        ]
+      },
       "mark": {
         "type": "text",
-        "font": "Inter",
-        "fontSize": 13,
+        "font": "Arial",
+        "fontSize": 10,
         "fontWeight": "bold",
-        "fill": "#653649",
-        "stroke": "#FFFFFF",
-        "strokeWidth": 2,
-        "strokeJoin": "round",
-        "dy": 0
+        "lineBreak": "\n",
+        "align": "center"
       },
       "encoding": {
         "longitude": {
-          "field": "longitude",
+          "field": "lon",
           "type": "quantitative"
         },
         "latitude": {
-          "field": "latitude",
+          "field": "lat",
           "type": "quantitative"
         },
         "text": {
-          "field": "state",
+          "field": "Name",
           "type": "nominal"
-        },
-        "tooltip": {
-          "field": "state",
-          "type": "nominal",
-          "title": "State or territory"
         }
       }
     }
@@ -129,7 +162,7 @@
       "stroke": null
     },
     "title": {
-      "font": "Inter",
+      "font": "Newsreader",
       "fontSize": 20,
       "anchor": "start",
       "subtitleFont": "Inter",

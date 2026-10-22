@@ -138,15 +138,11 @@
       ],
       "mark": {
         "type": "text",
-        "font": "Inter",
-        "fontSize": 11,
+        "font": "Arial",
+        "fontSize": 10,
         "fontWeight": "bold",
-        "fill": "#394150",
-        "stroke": "#FFFFFF",
-        "strokeWidth": 3,
-        "strokeJoin": "round",
-        "align": "center",
-        "baseline": "middle"
+        "lineBreak": "\n",
+        "align": "center"
       },
       "encoding": {
         "longitude": {

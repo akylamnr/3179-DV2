@@ -39,7 +39,7 @@ h2,
 h3,
 .vega-embed .vega-title {
   color: var(--forest);
-  font-family: "Newsreader", Georgia, serif;
+  font-family: "Fraunces", Georgia, serif;
   line-height: 1.25;
 }
 
@@ -83,11 +83,8 @@ a {
 /* Opening title block */
 .hero {
   padding: 42px max(7%, calc((100% - 1100px) / 2));
-  background: linear-gradient(
-    135deg,
-    #FFF7F8 0%,
-    #F8DDE7 100%
-  );
+
+  ;
 }
 
 .eyebrow {
@@ -104,7 +101,7 @@ a {
   margin-top: 0;
   color: #A64470;
   font-family: "Newsreader", Georgia, serif;
-  font-size: clamp(1.15rem, 2.2vw, 1.65rem);
+  font-size: 1.25rem;
 }
 
 .intro {
