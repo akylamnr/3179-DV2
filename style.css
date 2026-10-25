@@ -1,20 +1,35 @@
-/* =====================================
-   GROWN HERE, FLOWN IN
-   Australia's Flower Paradox
-   ===================================== */
-
+/* Australia's flower paradox */
 :root {
-  --cream: #FFF7F8;
-  --forest: #28483D;
-  --teal: #79A99A;       /* Australian-grown */
-  --blush-pink: #F2B9CC; /* Imported flowers */
-  --rose-pink: #D86C98;  /* Highlights */
-  --warm-grey: #E9E5DF;
-  --text: #30272B;
-  --muted: #74686D;
-  --white: #FFFFFF;
-  --soft-pink: #FFF7FA;
-  --border-pink: #F0E3E8;
+  color-scheme: light;
+  --cream: #fff7f9;
+  --surface: #fff;
+  --forest: #28483d;
+  --forest-dark: #1f382f;
+  --teal: #79a99a;
+  --blush: #f2b9cc;
+  --rose: #a64470;
+  --warm-grey: #e9e5df;
+  --text: #30272b;
+  --muted: #74686d;
+  --border: #f0e3e8;
+  --soft-pink: #fff7fa;
+  --shadow: 0 12px 32px rgb(65 42 52 / 6%);
+  --page-width: 1100px;
+}
+
+.visualization-panel > .vis,
+.visualization-panel > .chart-with-story {
+  margin-top: 26px;
+}
+
+.visualization-panel > .chart-with-story {
+  padding: 30px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.visualization-panel > .visualization-heading {
+  margin-top: 30px;
 }
 
 * {
@@ -31,77 +46,151 @@ body {
   color: var(--text);
   font-family: "Inter", Arial, sans-serif;
   line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* SERIF HEADINGS - keep Newsreader for the title and section headings. */
 h1,
 h2,
 h3,
 .vega-embed .vega-title {
   color: var(--forest);
-  font-family: "Fraunces", Georgia, serif;
-  line-height: 1.25;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 h1 {
-  margin: 8px 0 14px;
-  font-size: clamp(2.4rem, 4.3vw, 3.8rem);
+  max-width: none;
+  margin: 0 0 12px;
+  font-family: "Fraunces", "Newsreader", Georgia, serif;
   font-weight: 500;
-  line-height: 1.12;
-  letter-spacing: -1.2px;
+  font-size: clamp(2rem, 4.5vw, 3.9rem);
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+  text-align: left;
 }
 
 h2 {
-  margin-top: 8px;
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  font-weight: 500;
+  margin: 8px 0 20px;
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  letter-spacing: -0.025em;
 }
 
 h3 {
-  margin-top: 0;
-  font-size: 1.5rem;
-  font-weight: 500;
+  margin: 0 0 14px;
+  font-size: clamp(1.35rem, 2.5vw, 1.65rem);
 }
 
-
-/* Keep narrative paragraphs narrow and readable */
-p:not(.source):not(.eyebrow) {
-  max-width: 48ch;
+p:not(.source, .eyebrow) {
+  max-width: 52ch;
 }
-
-/* Source citations can use the available width */
-.source {
-  max-width: 100%;
-}
-
 
 a {
   color: var(--forest);
+  text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
 
-/* Opening title block */
-.hero {
-  padding: 42px max(7%, calc((100% - 1100px) / 2));
+a:hover {
+  color: var(--rose);
+}
 
-  ;
+a:focus-visible {
+  outline: 3px solid var(--rose);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(28px, 4vw, 48px) max(3%, calc((100% - 1400px) / 2));
+  border-bottom: 1px solid var(--border);
+  background: var(--forest);
+  text-align: center;
+}
+
+.hero > * {
+  position: relative;
+}
+
+.hero-copy {
+  width: fit-content;
+  max-width: 100%;
+  margin: 8px auto 0;
+  text-align: left;
+}
+
+.hero .eyebrow {
+  justify-content: center;
+  font-size: 0.76rem;
+  color: #ffc4d8;
+}
+
+.hero .eyebrow::after {
+  display: none;
 }
 
 .eyebrow {
-  margin: 0 0 12px;
-  color: var(--forest);
-  font-family: "Inter", Arial, sans-serif;
-  font-size: 0.78rem;
+  display: flex;
+  margin: 0 0 16px;
+  align-items: center;
+  gap: 18px;
+  color: var(--rose);
+  font-size: 0.9rem;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
+main .eyebrow {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  margin: 0 0 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--forest);
+  font-family: "DM Sans", "Inter", Arial, sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.3;
+  text-transform: none;
+}
+
+main .eyebrow::after {
+  display: none;
+}
+
+.eyebrow::after {
+  height: 1px;
+  flex: 1;
+  background: var(--border);
+  content: "";
+}
+
 .subtitle {
-  margin-top: 0;
-  color: #A64470;
-  font-family: "Newsreader", Georgia, serif;
-  font-size: 1.25rem;
+  max-width: 68ch;
+  margin: 0;
+  color: #fff2f6;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.45;
+  text-align: left;
+}
+
+.hero h1 {
+  color: var(--surface);
+}
+
+.hero .eyebrow,
+.hero .subtitle,
+.hero h1 {
+  opacity: 1;
 }
 
 .intro {
@@ -109,35 +198,32 @@ a {
   font-size: 1.05rem;
 }
 
-/* Main page layout */
 main {
-  width: min(100% - 40px, 1050px);
+  width: min(calc(100% - 48px), var(--page-width));
   margin: 0 auto;
 }
 
 section {
-  padding: 52px 0;
+  padding: clamp(32px, 5vw, 52px) 0;
   border-bottom: 1px solid var(--warm-grey);
 }
 
-section > p:not(.eyebrow) {
-  color: var(--text);
+section:last-child {
+  border-bottom: 0;
 }
 
-/* Individual chart containers */
+section > p:not(.eyebrow, .source) {
+  max-width: 66ch;
+}
+
 .chart-card {
   min-width: 0;
-  margin: 30px 0;
-  padding: clamp(18px, 4vw, 32px);
-  overflow: hidden;
-  background: var(--white);
-  border: 1px solid var(--border-pink);
-  border-radius: 16px;
-  box-shadow: 0 5px 18px rgba(65, 42, 52, 0.04);
+  margin: 28px 0;
+  padding: 0;
 }
 
 .chart-card h3 {
-  margin-bottom: 12px;
+  margin-bottom: 18px;
 }
 
 .vis {
@@ -147,23 +233,6 @@ section > p:not(.eyebrow) {
   margin: 20px auto;
 }
 
-/* Shown when a chart spec has not been created or cannot load yet. */
-.vis.placeholder {
-  display: flex;
-  min-height: 150px;
-  padding: 30px 18px;
-  align-items: center;
-  justify-content: center;
-  border: 1px dashed var(--rose-pink);
-  border-radius: 12px;
-  background: var(--soft-pink);
-  color: #A64470;
-  font-size: 0.95rem;
-  text-align: center;
-  overflow-wrap: anywhere;
-}
-
-/* Let rendered Vega visualisations fit the page. */
 .vega-embed {
   max-width: 100%;
   font-family: "Inter", Arial, sans-serif;
@@ -174,63 +243,39 @@ section > p:not(.eyebrow) {
 }
 
 .source {
-  margin-top: 16px;
-  color: var(--muted);
-  font-size: 0.84rem;
+  max-width: 100%;
+  margin: 18px 0 0;
+  color: #51464a;
+  font-size: 0.82rem;
+  line-height: 1.6;
 }
 
-/* Footer */
-footer {
-  padding: 32px 20px;
-  background: var(--forest);
-  color: var(--white);
+.vis.placeholder,
+.vis.chart-placeholder {
+  display: flex;
+  min-height: 150px;
+  padding: 30px 18px;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--blush);
+  border-radius: 12px;
+  background: var(--soft-pink);
+  color: var(--rose);
+  font-size: 0.95rem;
   text-align: center;
+  overflow-wrap: anywhere;
 }
-
-footer p {
-  margin: 6px auto;
-  font-size: 0.9rem;
-}
-
-footer a {
-  color: #F2B9CC;
-}
-
-/* Small-screen layout */
-@media (max-width: 600px) {
-  .hero {
-    padding: 48px 24px;
-  }
-
-  main {
-    width: calc(100% - 28px);
-  }
-
-  section {
-    padding: 36px 0;
-  }
-
-  .chart-card {
-    margin: 22px 0;
-    padding: 16px;
-  }
-}
-
-/* Chart 1: narrative beside the waffle chart */
 
 .waffle-layout {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.25fr);
-  gap: 28px;
+  gap: clamp(24px, 5vw, 48px);
   align-items: center;
 }
 
 .waffle-story h3 {
-  font-family: "Newsreader", Georgia, serif;
-  color: var(--forest);
+  max-width: 18ch;
   font-size: clamp(1.6rem, 2.5vw, 2.2rem);
-  line-height: 1.25;
-  margin-top: 0;
 }
 
 .waffle-story p {
@@ -238,44 +283,28 @@ footer a {
 }
 
 .waffle-chart {
-  width: 100%;
   min-width: 0;
   margin: 0;
 }
 
 .statistic {
   display: flex;
+  margin: 28px 0;
   align-items: center;
   gap: 14px;
-  margin: 28px 0;
 }
 
 .statistic strong {
-  color: #D6538A;
-  font-family: "Inter", Arial, sans-serif;
+  flex: 0 0 auto;
+  color: #c34f7d;
   font-size: clamp(2.4rem, 4vw, 3.5rem);
   line-height: 1.1;
 }
 
-.statistic span {
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
+.statistic span,
 .hint {
   color: var(--muted);
-  font-size: 0.9rem;
-}
-
-/* Stack the text and chart on smaller screens */
-@media (max-width: 700px) {
-  .waffle-layout {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .waffle-story p {
-    max-width: none;
-  }
+  font-size: 0.92rem;
 }
 
 .story-intro {
@@ -283,72 +312,33 @@ footer a {
   margin-bottom: 20px;
 }
 
-.insight-note {
-  margin-top: 24px;
-  padding-left: 18px;
-  border-left: 3px solid var(--pink);
-  color: var(--text);
-}
-
-.insight-note p {
-  max-width: 760px;
-}
-
-.insight-note strong {
-  color: var(--forest);
-}
-
-
-/* Map and slope chart displayed side by side */
-
-.chart-pair {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  align-items: start;
-  width: 100%;
-}
-
-.chart-pair .chart-card {
-  min-width: 0;
-  margin: 0;
-  padding: 20px;
-}
-
-.chart-pair .vis {
-  width: 100%;
-  min-width: 0;
-  margin: 0 auto;
-}
-
-.chart-pair .vega-embed {
-  max-width: 100%;
-}
-
-.chart-pair .source {
-  overflow-wrap: anywhere;
-  font-size: 0.78rem;
-}
-
 .section-intro {
-  max-width: 48ch;
+  max-width: 52ch;
   margin-bottom: 24px;
 }
 
 .insight-note {
-  margin-top: 20px;
-  padding-left: 14px;
-  border-left: 3px solid var(--pink);
+  margin: 20px 0;
+  padding: 16px 18px;
+  border-left: 3px solid var(--teal);
+  border-radius: 0 10px 10px 0;
+  background: #f3f8f5;
+  color: var(--text);
   line-height: 1.65;
 }
 
 .insight-note p {
-  max-width: 48ch;
-  margin-bottom: 12px;
+  max-width: 52ch;
+  margin: 0 0 12px;
 }
 
-.insight-note strong {
-  color: var(--forest);
+.insight-note p:last-child {
+  margin-bottom: 0;
+}
+
+.insight-note strong,
+.chart-story strong {
+  color: var(--forest-dark);
 }
 
 .annotation-caveat {
@@ -356,202 +346,118 @@ footer a {
   font-size: 0.85rem;
 }
 
-/* Stack charts on narrow screens */
-@media (max-width: 760px) {
-  .chart-pair {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-
-/* One white card containing two side-by-side charts */
 .chart-pair-card {
-  background: #FFFFFF;
-  border: 1px solid #F0E3E8;
-  border-radius: 18px;
-  padding: 28px;
+  width: 100%;
+  max-width: none;
 }
 
 .chart-pair {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 32px;
-  align-items: start;
   width: 100%;
+  margin: 28px 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 36px);
+  align-items: start;
 }
 
-.chart-column {
+.chart-pair .chart-card {
+  margin: 0;
+}
+
+.chart-column,
+.chart-visual,
+.chart-story {
   min-width: 0;
 }
 
-.chart-column .vis {
+.chart-column .vis,
+.chart-visual .vis {
   width: 100%;
   min-width: 0;
   margin: 0 auto;
 }
 
-.chart-column .vega-embed {
-  max-width: 100%;
-}
-
 .chart-column .source {
-  max-width: 100%;
   overflow-wrap: anywhere;
   font-size: 0.78rem;
-  margin-top: 20px;
 }
 
 .chart-column .insight-note {
   margin-top: 18px;
 }
 
-/* Stack on small screens only */
-@media (max-width: 760px) {
-  .chart-pair {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-}
-
-/* FIX: let the combined chart card use the full page width */
-
-.chart-card.chart-pair-card {
-  width: 100%;
-  max-width: none;
-  box-sizing: border-box;
-  margin: 24px 0;
-}
-
-/* Keep the two charts side by side inside one white card */
-
-.chart-pair {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 32px;
-  width: 100%;
-  align-items: start;
-  box-sizing: border-box;
-}
-
-.chart-column {
-  min-width: 0;
-}
-
-.chart-column .vis {
-  width: 100%;
-  min-width: 0;
-}
-
-.chart-column .source {
-  overflow-wrap: anywhere;
-}
-
-/* Stack them only on smaller screens */
-
-@media (max-width: 760px) {
-  .chart-pair {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-/* Side-by-side chart and explanation inside one white card */
 .chart-with-story {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.9fr);
-  gap: 28px;
+  gap: clamp(24px, 4vw, 40px);
   align-items: center;
 }
 
-.chart-visual {
-  min-width: 0;
-}
-
-.chart-visual .vis {
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
 .chart-story {
-  min-width: 0;
-  color: #30272B;
+  color: var(--text);
 }
 
 .chart-story h3 {
-  margin: 0 0 14px;
-  color: #28483D;
-  font-size: 1.4rem;
-  line-height: 1.3;
+  margin-bottom: 14px;
+  font-size: 1.5rem;
 }
 
 .chart-story p {
   max-width: none;
   margin: 0 0 14px;
-  color: #30272B;
   font-size: 0.95rem;
-  line-height: 1.7;
 }
 
-.chart-story strong {
-  color: #1F352E;
+.chart-story .closing-line {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .chart-with-story .source {
-  color: #51464A;
+  color: var(--muted);
   font-size: 0.82rem;
 }
 
-/* Stack the chart and text on smaller screens */
-@media (max-width: 760px) {
-  .chart-with-story {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 16px;
-  }
-}
 footer.site-footer {
   margin-top: 0;
-  padding: 42px 7%;
+  padding: clamp(36px, 6vw, 64px) max(7%, calc((100% - 1180px) / 2));
   background: var(--forest);
-  color: var(--white);
-  text-align: left;
+  color: var(--surface);
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.7fr) minmax(240px, 0.8fr);
-  gap: 52px;
   width: min(100%, 1180px);
   margin: 0 auto;
+  grid-template-columns: minmax(0, 1.7fr) minmax(220px, 0.8fr);
+  gap: clamp(32px, 6vw, 64px);
   align-items: start;
 }
 
-/* Footer headings */
-
 .site-footer h2,
 .site-footer h3 {
-  color: var(--white);
-  font-family: "Newsreader", Georgia, serif;
+  color: var(--surface);
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 500;
 }
 
 .site-footer h2 {
   margin: 0 0 18px;
-  font-size: 1.65rem;
-  font-weight: 500;
+  font-size: 1.75rem;
 }
 
 .site-footer h3 {
-  margin: 26px 0 12px;
-  font-size: 1.25rem;
-  font-weight: 500;
+  margin: 28px 0 12px;
+  font-size: 1.3rem;
 }
-
-/* Footer text */
 
 .site-footer p,
 .site-footer li {
-  color: var(--white);
-  font-family: "Inter", Arial, sans-serif;
-  font-size: 0.95rem;
+  color: #f7eff2;
+  font-size: 0.92rem;
   line-height: 1.7;
 }
 
@@ -559,8 +465,6 @@ footer.site-footer {
   max-width: none;
   margin: 0 0 16px;
 }
-
-/* Source lists */
 
 .footer-sources ul {
   margin: 0;
@@ -573,10 +477,8 @@ footer.site-footer {
   overflow-wrap: anywhere;
 }
 
-/* Light pink links for contrast */
-
 .site-footer a {
-  color: #FFD6E5;
+  color: #ffd6e5;
   text-decoration: underline;
   text-underline-offset: 3px;
   overflow-wrap: anywhere;
@@ -585,14 +487,12 @@ footer.site-footer {
 
 .site-footer a:hover,
 .site-footer a:focus-visible {
-  color: #FFFFFF;
+  color: var(--surface);
 }
-
-/* Date and AI acknowledgement */
 
 .site-footer .footer-date {
   margin-top: 24px;
-  color: #F4E6ED;
+  color: #f4e6ed;
   font-size: 0.85rem;
 }
 
@@ -600,15 +500,58 @@ footer.site-footer {
   overflow-wrap: anywhere;
 }
 
-/* Mobile layout: stack the two columns */
+@media (max-width: 760px) {
+  .waffle-layout,
+  .chart-pair {
+    grid-template-columns: minmax(0, 1fr);
+  }
 
-@media (max-width: 720px) {
-  footer.site-footer {
-    padding: 32px 24px;
+  .waffle-story p {
+    max-width: none;
+  }
+
+  .chart-with-story {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
   }
 
   .footer-grid {
     grid-template-columns: minmax(0, 1fr);
     gap: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    width: calc(100% - 32px);
+  }
+
+  .hero {
+    padding: 32px 24px;
+  }
+
+  section {
+    padding: 32px 0;
+  }
+
+  .chart-card {
+    margin: 22px 0;
+  }
+
+  footer.site-footer {
+    padding: 36px 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }

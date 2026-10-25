@@ -8,7 +8,7 @@ const sharedConfig = {
   },
 
   title: {
-    font: "Newsreader",
+    font: "Inter",
     fontSize: 22,
     anchor: "start",
     subtitleFont: "Inter",

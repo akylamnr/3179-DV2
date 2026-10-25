@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&display=swap" rel="stylesheet">
 </head>
 
@@ -24,29 +24,25 @@
   <header class="hero">
     <p class="eyebrow">FIT3179 · Data Visualization 2</p>
 
-    <h1>Australia's Flowers and Horticulture</h1>
+    <div class="hero-copy">
+      <h1>Australia's Flowers and Horticulture</h1>
 
-    <p class="subtitle">A closer look at Australia's flower and horticulture industry: Why imported flowers are so prominent in Australia, despite it's diverse flower ecosystem.</p>
+      <p class="subtitle">A closer look at Australia's flower and horticulture industry: Why imported flowers are so prominent in Australia, despite it's diverse flower ecosystem.</p>
+    </div>
 
 
   </header>
 
   <main>
-
     <!-- SECTION 1 -->
     <section>
-      <p class="eyebrow">01 - HORTICULTURE COMPOSITION</p>
-
-      <h2>Flowers in the bigger picture</h2>
+      <h2 class="eyebrow section-heading">01 - Horticulture composition</h2>
 
       <article class="chart-card">
 
         <div class="waffle-layout">
 
           <div class="waffle-story">
-
-            <h3>Flowers are one part of a much bigger industry</h3>
-
             <p>
               Horticulture spans fruit, vegetables, nuts, wine grapes
               and a flower-related group. Each square represents
@@ -90,80 +86,64 @@
     <!-- SECTION 2 -->
     
     <section>
-      <p class="eyebrow">02 - WHERE FLOWERS GROW</p>
+      <h2 class="eyebrow section-heading">02 - Where flowers grow</h2>
 
-      <h2>Growing flowers at home</h2>
+      <div class="chart-pair">
+        <article class="chart-card chart-column">
+          <div id="chart02" class="vis"></div>
+          <p class="insight-note">
+            Victoria stands out as the leading state for cut-flower production,
+            with a reported value of A$114.4 million. The map shows the value
+            produced in one year, rather than how production has changed over time.
+          </p>
+          <p class="source">
+            Data:
+            <a
+              href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25"
+              target="_blank"
+              rel="noopener noreferrer"
+            >ABS Australian Agriculture: Horticulture, 2024-25</a>.
 
-        <!-- CHART 2: CHOROPLETH MAP -->
-        
-        <!-- ONE WHITE BOX CONTAINING BOTH CHARTS -->
-        <article class="chart-card chart-pair-card">
-
-          <div class="chart-pair">
-
-            <!-- LEFT: CHART 2 - CHOROPLETH MAP -->
-            <div class="chart-column">
-              <div id="chart02" class="vis"></div>
-              <p class="insight-note">
-                Victoria stands out as the leading state for cut-flower production,
-                with a reported value of A$114.4 million. The map shows the value
-                produced in one year, rather than how production has changed over time.
-              </p>
-              <p class="source">
-                Data:
-                <a
-                  href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >ABS Australian Agriculture: Horticulture, 2024-25</a>.
-
-                Boundaries:
-                <a
-                  href="https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >ABS State and Territory Boundaries</a>.
-              </p>
-            </div>
-
-            <!-- RIGHT: CHART 3 - SLOPE CHART -->
-            <div class="chart-column">
-              <div id="chart03" class="vis"></div>
-
-              <div class="insight-note">
-                <p>
-                  <strong>The flower-related category barely changed.</strong>
-                  Its combined farm-gate value rose by 1.4% between
-                  2020-21 and 2024-25, while nuts grew by 38.5%
-                  and wine grapes declined by 27.5%.
-                </p>
-
-                <p class="annotation-caveat">
-                  These are nominal values, not adjusted for inflation,
-                  and measure farm-gate value rather than physical production.
-                </p>
-              </div>
-
-              <p class="source">
-                Source:
-                <a
-                  href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >ABS Australian Agriculture: Horticulture, 2024-25 - Table 1</a>.
-              </p>
-            </div>
-
-          </div>
+            Boundaries:
+            <a
+              href="https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files"
+              target="_blank"
+              rel="noopener noreferrer"
+            >ABS State and Territory Boundaries</a>.
+          </p>
         </article>
+
+        <article class="chart-card chart-column">
+          <div id="chart03" class="vis"></div>
+          <div class="insight-note">
+            <p>
+              <strong>The flower-related category barely changed.</strong>
+              Its combined farm-gate value rose by 1.4% between
+              2020-21 and 2024-25, while nuts grew by 38.5%
+              and wine grapes declined by 27.5%.
+            </p>
+
+            <p class="annotation-caveat">
+              These are nominal values, not adjusted for inflation,
+              and measure farm-gate value rather than physical production.
+            </p>
+          </div>
+          <p class="source">
+            Source:
+            <a
+              href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25"
+              target="_blank"
+              rel="noopener noreferrer"
+            >ABS Australian Agriculture: Horticulture, 2024-25 - Table 1</a>.
+          </p>
+        </article>
+      </div>
     </section>
 
 
     <!-- SECTION 3 -->
     <section>
-      <p class="eyebrow">03 - FLOWERS ON THE MOVE</p>
-
-      <h2>Flowers that travel the world</h2>
+      <h2 class="eyebrow section-heading">03 - Flowers on the move</h2>
 
       <p>
       Australia's local flower industry is concentrated in particular
@@ -176,46 +156,47 @@
       <article class="chart-card">
         <h3>Which countries supply the most flowers?</h3>
         <div id="chart04" class="vis"></div>
-        <div id="chart05" class="vis"></div>
-        <p class="insight-note">
-        Australia's flower imports connect suppliers across three regions:
-        Malaysia, Vietnam and China in Asia, Kenya in Africa, and Ecuador
-        and Colombia in South America. The flow map shows the value moving
-        from these suppliers to Australia.
-        </p>
-        <p class="source">Source: International merchandise trade statistics.</p>
       </article>
-
-      
-      <article class="chart-card chart-with-story">
-        <div class="chart-visual">
-          <div id="chart09" class="vis"></div>
-          <p class="source">
-            Source: UN Comtrade, annual flower-import values
-            for the years shown in the chart.
-          </p>
-        </div>
-
-        <div class="chart-story">
-          <h3>How have Australia's suppliers changed?</h3>
-          <p>
-            Australia's flower imports come from a range of overseas
-            suppliers, but their importance changes over time. This
-            heatmap compares import values across countries and years.
-          </p>
-          <p>
-            <strong>How to read it:</strong> Darker blue cells represent
-            higher import values, while lighter cells represent lower
-            values. Follow a row across the years to see how a supplier's
-            imports have changed.
-          </p>
-        </div>
-      </article>
-
 
       <article class="chart-card">
-        
-        <h3>How have Australia's import sources changed?</h3>
+        <div id="chart05" class="vis"></div>
+        <p class="insight-note">
+          Australia's flower imports connect suppliers across three regions:
+          Malaysia, Vietnam and China in Asia, Kenya in Africa, and Ecuador
+          and Colombia in South America. The flow map shows the value moving
+          from these suppliers to Australia.
+        </p>
+        <p class="source">Source: International merchandise trade statistics.</p>
+
+      </article>
+
+      <article class="chart-card chart-with-story">
+          <div class="chart-visual">
+            <div id="chart09" class="vis"></div>
+            <p class="source">
+              Source: UN Comtrade, annual flower-import values
+              for the years shown in the chart.
+            </p>
+          </div>
+
+          <div class="chart-story">
+            <h3>How have Australia's suppliers changed?</h3>
+            <p>
+              Australia's flower imports come from a range of overseas
+              suppliers, but their importance changes over time. This
+              heatmap compares import values across countries and years.
+            </p>
+            <p>
+              <strong>How to read it:</strong> Darker blue cells represent
+              higher import values, while lighter cells represent lower
+              values. Follow a row across the years to see how a supplier's
+              imports have changed.
+            </p>
+          </div>
+      </article>
+
+      <article class="chart-card">
+        <h3 class="visualization-heading">How have Australia's import sources changed?</h3>
         <div id="chart07" class="vis"></div>
         <p class="source">Source: International merchandise trade statistics.</p>
       </article>
@@ -223,9 +204,7 @@
 
     <!-- SECTION 4: TO COMPLETE LATER -->
     <section>
-      <p class="eyebrow">04 - THE BIG QUESTION</p>
-
-      <h2>So why do so many flowers fly in?</h2>
+      <h2 class="eyebrow section-heading">04 - The big question</h2>
 
       
       <article class="chart-card chart-with-story">
