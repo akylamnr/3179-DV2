@@ -12,7 +12,7 @@
   },
   "width": 350,
   "height": 275,
-  "background": "#FFFFFF",
+  "background": "transparent",
   "data": {
     "url": "data/horticulture_state_rankings.csv",
     "format": {

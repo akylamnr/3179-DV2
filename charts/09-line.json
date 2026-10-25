@@ -3,7 +3,7 @@
   "description": "Interactive flow map of Australia's imports of fresh-cut flowers and buds by supplier and year from 2017 to 2024. HS 060310 under HS 1988/92, import values in US$ million. Move the year slider to update the routes.",
   "width": 430,
   "height": 340,
-  "background": "#FFFFFF",
+  "background": "transparent",
   "title": {
     "text": "Where do Australia's imported flowers come from?",
     "subtitle": "Fresh-cut flowers and buds · Choose a year to compare supplier values (US$ million)",

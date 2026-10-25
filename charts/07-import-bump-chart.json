@@ -20,7 +20,7 @@
     "top": 8,
     "bottom": 8
   },
-  "background": "#FFFFFF",
+  "background": "transparent",
   "data": {
     "url": "data/flower_imports_by_country_year.csv",
     "format": {

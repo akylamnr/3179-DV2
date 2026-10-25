@@ -3,6 +3,7 @@
   "description": "Lollipop chart of the average import price per kilogram of cut flowers (HS 0603) from each top supplier, with the average of all six marked.",
   "width": 500,
   "height": 260,
+  "background": "transparent",
   "title": {
     "text": "What each supplier's flowers cost per kilogram",
     "subtitle": "Import value divided by weight, 2024."

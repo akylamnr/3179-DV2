@@ -8,7 +8,7 @@
   "description": "The percentage is cut-flower farm-gate value from ABS Table 5 divided by the sum of the five horticulture summary categories reported for each state in ABS Table 1. The Northern Territory and Australian Capital Territory are shown as no data because a complete state denominator is not available in Table 1.",
   "width": 430,
   "height": 340,
-  "background": "#FFFFFF",
+  "background": "transparent",
   "projection": {
     "type": "equirectangular"
   },
@@ -42,8 +42,8 @@
       ],
       "mark": {
         "type": "geoshape",
-        "stroke": "#FFFFFF",
-        "strokeWidth": 1.5
+        "stroke": "#28483D",
+        "strokeWidth": 0.5
       },
       "encoding": {
         "color": {
@@ -53,7 +53,7 @@
             "type": "quantitative",
             "scale": {
               "domain": [0, 5.5],
-              "range": ["#FCEAF1", "#A64470"],
+              "range": ["#E5F0E9", "#28483D"],
               "clamp": true
             },
             "legend": {
@@ -101,7 +101,7 @@
             "lat": -25.5
           },
           {
-            "Name": "Northern Territory",
+            "Name": "Northern\n Territory",
             "lon": 133.4,
             "lat": -19.5
           },
@@ -116,7 +116,7 @@
             "lat": -22.5
           },
           {
-            "Name": "New South Wales",
+            "Name": "New South\n Wales",
             "lon": 146.3,
             "lat": -32.3
           },
@@ -135,7 +135,7 @@
       "mark": {
         "type": "text",
         "font": "Arial",
-        "fontSize": 10,
+        "fontSize": 12,
         "fontWeight": "bold",
         "lineBreak": "\n",
         "align": "center"
@@ -174,10 +174,6 @@
       "titleFont": "Inter",
       "labelFontSize": 12,
       "titleFontSize": 12
-    },
-    "geoshape": {
-      "stroke": "#FFFFFF",
-      "strokeWidth": 1.5
     }
   }
 }

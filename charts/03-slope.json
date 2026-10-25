@@ -12,7 +12,7 @@
   },
   "width": 430,
   "height": 340,
-  "background": "#FFFFFF",
+  "background": "transparent",
   "data": {
     "url": "data/horticulture_value_trends.csv",
     "format": {
