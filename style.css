@@ -42,7 +42,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--cream);
+  background:var(--cream);
   color: var(--text);
   font-family: "Inter", Arial, sans-serif;
   line-height: 1.7;
@@ -236,6 +236,11 @@ section > p:not(.eyebrow, .source) {
 .vega-embed {
   max-width: 100%;
   font-family: "Inter", Arial, sans-serif;
+}
+
+#chart05 > svg {
+  display: block;
+  margin-inline: auto;
 }
 
 .vega-embed summary {
@@ -551,6 +556,8 @@ footer.site-footer {
 #vg-tooltip-element tr + tr td {
   border-top: 1px solid #f2b9cc;
 }
+
+
 
 @media (max-width: 760px) {
   .waffle-layout,

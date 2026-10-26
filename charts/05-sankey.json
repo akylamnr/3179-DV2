@@ -1,0 +1,333 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "A custom alluvial diagram of 2025 Australian cut-flower imports, arranged from suppliers through regions to Australia.",
+  "width": 900,
+  "height": 640,
+  "padding": 0,
+  "autosize": "pad",
+  "background": "transparent",
+  "title": {
+    "text": "Where Australia's imported flowers come from",
+    "subtitle": "HS 0603 · Calendar 2025 · Import value in US$ million",
+    "font": "Inter",
+    "fontSize": 21,
+    "fontWeight": "bold",
+    "color": "#30272B",
+    "subtitleFont": "Inter",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#74686D",
+    "anchor": "start",
+    "offset": 12
+  },
+  "data": [
+    {
+      "name": "imports",
+      "url": "data/flower_imports_wits_2025_alluvial.csv",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "value": "number",
+          "x": "number",
+          "x2": "number",
+          "top": "number",
+          "bottom": "number",
+          "label_x": "number",
+          "label_y": "number",
+          "start_x": "number",
+          "end_x": "number",
+          "source_y": "number",
+          "target_y": "number"
+        }
+      }
+    },
+    {
+      "name": "nodes",
+      "source": "imports",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.kind === 'node'"
+        }
+      ]
+    },
+    {
+      "name": "links",
+      "source": "imports",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.kind === 'flow'"
+        },
+        {
+          "type": "formula",
+          "as": "strokeWidth",
+          "expr": "abs(scale('y', datum.bottom) - scale('y', datum.top))"
+        },
+        {
+          "type": "linkpath",
+          "orient": "horizontal",
+          "shape": "diagonal",
+          "sourceX": {
+            "expr": "scale('x', datum.start_x)"
+          },
+          "sourceY": {
+            "expr": "scale('y', datum.source_y)"
+          },
+          "targetX": {
+            "expr": "scale('x', datum.end_x)"
+          },
+          "targetY": {
+            "expr": "scale('y', datum.target_y)"
+          }
+        }
+      ]
+    },
+    {
+      "name": "stages",
+      "values": [
+        {
+          "x": 0.065,
+          "label": "SUPPLIERS"
+        },
+        {
+          "x": 0.975,
+          "label": "CONTINENT"
+        },
+        {
+          "x": 1.935,
+          "label": "DESTINATION"
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "linear",
+      "domain": [-0.95, 2.75],
+      "range": "width",
+      "zero": false
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "domain": [0, 640],
+      "range": [0, {"signal": "height"}],      
+      "zero": false
+    },
+    {
+      "name": "supplierColor",
+      "type": "ordinal",
+      "domain": [
+        "Malaysia",
+        "Kenya",
+        "Ecuador",
+        "Colombia",
+        "China",
+        "Vietnam"
+      ],
+      "range": [
+        "#2F6BFF",
+        "#F39C12",
+        "#8B5CF6",
+        "#00A6D6",
+        "#E84A8A",
+        "#B08D00"
+      ]
+    },
+    {
+      "name": "regionColor",
+      "type": "ordinal",
+      "domain": [
+        "Other Asian suppliers",
+        "Other African suppliers",
+        "Other regions / suppliers",
+        "Asia",
+        "South America",
+        "Africa",
+        "Other regions",
+        "Australia"
+      ],
+      "range": [
+        "#4477AA",
+        "#AA7744",
+        "#888888",
+        "#009E73",
+        "#888888",
+        "#888888",
+        "#888888",
+        "#293B4A"
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "type": "path",
+      "name": "import-links",
+      "from": {
+        "data": "links"
+      },
+      "clip": true,
+      "encode": {
+        "update": {
+          "path": {
+            "field": "path"
+          },
+          "stroke": {
+            "signal": "datum.target === 'Australia' ? scale('regionColor', datum.region) : (datum.source === 'Other Asian suppliers' || datum.source === 'Other African suppliers' || datum.source === 'Other regions / suppliers' ? scale('regionColor', datum.source) : scale('supplierColor', datum.source))"
+          },
+          "strokeWidth": {
+            "field": "strokeWidth"
+          },
+          "strokeOpacity": {
+            "value": 0.38
+          },
+          "strokeCap": {
+            "value": "butt"
+          },
+          "fill": {
+            "value": null
+          }
+        },
+        "hover": {
+          "strokeOpacity": {
+            "value": 0.82
+          },
+          "tooltip": {
+            "signal": "{'From': datum.source, 'To': datum.target, 'Continent': datum.region, 'Import value (US$ million)': format(datum.value, ',.2f')}"
+          }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "name": "import-nodes",
+      "from": {
+        "data": "nodes"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "scale": "x",
+            "field": "x"
+          },
+          "x2": {
+            "scale": "x",
+            "field": "x2"
+          },
+          "y": {
+            "scale": "y",
+            "field": "top"
+          },
+          "y2": {
+            "scale": "y",
+            "field": "bottom"
+          },
+          "fill": {
+            "signal": "datum.label_kind === 'source' ? (datum.source === 'Other Asian suppliers' || datum.source === 'Other African suppliers' || datum.source === 'Other regions / suppliers' ? scale('regionColor', datum.source) : scale('supplierColor', datum.source)) : scale('regionColor', datum.label_kind === 'destination' ? 'Australia' : datum.region)"
+          },
+          "stroke": {
+            "value": "#FFFFFF"
+          },
+          "strokeWidth": {
+            "value": 1
+          }
+        },
+        "hover": {
+          "tooltip": {
+            "signal": "{'Supplier or destination': datum.source, 'Continent': datum.region, 'Import value (US$ million)': format(datum.value, ',.2f')}"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "name": "node-labels",
+      "from": {
+        "data": "nodes"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "scale": "x",
+            "field": "label_x"
+          },
+          "y": {
+            "scale": "y",
+            "field": "label_y"
+          },
+          "text": {
+            "field": "label"
+          },
+          "align": {
+            "signal": "datum.label_kind === 'source' ? 'right' : 'left'"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "font": {
+            "value": "Inter"
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "fontWeight": {
+            "value": 600
+          },
+          "fill": {
+            "value": "#30272B"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "name": "stage-labels",
+      "from": {
+        "data": "stages"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "scale": "x",
+            "field": "x"
+          },
+          "y": {
+            "scale": "y",
+            "value": 6
+          },
+          "text": {
+            "field": "label"
+          },
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "top"
+          },
+          "font": {
+            "value": "Inter"
+          },
+          "fontSize": {
+            "value": 10
+          },
+          "fontWeight": {
+            "value": 700
+          },
+          "fill": {
+            "value": "#74686D"
+          }
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "text": {
+      "font": "Inter",
+      "fill": "#30272B"
+    }
+  }
+}

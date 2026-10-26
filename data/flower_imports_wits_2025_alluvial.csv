@@ -1,0 +1,28 @@
+kind,link_id,region,source,target,value,x,x2,top,bottom,label_x,label_y,label,label_kind,start_x,end_x,source_y,target_y
+node,,Asia,Vietnam,,20.425080,0.05,0.08,24.000,132.253,0.02,78.126,Vietnam · $20.4m,source,,,,
+node,,Asia,Malaysia,,18.182050,0.05,0.08,135.253,231.618,0.02,183.435,Malaysia · $18.2m,source,,,,
+node,,Asia,China,,9.752650,0.05,0.08,234.618,286.307,0.02,260.462,China · $9.8m,source,,,,
+node,,Asia,Other Asian suppliers,,5.332730,0.05,0.08,289.307,317.570,0.02,303.439,Other Asian suppliers · $5.3m,source,,,,
+node,,Africa,Kenya,,20.735530,0.05,0.08,317.570,427.469,0.02,372.519,Kenya · $20.7m,source,,,,
+node,,Africa,Other African suppliers,,0.203840,0.05,0.08,430.469,431.549,0.02,431.009,,source,,,,
+node,,South America,Ecuador,,15.185540,0.05,0.08,431.549,512.032,0.02,471.791,Ecuador · $15.2m,source,,,,
+node,,South America,Colombia,,6.971300,0.05,0.08,515.032,551.980,0.02,533.506,Colombia · $7.0m,source,,,,
+node,,Other regions,Other regions / suppliers,,2.161200,0.05,0.08,551.980,563.435,0.02,557.707,Other regions / suppliers · $2.2m,source,,,,
+node,,Asia,Asia,,53.692510,0.96,0.99,24.000,308.570,1.03,166.285,Asia · $53.7m,region,,,,
+node,,South America,South America,,22.156840,0.96,0.99,322.570,440.002,1.03,381.286,South America · $22.2m,region,,,,
+node,,Africa,Africa,,20.939370,0.96,0.99,454.002,564.980,1.03,509.491,Africa · $20.9m,region,,,,
+node,,Other regions,Other regions,,2.161200,0.96,0.99,578.980,590.435,1.03,584.707,Other regions · $2.2m,region,,,,
+node,,Australia,Australia,,98.949920,1.92,1.95,58.000,582.435,1.99,320.217,Australia · $98.9m,destination,,,,
+flow,Vietnam-to-Asia,Asia,Vietnam,Asia,20.425080,,,24.000,132.253,,,,,0.08,0.92,78.126,78.126
+flow,Malaysia-to-Asia,Asia,Malaysia,Asia,18.182050,,,135.253,231.618,,,,,0.08,0.92,183.435,180.435
+flow,China-to-Asia,Asia,China,Asia,9.752650,,,234.618,286.307,,,,,0.08,0.92,260.462,254.462
+flow,Other Asian suppliers-to-Asia,Asia,Other Asian suppliers,Asia,5.332730,,,289.307,317.570,,,,,0.08,0.92,303.439,294.439
+flow,Ecuador-to-South America,South America,Ecuador,South America,15.185540,,,431.549,512.032,,,,,0.08,0.92,471.791,362.812
+flow,Colombia-to-South America,South America,Colombia,South America,6.971300,,,515.032,551.980,,,,,0.08,0.92,533.506,421.528
+flow,Kenya-to-Africa,Africa,Kenya,Africa,20.735530,,,317.570,427.469,,,,,0.08,0.92,372.519,508.951
+flow,Other African suppliers-to-Africa,Africa,Other African suppliers,Africa,0.203840,,,430.469,431.549,,,,,0.08,0.92,431.009,564.440
+flow,Other regions / suppliers-to-Other regions,Other regions,Other regions / suppliers,Other regions,2.161200,,,551.980,563.435,,,,,0.08,0.92,557.707,584.707
+flow,Asia-to-Australia,Asia,Asia,Australia,53.692510,,,24.000,308.570,,,,,1.01,1.92,166.285,200.285
+flow,Africa-to-Australia,Africa,Africa,Australia,20.939370,,,454.002,564.980,,,,,1.01,1.92,509.491,398.060
+flow,South America-to-Australia,South America,South America,Australia,22.156840,,,322.570,440.002,,,,,1.01,1.92,381.286,512.265
+flow,Other regions-to-Australia,Other regions,Other regions,Australia,2.161200,,,578.980,590.435,,,,,1.01,1.92,584.707,576.707

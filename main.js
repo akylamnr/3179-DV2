@@ -62,38 +62,40 @@ vegaEmbed("#chart02", "charts/02-choropleth.json", {
 );
 
 // Chart 3: Horticulture slope chart 
-vegaEmbed("#chart03", "charts/03-slope.json", {
+vegaEmbed("#chart03", "charts/03-index-cut-flower.json", {
   actions: false,
   renderer: "svg",
   config: sharedConfig
 }).catch(error =>
-  handleChartError("#chart03", "charts/03-slope.json", error)
+  handleChartError("#chart03", "charts/03-index-cut-flower.json", error)
 );
 
-// Chart 4: Where Australia's imported cut flowers come from - proportional symbol map
-vegaEmbed("#chart04", "charts/04-supplier-map.json", {
+// Chart 3: Horticulture slope chart 
+vegaEmbed("#chart04", "charts/04-slope.json", {
   actions: false,
   renderer: "svg",
   config: sharedConfig
 }).catch(error =>
-  handleChartError("#chart04", "charts/04-supplier-map.json", error)
+  handleChartError("#chart04", "charts/04-slope.json", error)
 );
 
-vegaEmbed("#chart05", "charts/05-import-flow-map.json", {
+
+
+vegaEmbed("#chart05", "charts/05-sankey.json", {
   actions: false,
   renderer: "svg",
   config: sharedConfig
 }).catch(error =>
-  handleChartError("#chart05", "charts/05-import-flow-map.json", error)
+  handleChartError("#chart05", "charts/05-sankey.json", error)
 );
 
 // Chart 6: International supplier map
-vegaEmbed("#chart06", "charts/06-supplier-map.json", {
+vegaEmbed("#chart06", "charts/06-flow-map.json", {
   actions: false,
   renderer: "svg",
   config: sharedConfig
 }).catch((error) =>
-  handleChartError("#chart06", "charts/06-supplier-map.json", error)
+  handleChartError("#chart06", "charts/06-flow-map.json", error)
 );
 vegaEmbed("#chart07", "charts/07-import-bump-chart.json", {
   actions: false,
