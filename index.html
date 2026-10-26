@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Australia's Flowers and Horticulture</title>
-  <link rel="icon" type="image/png" href="./favicon.png">
-
 
   <!-- Vega-Lite libraries -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
@@ -29,7 +27,7 @@
     <div class="hero-copy">
       <h1>Australia's Flowers and Horticulture</h1>
 
-      <p class="subtitle">A closer look at Australia's flower and horticulture industry: Why imported flowers are so prominent in Australia, despite it's diverse flower ecosystem.</p>
+      <p class="subtitle">How local growers, imported flowers and export markets shape Australia's flower trade.</p>
     </div>
 
 
@@ -38,7 +36,7 @@
   <main>
     <!-- SECTION 1 -->
     <section>
-      <h2 class="eyebrow section-heading">01 - Horticulture composition</h2>
+      <h2 class="eyebrow section-heading">1. An Overview of Horticulture</h2>
 
       <article class="chart-card">
 
@@ -81,14 +79,36 @@
         </p>
 
       </article>
-      
 
+      <article class="chart-card">
+        <div id="chart04" class="vis"></div>
+        <div class="insight-note">
+          <p>
+            <strong>The flower-related category barely changed.</strong>
+            Its combined farm-gate value rose by 1.4% between 2020-21
+            and 2024-25, while nuts grew by 38.5% and wine grapes
+            declined by 27.5%.
+          </p>
+          <p class="annotation-caveat">
+            These are nominal values, not adjusted for inflation, and measure
+            farm-gate value rather than physical production.
+          </p>
+        </div>
+        <p class="source">
+          Source:
+          <a
+            href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25"
+            target="_blank"
+            rel="noopener noreferrer"
+          >ABS Australian Agriculture: Horticulture, 2024-25 - Table 1</a>.
+        </p>
+      </article>
     </section>
 
     <!-- SECTION 2 -->
     
     <section>
-      <h2 class="eyebrow section-heading">02 - Where flowers grow</h2>
+      <h2 class="eyebrow section-heading">2. Where do flowers grow?</h2>
 
       <div class="chart-pair">
         <article class="chart-card chart-column">
@@ -96,7 +116,8 @@
           <p class="insight-note">
             Victoria stands out as the leading state for cut-flower production,
             with a reported value of A$114.4 million. The map shows the value
-            produced in one year, rather than how production has changed over time.
+            produced in one year as a share of the state's five-category
+            horticulture value.
           </p>
           <p class="source">
             Data:
@@ -114,30 +135,28 @@
             >ABS State and Territory Boundaries</a>.
           </p>
         </article>
-        <div id="chart03" class="vis"></div>
 
         <article class="chart-card chart-column">
-          <div id="chart04" class="vis"></div>
-          <div class="insight-note">
-            <p>
-              <strong>The flower-related category barely changed.</strong>
-              Its combined farm-gate value rose by 1.4% between
-              2020-21 and 2024-25, while nuts grew by 38.5%
-              and wine grapes declined by 27.5%.
-            </p>
-
-            <p class="annotation-caveat">
-              These are nominal values, not adjusted for inflation,
-              and measure farm-gate value rather than physical production.
-            </p>
+          <div id="chart08" class="vis"></div>
+          <div class="state-value-legend" aria-label="Bar height represents value in A$ million">
+            <span class="state-value-legend-title">Bar height (A$ million)</span>
+            <span class="state-value-key"><i class="state-value-line state-value-25"></i>25</span>
+            <span class="state-value-key"><i class="state-value-line state-value-50"></i>50</span>
+            <span class="state-value-key"><i class="state-value-line state-value-75"></i>75</span>
+            <span class="state-value-key"><i class="state-value-line state-value-100"></i>100</span>
+            <span class="state-value-key"><i class="state-value-line state-value-125"></i>125</span>
           </div>
+          <p class="insight-note">
+            The paired vertical bars are positioned at approximate state
+            centres: pink shows cut-flower production and blue shows imports
+            landed in 2024-25. Both use the same linear height scale; the
+            graduated key gives reference heights in A$ millions. “Landed”
+            records the state of arrival, not necessarily where flowers are
+            sold. Missing imports are not treated as zero.
+          </p>
           <p class="source">
-            Source:
-            <a
-              href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25"
-              target="_blank"
-              rel="noopener noreferrer"
-            >ABS Australian Agriculture: Horticulture, 2024-25 - Table 1</a>.
+            Source: Hort Innovation, <em>Australian Horticulture Statistics
+            Handbook 2024/25</em>, All Other Horticulture, pp. 409-411.
           </p>
         </article>
       </div>
@@ -146,74 +165,115 @@
 
     <!-- SECTION 3 -->
     <section>
-      <h2 class="eyebrow section-heading">03 - Flowers on the move</h2>
+      <h2 class="eyebrow section-heading">3. Flowers Go Global</h2>
 
       <p>
-      Australia's local flower industry is concentrated in particular
-      states, but the flowers sold here also come from overseas.
-      Six countries supplied about 91% of the reported value of
-      Australia's fresh-cut flower imports in 2024. Where do they        
-      come from, and how have these suppliers changed over time?
+        Australia's flower trade moves in both directions: imported flowers
+        supply the local market, while distinctive native varieties reach
+        overseas buyers. The maps use Australian dollars and financial years;
+        the WITS and Comtrade charts below use US dollars and calendar years.
       </p>
 
-      <article class="chart-card">
-        <h3>Which countries supply the most flowers?</h3>
-        <div id="chart04" class="vis"></div>
+      <article class="chart-card trade-map-layout">
+        <div class="trade-map-main">
+          <div id="chart06" class="vis"></div>
+          <div id="tradeMapControls" class="trade-map-controls">
+            <button id="resetTradeMap" class="reset-map-button" type="button" disabled>
+              Reset map
+            </button>
+          </div>
+        </div>
+        <aside class="trade-map-aside">
+          <div class="trade-map-legends">
+            <div class="trade-direction-legend" aria-label="Trade direction shown by line color">
+              <span class="trade-map-legend-title">Direction</span>
+              <span class="trade-direction-key"><i class="trade-direction-line trade-import-line"></i>Imports</span>
+              <span class="trade-direction-key"><i class="trade-direction-line trade-export-line"></i>Exports</span>
+            </div>
+          <div class="flow-value-legend" aria-label="Trade value shown by line thickness">
+            <span class="flow-value-legend-title">Trade value (A$ million)</span>
+            <span class="flow-value-key"><i class="flow-value-line flow-value-5"></i>5</span>
+            <span class="flow-value-key"><i class="flow-value-line flow-value-10"></i>10</span>
+            <span class="flow-value-key"><i class="flow-value-line flow-value-15"></i>15</span>
+            <span class="flow-value-key"><i class="flow-value-line flow-value-20"></i>20+</span>
+          </div>
+          <p class="source">
+            Source: Hort Innovation, <em>Australian Horticulture Statistics
+            Handbook 2024/25</em>, All Other Horticulture, pp. 409-411.
+            Blank values reported as under A$1m are omitted; South Korea's
+            2025 value is derived from its reported share.
+          </p>
+        </div>
+        <div class="chart-story">
+          <h3>What moves in and out?</h3>
+        
+          <p>
+            The import routes show the five largest suppliers, not all
+            imports. The Handbook reports some small export values only as
+            “under A$1 million”; those values are left blank rather than
+            estimated. South Korea's 2025 value is the exception and is
+            flagged in its tooltip.
+          </p>
+        </div>
       </article>
+
+      <h3 class="visualization-heading">How have Australia's import sources changed?</h3>
 
       <article class="chart-card">
         <div id="chart05" class="vis"></div>
         <p class="insight-note">
-          Australia's flower imports connect suppliers across three regions:
-          Malaysia, Vietnam and China in Asia, Kenya in Africa, and Ecuador
-          and Colombia in South America. The flow map shows the value moving
-          from these suppliers to Australia.
+          Each flow connects an import supplier to its continent and then
+          to Australia. Asia is highlighted in green; other continents are
+          grey. This WITS view uses US dollars and is separate from the
+          Handbook's Australian-dollar financial-year figures above.
         </p>
-        <p class="source">Source: International merchandise trade statistics.</p>
-        <div id="chart06" class="vis"></div>
-
-      </article>
-
-      <article class="chart-card chart-with-story">
-          <div class="chart-visual">
-            <div id="chart09" class="vis"></div>
-            <p class="source">
-              Source: UN Comtrade, annual flower-import values
-              for the years shown in the chart.
-            </p>
-          </div>
-
-          <div class="chart-story">
-            <h3>How have Australia's suppliers changed?</h3>
-            <p>
-              Australia's flower imports come from a range of overseas
-              suppliers, but their importance changes over time. This
-              heatmap compares import values across countries and years.
-            </p>
-            <p>
-              <strong>How to read it:</strong> Darker blue cells represent
-              higher import values, while lighter cells represent lower
-              values. Follow a row across the years to see how a supplier's
-              imports have changed.
-            </p>
-          </div>
+        <p class="source">
+          Source: World Integrated Trade Solution (WITS), Australia imports,
+          HS 0603, 2025. Values are reported in US$ million.
+        </p>
       </article>
 
       <article class="chart-card">
-        <h3 class="visualization-heading">How have Australia's import sources changed?</h3>
         <div id="chart07" class="vis"></div>
-        <p class="source">Source: International merchandise trade statistics.</p>
+        <p class="source">
+          Source: UN Comtrade, Australia imports, HS 060310, calendar years
+          2017-2024. Values are reported in US$ million.
+        </p>
       </article>
-    </section>
 
-    <!-- SECTION 4: TO COMPLETE LATER -->
+  
+
+    <!-- SECTION 5 -->
     <section>
-      <h2 class="eyebrow section-heading">04 - The big question</h2>
-
+      <h2 class="eyebrow section-heading">4. Why does Australia import flowers?</h2>
       
+      <article class="chart-card">
+        <div id="chart10" class="vis"></div>
+        <p class="insight-note">
+          Each bar is one of the six leading origin countries, stacked by
+          flower type. Kenya and Ecuador have large rose segments, while
+          Malaysia and Vietnam have large chrysanthemum segments. Lilies
+          are omitted because their import value is very small.
+        </p>
+        <p class="source">
+          Source: UN Comtrade, Australia imports by partner and product,
+          calendar 2024, HS 060311-060319, H6 classification. Values are in
+          US dollars. The six origins are the largest by total value across
+          cut-flower categories. Lilies are excluded. Partner records carry
+          <code>isReported=false</code> in the Comtrade response, so origin-level
+          values should be treated as indicative and the chart does not show
+          all Australian imports.
+        </p>
+      </article>
+
+      <article class="chart-card">
+        <div id="chart11" class="vis"></div>
+        
+      </article>
+
       <article class="chart-card chart-with-story">
         <div class="chart-visual">
-          <div id="chart08" class="vis"></div>
+          <div id="chart09" class="vis"></div>
           <p class="source">
             Source: UN Comtrade, HS 0603, 2024.
             Unit value is import value divided by reported weight.
@@ -223,16 +283,22 @@
         <div class="chart-story">
           <h3>What does the price tell us?</h3>
           <p>
-            Dividing import value by the weight of flowers imported
-            gives an estimate of the average trade value per kilogram
-            for each supplier.
+            Dividing import value by reported weight estimates the average
+            trade value per kilogram for each supplier. This Comtrade measure
+            is in US dollars for calendar year 2024, so it should not be
+            compared directly with the Handbook's Australian-dollar series.
           </p>
           <p class="closing-line">
-          Australia grows distinctive flowers, but its flower-related horticulture category has barely grown in value, rising just 1.4% between 2020–21 and 2024–25. Meanwhile, six countries supplied about 91% of Australia's reported fresh-cut flower import value in 2024. Overseas production costs, seasonal demand peaks and limited country-of-origin information may help explain why imported flowers remain so prominent. For shoppers who prefer local flowers, asking florists and supermarkets where their flowers were grown is a simple place to start.
+            The story is not simply local versus imported. Australian growers
+            supply a substantial domestic industry, imports help meet demand,
+            and selected native flowers reach overseas markets. Different
+            datasets describe different points in that chain, which is why
+            the financial-year Handbook figures and calendar-year Comtrade
+            comparisons are kept distinct.
           </p>
         </div>
       </article>
-    
+      
       </section>
 
   </main>
@@ -251,6 +317,13 @@
              target="_blank" rel="noopener noreferrer">
             Australian Agriculture: Horticulture, 2024–25
           </a>. Horticulture values by category and state.
+        </li>
+
+        <li>
+          Hort Innovation.
+          <em>Australian Horticulture Statistics Handbook 2024/25</em>,
+          All Other Horticulture, pp. 409-411. Cut-flower production,
+          trade by partner and imports landed by state.
         </li>
 
         <li>

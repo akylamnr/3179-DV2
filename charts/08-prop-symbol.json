@@ -1,0 +1,323 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Flowers grown and landed by state",
+    "subtitle": "Production & landed imports · 2024-25 · A$ million",
+    "font": "Inter",
+    "fontSize": 18,
+    "anchor": "start",
+    "subtitleFont": "Inter",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#74686D",
+    "offset": 10
+  },
+  "description": "Two-layer Australian state map: a base boundary layer and a symbol layer containing state labels and paired vertical proportional bars. Bar heights are linearly scaled in screen space by A$ million.",
+  "width": 350,
+  "height": 360,
+  "background": "transparent",
+  "projection": {
+    "type": "mercator",
+    "center": [134, -27],
+    "scale": 405,
+    "translate": [175, 180]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "maps/australia_states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "australia_states"
+        }
+      },
+      "transform": [
+        {
+          "lookup": "properties.STE_NAME21",
+          "from": {
+            "data": {
+              "url": "data/state_grown_vs_landed.csv",
+              "format": {
+                "type": "csv",
+                "parse": {
+                  "production_fy2025_aud_m": "number",
+                  "imports_landed_fy2025_aud_m": "number"
+                }
+              }
+            },
+            "key": "state",
+            "fields": [
+              "production_fy2025_aud_m",
+              "imports_landed_fy2025_aud_m",
+              "imports_as_pct_of_production_fy2025",
+              "note"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#D8D5D2",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "properties.STE_NAME21",
+            "type": "nominal",
+            "title": "State or territory"
+          },
+          {
+            "field": "production_fy2025_aud_m",
+            "type": "quantitative",
+            "title": "Production (A$ million)",
+            "format": ".1f"
+          },
+          {
+            "field": "imports_landed_fy2025_aud_m",
+            "type": "quantitative",
+            "title": "Imports landed (A$ million)",
+            "format": ".1f"
+          },
+          {
+            "field": "note",
+            "type": "nominal",
+            "title": "Note"
+          }
+        ]
+      }
+    },
+    {
+      "layer": [
+        {
+      "data": {
+        "url": "data/state_grown_vs_landed.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "production_fy2025_aud_m": "number",
+            "imports_landed_fy2025_aud_m": "number",
+            "imports_as_pct_of_production_fy2025": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "lookup": "state",
+          "from": {
+            "data": {
+              "values": [
+                {
+                  "state": "Western Australia",
+                  "longitude": 121.5,
+                  "latitude": -25.5
+                },
+                {
+                  "state": "Northern Territory",
+                  "longitude": 133.5,
+                  "latitude": -19.5
+                },
+                {
+                  "state": "Queensland",
+                  "longitude": 146.5,
+                  "latitude": -22.5
+                },
+                {
+                  "state": "South Australia",
+                  "longitude": 135.0,
+                  "latitude": -30.0
+                },
+                {
+                  "state": "New South Wales",
+                  "longitude": 150.5,
+                  "latitude": -32.5
+                },
+                {
+                  "state": "Australian Capital Territory",
+                  "longitude": 152.0,
+                  "latitude": -35.3
+                },
+                {
+                  "state": "Victoria",
+                  "longitude": 142.5,
+                  "latitude": -37.0
+                },
+                {
+                  "state": "Tasmania",
+                  "longitude": 146.5,
+                  "latitude": -42.0
+                }
+              ]
+            },
+            "key": "state",
+            "fields": ["longitude", "latitude"]
+          }
+        },
+        {
+          "fold": [
+            "production_fy2025_aud_m",
+            "imports_landed_fy2025_aud_m"
+          ],
+          "as": ["measure", "value_aud_m"]
+        },
+        {
+          "filter": "isValid(datum.value_aud_m)"
+        },
+        {
+          "calculate": "datum.measure === 'production_fy2025_aud_m' ? 'Production' : 'Imports landed'",
+          "as": "series"
+        },
+        {
+          "calculate": "datum.measure === 'production_fy2025_aud_m' ? datum.longitude - 0.65 : datum.longitude + 0.65",
+          "as": "bar_longitude"
+        },
+        {
+          "calculate": "(2 * atan(exp(log(tan(PI / 4 + datum.latitude * PI / 360)) + datum.value_aud_m * 0.9 / 405)) - PI / 2) * 180 / PI",
+          "as": "bar_top_latitude"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 8,
+        "strokeCap": "butt"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "bar_longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "longitude2": {
+          "field": "bar_longitude"
+        },
+        "latitude2": {
+          "field": "bar_top_latitude"
+        },
+        "color": {
+          "field": "series",
+          "type": "nominal",
+          "title": "Measure",
+          "scale": {
+            "domain": ["Production", "Imports landed"],
+            "range": ["#D6538A", "#2F6BFF"]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "title": null
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State or territory"
+          },
+          {
+            "field": "series",
+            "type": "nominal",
+            "title": "Measure"
+          },
+          {
+            "field": "value_aud_m",
+            "type": "quantitative",
+            "title": "Value (A$ million)",
+            "format": ".1f"
+          },
+          {
+            "field": "imports_as_pct_of_production_fy2025",
+            "type": "quantitative",
+            "title": "Imports as % of production",
+            "format": ".1f"
+          },
+          {
+            "field": "note",
+            "type": "nominal",
+            "title": "Note"
+          }
+        ]
+      }
+        },
+        {
+      "data": {
+        "values": [
+          {
+            "code": "WA",
+            "longitude": 121.5,
+            "latitude": -27.0
+          },
+          {
+            "code": "NT",
+            "longitude": 133.5,
+            "latitude": -21.0
+          },
+          {
+            "code": "QLD",
+            "longitude": 146.5,
+            "latitude": -24.0
+          },
+          {
+            "code": "SA",
+            "longitude": 135.0,
+            "latitude": -31.5
+          },
+          {
+            "code": "NSW",
+            "longitude": 150.5,
+            "latitude": -34.0
+          },
+          {
+            "code": "VIC",
+            "longitude": 142.5,
+            "latitude": -38.2
+          },
+          {
+            "code": "TAS",
+            "longitude": 146.5,
+            "latitude": -43.5
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "font": "Inter",
+        "fontSize": 10,
+        "fontWeight": 700,
+        "color": "#30272B",
+        "dy": 4
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "code",
+          "type": "nominal"
+        }
+      }
+        }
+        ]
+      }
+  ],
+  "config": {
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    },
+    "legend": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "padding": 6
+    }
+  }
+}

@@ -42,7 +42,7 @@ html {
 
 body {
   margin: 0;
-  background:var(--cream);
+  background: var(--cream);
   color: var(--text);
   font-family: "Inter", Arial, sans-serif;
   line-height: 1.7;
@@ -238,13 +238,274 @@ section > p:not(.eyebrow, .source) {
   font-family: "Inter", Arial, sans-serif;
 }
 
-#chart05 > svg {
-  display: block;
-  margin-inline: auto;
+#chart09 svg {
+  cursor: grab;
+  touch-action: none;
+}
+
+#chart09 svg:active {
+  cursor: grabbing;
 }
 
 .vega-embed summary {
   color: var(--forest);
+}
+
+.trade-map-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(250px, 0.9fr);
+  gap: clamp(24px, 4vw, 44px);
+  align-items: start;
+}
+
+.trade-map-main,
+.trade-map-aside {
+  min-width: 0;
+}
+
+.trade-map-main .vega-embed {
+  width: 100%;
+}
+
+.trade-map-controls {
+  display: flex;
+  margin-top: 14px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 14px 20px;
+}
+
+#tradeMapControls .vega-bindings {
+  display: contents;
+}
+
+#tradeMapControls .vega-bind {
+  min-width: 150px;
+  flex: 1 1 150px;
+}
+
+#tradeMapControls .vega-bind label {
+  display: grid;
+  grid-template-columns: auto minmax(70px, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+  font-size: 0.86rem;
+}
+
+#tradeMapControls .vega-bind:nth-child(3) label {
+  grid-template-columns: 1fr;
+}
+
+#tradeMapControls input[type="range"] {
+  width: 100%;
+  margin: 0;
+  accent-color: var(--forest);
+  cursor: pointer;
+}
+
+#tradeMapControls input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 999px;
+  background: #dededb;
+}
+
+#tradeMapControls input[type="range"]::-webkit-slider-thumb {
+  width: 18px;
+  height: 18px;
+  margin-top: -6px;
+  appearance: none;
+  border: 2px solid var(--surface);
+  border-radius: 50%;
+  background: var(--forest);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 22%);
+}
+
+#tradeMapControls input[type="range"]::-moz-range-track {
+  height: 6px;
+  border-radius: 999px;
+  background: #dededb;
+}
+
+#tradeMapControls input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--surface);
+  border-radius: 50%;
+  background: var(--forest);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 22%);
+}
+
+#tradeMapControls select {
+  width: 100%;
+  min-height: 36px;
+  padding: 5px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.86rem;
+}
+
+.reset-map-button {
+  min-height: 36px;
+  padding: 7px 14px;
+  border: 1px solid var(--forest);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--forest);
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.reset-map-button:hover:not(:disabled) {
+  background: var(--forest);
+  color: var(--surface);
+}
+
+.reset-map-button:focus-visible {
+  outline: 3px solid var(--rose);
+  outline-offset: 3px;
+}
+
+.reset-map-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.state-value-legend {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  margin: 0 0 18px;
+  color: var(--text);
+  font-size: 0.85rem;
+}
+
+.trade-map-legends {
+  display: grid;
+  gap: 24px;
+  margin: 12px 0 30px;
+  padding: 16px;
+  border-radius: 10px;
+  background: #f3f8f5;
+}
+
+.trade-direction-legend,
+.flow-value-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.trade-map-legend-title,
+.flow-value-legend-title {
+  flex-basis: 100%;
+  font-weight: 700;
+}
+
+.trade-direction-key {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.trade-direction-line {
+  display: inline-block;
+  width: 28px;
+  border-top: 3px solid;
+}
+
+.trade-import-line {
+  border-color: #2f6bff;
+}
+
+.trade-export-line {
+  border-color: #e84a8a;
+}
+
+.state-value-legend-title {
+  flex-basis: 100%;
+  font-weight: 700;
+}
+
+.state-value-key {
+  display: inline-flex;
+  min-width: 30px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.state-value-line {
+  display: block;
+  width: 8px;
+  border-bottom: 1px solid #59616d;
+  background: #59616d;
+}
+
+.state-value-25 {
+  height: 22.5px;
+}
+
+.state-value-50 {
+  height: 45px;
+}
+
+.state-value-75 {
+  height: 67.5px;
+}
+
+.state-value-100 {
+  height: 90px;
+}
+
+.state-value-125 {
+  height: 112.5px;
+}
+
+.flow-value-legend {
+  margin: 0;
+}
+
+.flow-value-legend-title {
+  flex-basis: 100%;
+}
+
+.flow-value-key {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.flow-value-line {
+  display: inline-block;
+  width: 30px;
+  height: 14px;
+  border-top: solid #59616d;
+}
+
+.flow-value-5 {
+  border-top-width: 3.125px;
+}
+
+.flow-value-10 {
+  border-top-width: 4.75px;
+}
+
+.flow-value-15 {
+  border-top-width: 6.375px;
+}
+
+.flow-value-20 {
+  border-top-width: 8px;
 }
 
 .source {
@@ -557,12 +818,19 @@ footer.site-footer {
   border-top: 1px solid #f2b9cc;
 }
 
-
-
 @media (max-width: 760px) {
   .waffle-layout,
-  .chart-pair {
+  .chart-pair,
+  .trade-map-layout {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .trade-map-legends {
+    margin-top: 4px;
+  }
+
+  #tradeMapControls .vega-bind {
+    flex-basis: 100%;
   }
 
   .waffle-story p {

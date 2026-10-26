@@ -1,0 +1,31 @@
+year,country,variety,import_value_usd_m,classification,is_reported
+2024,Malaysia,Roses,0.000000,H6,False
+2024,Malaysia,Chrysanthemums,17.875637,H6,False
+2024,Malaysia,Other cut flowers,0.049054,H6,False
+2024,Malaysia,Orchids,1.439023,H6,False
+2024,Malaysia,Carnations,0.000000,H6,False
+2024,Kenya,Roses,14.796432,H6,False
+2024,Kenya,Chrysanthemums,0.000937,H6,False
+2024,Kenya,Other cut flowers,1.694664,H6,False
+2024,Kenya,Orchids,0.004472,H6,False
+2024,Kenya,Carnations,0.934780,H6,False
+2024,Ecuador,Roses,10.503931,H6,False
+2024,Ecuador,Chrysanthemums,0.000000,H6,False
+2024,Ecuador,Other cut flowers,2.505827,H6,False
+2024,Ecuador,Orchids,0.019181,H6,False
+2024,Ecuador,Carnations,0.263356,H6,False
+2024,Viet Nam,Roses,0.000000,H6,False
+2024,Viet Nam,Chrysanthemums,9.058821,H6,False
+2024,Viet Nam,Other cut flowers,1.378862,H6,False
+2024,Viet Nam,Orchids,1.042898,H6,False
+2024,Viet Nam,Carnations,0.000000,H6,False
+2024,Colombia,Roses,2.490153,H6,False
+2024,Colombia,Chrysanthemums,4.757402,H6,False
+2024,Colombia,Other cut flowers,0.826981,H6,False
+2024,Colombia,Orchids,0.000000,H6,False
+2024,Colombia,Carnations,0.910224,H6,False
+2024,China,Roses,4.684506,H6,False
+2024,China,Chrysanthemums,0.014003,H6,False
+2024,China,Other cut flowers,1.647540,H6,False
+2024,China,Orchids,0.021911,H6,False
+2024,China,Carnations,0.891558,H6,False

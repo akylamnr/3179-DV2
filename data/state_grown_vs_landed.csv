@@ -1,0 +1,9 @@
+state,code,grid_col,grid_row,production_fy2025_aud_m,imports_landed_fy2023_aud_m,imports_landed_fy2024_aud_m,imports_landed_fy2025_aud_m,imports_as_pct_of_production_fy2025,note
+Western Australia,WA,0,1,71.1,22.4,16.5,14.9,21.0,
+Northern Territory,NT,1,0,,,,,,No production figure in the Handbook
+Queensland,QLD,2,0,61.8,6.7,9.0,11.5,18.6,
+South Australia,SA,1,1,30.9,4.6,4.9,6.3,20.4,
+New South Wales,NSW,2,1,40.2,37.5,28.8,28.8,71.6,
+Australian Capital Territory,ACT,3,1,,,,,,No production figure in the Handbook
+Victoria,VIC,2,2,114.4,31.8,37.5,46.7,40.8,
+Tasmania,TAS,2,3,6.2,,,,,Production reported; no imports reported for this state

@@ -1,0 +1,478 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Two-way map of selected Australian cut-flower imports and exports from the Hort Innovation 2024/25 Handbook. Values are A$ million for financial years ending June. Blank values reported as under A$1m are not plotted.",
+  "title": {
+    "text": "Australia's flowers move both ways",
+    "subtitle": "Selected suppliers and markets · A$ million · Year ending June",
+    "font": "Inter",
+    "fontSize": 20,
+    "fontWeight": "bold",
+    "anchor": "start",
+    "offset": 12,
+    "subtitleFont": "Inter",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#74686D"
+  },
+  "width": 600,
+  "height": 300,
+  "background": "transparent",
+  "params": [
+    {
+      "name": "selectedYear",
+      "value": 2025,
+      "bind": {
+        "input": "range",
+        "min": 2023,
+        "max": 2025,
+        "step": 1,
+        "name": "Year:"
+      }
+    },
+    {
+      "name": "zoom",
+      "value": 100,
+      "bind": {
+        "input": "range",
+        "min": 100,
+        "max": 180,
+        "step": 10,
+        "name": "Zoom: "
+      }
+    },
+    {
+      "name": "selectedContinent",
+      "value": null,
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Asia",
+          "Africa",
+          "Europe",
+          "North America",
+          "South America"
+        ],
+        "labels": [
+          "All continents",
+          "Asia",
+          "Africa",
+          "Europe",
+          "North America",
+          "South America"
+        ],
+        "name": "Continent:"
+      }
+    }
+  ],
+  "projection": {
+    "type": "equalEarth",
+    "rotate": [-150, 0, 0],
+    "center": [0, 0],
+    "scale": {
+      "expr": "zoom"
+    }
+  },
+  "layer": [
+    {
+      "data": {
+        "values": [
+          {
+            "type": "Sphere"
+          }
+        ]
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#87CDE3"
+      }
+    },
+    {
+      "data": {
+        "url": "maps/world_countries.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "world_countries"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#F1EEE9",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.55
+      }
+    },
+    {
+      "data": {
+        "graticule": {
+          "step": [30, 30]
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.65,
+        "opacity": 0.7
+      }
+    },
+    {
+      "data": {
+        "url": "data/trade_flows_fy2023_25.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "year_ending_june": "number",
+            "value_aud_m": "number",
+            "share_of_direction_pct": "number",
+            "sequence": "number",
+            "longitude": "number",
+            "latitude": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.year_ending_june === selectedYear && isValid(datum.value_aud_m) && ((datum.direction === 'import' && datum.sequence === 0) || (datum.direction === 'export' && datum.sequence === 1))"
+        },
+        {
+          "calculate": "datum.country === 'Malaysia' || datum.country === 'Vietnam' || datum.country === 'China' || datum.country === 'Japan' || datum.country === 'South Korea' ? 'Asia' : datum.country === 'Kenya' ? 'Africa' : datum.country === 'Ecuador' ? 'South America' : datum.country === 'Netherlands' ? 'Europe' : 'North America'",
+          "as": "continent"
+        },
+        {
+          "filter": "selectedContinent === null || selectedContinent === '' || datum.continent === selectedContinent"
+        },
+        {
+          "calculate": "datum.direction === 'import' ? datum.country + ' → Australia' : 'Australia → ' + datum.country",
+          "as": "route_description"
+        },
+        {
+          "calculate": "datum.direction === 'import' ? (datum.longitude < -30 ? datum.longitude + 360 : datum.longitude) : 149.13",
+          "as": "lon0"
+        },
+        {
+          "calculate": "datum.direction === 'import' ? 149.13 : (datum.longitude < -30 ? datum.longitude + 360 : datum.longitude)",
+          "as": "lon2"
+        },
+        {
+          "calculate": "datum.direction === 'import' ? datum.latitude : -35.28",
+          "as": "lat0"
+        },
+        {
+          "calculate": "datum.direction === 'import' ? -35.28 : datum.latitude",
+          "as": "lat2"
+        },
+        {
+          "calculate": "0.5 * (datum.lon0 + datum.lon2)",
+          "as": "ctrl_lon"
+        },
+        {
+          "calculate": "0.5 * (datum.lat0 + datum.lat2) + 0.22 * abs(datum.lon2 - datum.lon0)",
+          "as": "ctrl_lat"
+        },
+        {
+          "calculate": "sequence(0, 41)",
+          "as": "step"
+        },
+        {
+          "flatten": ["step"]
+        },
+        {
+          "calculate": "datum.step / 40",
+          "as": "t"
+        },
+        {
+          "calculate": "pow(1 - datum.t, 2) * datum.lon0 + 2 * (1 - datum.t) * datum.t * datum.ctrl_lon + pow(datum.t, 2) * datum.lon2",
+          "as": "arc_lon"
+        },
+        {
+          "calculate": "pow(1 - datum.t, 2) * datum.lat0 + 2 * (1 - datum.t) * datum.t * datum.ctrl_lat + pow(datum.t, 2) * datum.lat2",
+          "as": "arc_lat"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "opacity": 0.78,
+        "strokeCap": "round"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "arc_lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "arc_lat",
+          "type": "quantitative"
+        },
+        "detail": {
+          "field": "route",
+          "type": "nominal"
+        },
+        "order": {
+          "field": "step",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "direction",
+          "type": "nominal",
+          "title": "Direction",
+          "scale": {
+            "domain": ["import", "export"],
+            "range": ["#2F6BFF", "#E84A8A"]
+          },
+          "legend": null
+        },
+        "size": {
+          "field": "value_aud_m",
+          "type": "quantitative",
+          "title": "Trade value (A$ million)",
+          "scale": {
+            "domain": [0, 20],
+            "range": [1.5, 8],
+            "clamp": true
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "route_description",
+            "type": "nominal",
+            "title": "Route"
+          },
+          {
+            "field": "country",
+            "type": "nominal",
+            "title": "Partner"
+          },
+          {
+            "field": "continent",
+            "type": "nominal",
+            "title": "Continent"
+          },
+          {
+            "field": "year_ending_june",
+            "type": "quantitative",
+            "title": "Financial Year",
+            "format": "d"
+          },
+          {
+            "field": "value_aud_m",
+            "type": "quantitative",
+            "title": "Value (A$ million)",
+            "format": ".1f"
+          },
+          {
+            "field": "share_of_direction_pct",
+            "type": "quantitative",
+            "title": "Share of direction (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "note",
+            "type": "nominal",
+            "title": "Note"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/trade_flows_fy2023_25.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "year_ending_june": "number",
+            "value_aud_m": "number",
+            "sequence": "number",
+            "longitude": "number",
+            "latitude": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.year_ending_june === selectedYear && isValid(datum.value_aud_m) && ((datum.direction === 'import' && datum.sequence === 0) || (datum.direction === 'export' && datum.sequence === 1))"
+        },
+        {
+          "calculate": "datum.country === 'Malaysia' || datum.country === 'Vietnam' || datum.country === 'China' || datum.country === 'Japan' || datum.country === 'South Korea' ? 'Asia' : datum.country === 'Kenya' ? 'Africa' : datum.country === 'Ecuador' ? 'South America' : datum.country === 'Netherlands' ? 'Europe' : 'North America'",
+          "as": "continent"
+        },
+        {
+          "filter": "selectedContinent === null || selectedContinent === '' || datum.continent === selectedContinent"
+        },
+        {
+          "calculate": "datum.country === 'Malaysia' || datum.country === 'Vietnam' || datum.country === 'China' || datum.country === 'Japan' || datum.country === 'South Korea' ? 'Asia' : datum.country === 'Kenya' ? 'Africa' : datum.country === 'Ecuador' ? 'South America' : datum.country === 'Netherlands' ? 'Europe' : 'North America'",
+          "as": "continent"
+        },
+        {
+          "filter": "selectedContinent === null || selectedContinent === '' || datum.continent === selectedContinent"
+        },
+        {
+          "calculate": "datum.direction === 'import' ? datum.country + ' → Australia' : 'Australia → ' + datum.country",
+          "as": "route_description"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1.3,
+        "opacity": 0.95
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Malaysia",
+              "Kenya",
+              "Ecuador",
+              "Colombia",
+              "China",
+              "Vietnam",
+              "Japan",
+              "Netherlands",
+              "United States",
+              "South Korea"
+            ],
+            "range": [
+              "#2F6BFF",
+              "#F39C12",
+              "#8B5CF6",
+              "#00A6D6",
+              "#E84A8A",
+              "#B08D00",
+              "#009E73",
+              "#888888",
+              "#888888",
+              "#009E73"
+            ]
+          },
+          "legend": null
+        },
+        "size": {
+          "value": 85
+        },
+        "tooltip": [
+          {
+            "field": "route_description",
+            "type": "nominal",
+            "title": "Route"
+          },
+          {
+            "field": "country",
+            "type": "nominal",
+            "title": "Partner"
+          },
+          {
+            "field": "year_ending_june",
+            "type": "quantitative",
+            "title": "Financial Year",
+            "format": "d"
+          },
+          {
+            "field": "value_aud_m",
+            "type": "quantitative",
+            "title": "Value (A$ million)",
+            "format": ".1f"
+          },
+          {
+            "field": "note",
+            "type": "nominal",
+            "title": "Note"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "name": "Australia",
+            "longitude": 149.13,
+            "latitude": -35.28
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "text": "★",
+        "font": "Arial",
+        "fontSize": 20,
+        "fontWeight": "bold",
+        "color": "#28483D",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "tooltip": {
+          "field": "name",
+          "type": "nominal",
+          "title": "Australia"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "name": "Australia",
+            "longitude": 149.13,
+            "latitude": -35.28
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "dy": 17,
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#28483D",
+        "font": "Inter"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "name",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "color": "independent"
+    }
+  },
+  "config": {
+    "font": "Inter",
+    "view": {
+      "stroke": null,
+      "continuousWidth": 420,
+      "continuousHeight": 300
+    }
+
+  }
+}
