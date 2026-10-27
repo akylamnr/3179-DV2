@@ -2,13 +2,11 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Farm-Gate Value of Australia's Horticulture (2020-21, 2024-25)",
-    "subtitle": "2020-21 to 2024-25 · A$ million, not adjusted for inflation",
+    "offset": 25,
     "font": "Inter",
-    "fontSize": 16,
+    "fontSize": 20,
     "anchor": "start",
-    "subtitleFont": "Inter",
-    "subtitleFontSize": 11,
-    "subtitleColor": "#74686D"
+    "color" : "#1f382f"
   },
   "width": 430,
   "height": 340,

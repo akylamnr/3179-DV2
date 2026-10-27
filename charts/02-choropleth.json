@@ -3,7 +3,8 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Where are cut flowers most important?",
-    "subtitle": "2024-25 · Cut-flower farm-gate value as a share of reported horticulture value"
+    "subtitle": "2024-25 · Cut-flower farm-gate value as a share of reported horticulture value",
+    "color" : "#1f382f"
   },
   "description": "The percentage is cut-flower farm-gate value from ABS Table 5 divided by the sum of the five horticulture summary categories reported for each state in ABS Table 1. The Northern Territory and Australian Capital Territory are shown as no data because a complete state denominator is not available in Table 1.",
   "width": 430,
