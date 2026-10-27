@@ -10,14 +10,15 @@
     "text": "Where Australia's imported flowers come from",
     "subtitle": "HS 0603 · Calendar 2025 · Import value in US$ million",
     "font": "Inter",
-    "fontSize": 21,
-    "fontWeight": "bold",
-    "color": "#30272B",
+    "fontSize": 19,
+    "fontWeight": 700,
+    "color": "#1f382f",
     "subtitleFont": "Inter",
     "subtitleFontSize": 12,
     "subtitleColor": "#74686D",
     "anchor": "start",
-    "offset": 12
+    "offset": 10,
+    "subtitleFontWeight": "normal"
   },
   "data": [
     {
@@ -104,15 +105,26 @@
     {
       "name": "x",
       "type": "linear",
-      "domain": [-0.95, 2.75],
+      "domain": [
+        -0.95,
+        2.75
+      ],
       "range": "width",
       "zero": false
     },
     {
       "name": "y",
       "type": "linear",
-      "domain": [0, 640],
-      "range": [0, {"signal": "height"}],      
+      "domain": [
+        0,
+        640
+      ],
+      "range": [
+        0,
+        {
+          "signal": "height"
+        }
+      ],
       "zero": false
     },
     {
@@ -127,12 +139,12 @@
         "Vietnam"
       ],
       "range": [
-        "#2F6BFF",
-        "#F39C12",
-        "#8B5CF6",
-        "#00A6D6",
-        "#E84A8A",
-        "#B08D00"
+        "#329481",
+        "#EE9F27",
+        "#B695C9",
+        "#8A6E3B",
+        "#A64470",
+        "#B7C75E"
       ]
     },
     {
@@ -149,14 +161,14 @@
         "Australia"
       ],
       "range": [
-        "#4477AA",
-        "#AA7744",
+        "#6E9F7F",
+        "#C58A3A",
         "#D4D2CC",
         "#35A99A",
         "#B5B4AF",
         "#B5B4AF",
         "#B5B4AF",
-        "#293B4A"
+        "#28483D"
       ]
     }
   ],

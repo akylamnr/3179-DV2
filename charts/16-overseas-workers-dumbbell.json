@@ -4,64 +4,187 @@
     "text": "Horticulture farms increasingly rely on overseas workers during peak months",
     "subtitle": "Share of farms using overseas workers in peak months · 2021–22 vs 2023–24",
     "font": "Inter",
-    "fontSize": 16,
+    "fontWeight": 700,
+    "fontSize": 19,
     "anchor": "start",
     "subtitleFont": "Inter",
-    "subtitleFontSize": 11,
-    "subtitleColor": "#74686D"
+    "subtitleFontSize": 12,
+    "subtitleColor": "#74686D",
+    "color": "#1f382f",
+    "offset": 10,
+    "subtitleFontWeight": "normal"
   },
-  "width": 620,
-  "height": 300,
+  "width": 720,
+  "height": 400,
   "background": "transparent",
   "data": {
     "url": "data/labour_overseas_workers_peak.csv",
-    "format": { "type": "csv", "parse": { "pct_farms": "number", "rse_pct": "number" } }
+    "format": {
+      "type": "csv",
+      "parse": {
+        "pct_farms": "number",
+        "rse_pct": "number"
+      }
+    }
   },
   "encoding": {
     "y": {
       "field": "state",
       "type": "nominal",
-      "sort": { "field": "pct_farms", "op": "max", "order": "descending" },
-      "axis": { "title": null, "labelFont": "Inter", "labelFontSize": 11, "ticks": false, "domain": false }
+      "sort": {
+        "field": "pct_farms",
+        "op": "max",
+        "order": "descending"
+      },
+      "axis": {
+        "title": null,
+        "labelFont": "Inter",
+        "labelFontSize": 13,
+        "ticks": false,
+        "domain": false,
+        "titleFont": "Inter",
+        "titleFontSize": 13,
+        "labelColor": "#5B4E49",
+        "titleColor": "#5B4E49",
+        "titleFontWeight": 600
+      }
     },
     "x": {
       "field": "pct_farms",
       "type": "quantitative",
-      "scale": { "domain": [0, 70], "nice": false },
+      "scale": {
+        "domain": [
+          0,
+          70
+        ],
+        "nice": false
+      },
       "axis": {
         "title": "Farms using overseas workers in peak months (%)",
         "tickCount": 7,
         "labelFont": "Inter",
         "titleFont": "Inter",
-        "labelFontSize": 10,
-        "titleFontSize": 10,
+        "labelFontSize": 13,
+        "titleFontSize": 13,
         "grid": true,
         "gridColor": "#E9E5DF",
-        "domainColor": "#8E8078"
+        "domainColor": "#8E8078",
+        "labelColor": "#5B4E49",
+        "titleColor": "#5B4E49",
+        "titleFontWeight": 600
       }
     },
-    "detail": { "field": "state" },
-    "order": { "field": "year", "type": "nominal" }
+    "detail": {
+      "field": "state"
+    },
+    "order": {
+      "field": "year",
+      "type": "nominal"
+    }
   },
   "layer": [
-    { "mark": { "type": "line", "color": "#B7AAA6", "strokeWidth": 2 } },
     {
-      "mark": { "type": "circle", "size": 115, "filled": true, "stroke": "#FFFFFF", "strokeWidth": 1.5 },
+      "mark": {
+        "type": "line",
+        "color": "#B7AAA6",
+        "strokeWidth": 3
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 115,
+        "filled": true,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1.5
+      },
       "encoding": {
         "color": {
           "field": "year",
           "type": "nominal",
-          "scale": { "domain": ["2021–22", "2023–24"], "range": ["#B695C9", "#D6538A"] },
-          "legend": { "title": null, "orient": "top", "direction": "horizontal" }
+          "scale": {
+            "domain": [
+              "2021–22",
+              "2023–24"
+            ],
+            "range": [
+              "#8FA7B8",
+              "#D9822B"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "top",
+            "direction": "horizontal",
+            "labelFont": "Inter",
+            "titleFont": "Inter",
+            "labelFontSize": 13,
+            "titleFontSize": 13,
+            "labelColor": "#5B4E49",
+            "titleColor": "#5B4E49",
+            "titleFontWeight": 600
+          }
         },
         "tooltip": [
-          { "field": "state", "type": "nominal", "title": "State" },
-          { "field": "year", "type": "nominal", "title": "Year" },
-          { "field": "pct_farms", "type": "quantitative", "title": "Farms (%)", "format": ".1f" },
-          { "field": "rse_pct", "type": "quantitative", "title": "RSE (%)", "format": ".1f" }
-        ]
-      }
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "year",
+            "type": "nominal",
+            "title": "Year"
+          },
+          {
+            "field": "pct_farms",
+            "type": "quantitative",
+            "title": "Farms (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "rse_pct",
+            "type": "quantitative",
+            "title": "RSE (%)",
+            "format": ".1f"
+          }
+        ],
+        "opacity": {
+          "condition": {
+            "param": "hoverState",
+            "empty": false,
+            "value": 1
+          },
+          "value": 0.55
+        },
+        "size": {
+          "condition": {
+            "param": "hoverState",
+            "empty": false,
+            "value": 220
+          },
+          "value": 115
+        }
+      },
+      "params": [
+        {
+          "name": "hoverState",
+          "select": {
+            "type": "point",
+            "fields": [
+              "state"
+            ],
+            "on": "pointerover",
+            "clear": "pointerout"
+          }
+        }
+      ]
     }
   ],
-  "config": { "font": "Inter", "view": { "stroke": null } }
+  "config": {
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    }
+  }
 }

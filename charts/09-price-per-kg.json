@@ -6,63 +6,212 @@
   "background": "transparent",
   "title": {
     "text": "What each supplier's flowers cost per kilogram",
-    "subtitle": "Import value divided by weight, 2024."
+    "subtitle": "Import value divided by weight, 2024.",
+    "font": "Inter",
+    "fontWeight": 700,
+    "fontSize": 19,
+    "color": "#1f382f",
+    "anchor": "start",
+    "offset": 10,
+    "subtitleFont": "Inter",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#74686D",
+    "subtitleFontWeight": "normal"
   },
   "data": {
     "url": "data/flower_import_flows.csv",
-    "format": {"type": "csv", "parse": {"sequence": "number", "import_value_usd_m": "number", "quantity_kg": "number"}}
+    "format": {
+      "type": "csv",
+      "parse": {
+        "sequence": "number",
+        "import_value_usd_m": "number",
+        "quantity_kg": "number"
+      }
+    }
   },
   "transform": [
-    {"filter": "datum.sequence == 0"},
-    {"calculate": "datum.import_value_usd_m * 1000000 / datum.quantity_kg", "as": "usd_per_kg"},
+    {
+      "filter": "datum.sequence == 0"
+    },
+    {
+      "calculate": "datum.import_value_usd_m * 1000000 / datum.quantity_kg",
+      "as": "usd_per_kg"
+    },
     {
       "joinaggregate": [
-        {"op": "sum", "field": "import_value_usd_m", "as": "sum_value"},
-        {"op": "sum", "field": "quantity_kg", "as": "sum_kg"}
+        {
+          "op": "sum",
+          "field": "import_value_usd_m",
+          "as": "sum_value"
+        },
+        {
+          "op": "sum",
+          "field": "quantity_kg",
+          "as": "sum_kg"
+        }
       ]
     },
-    {"calculate": "datum.sum_value * 1000000 / datum.sum_kg", "as": "avg_price"}
+    {
+      "calculate": "datum.sum_value * 1000000 / datum.sum_kg",
+      "as": "avg_price"
+    }
   ],
   "layer": [
     {
-      "mark": {"type": "rule", "color": "#2F65A7", "strokeWidth": 3},
+      "mark": {
+        "type": "rule",
+        "color": "#D6538A",
+        "strokeWidth": 3
+      },
       "encoding": {
-        "y": {"field": "country", "type": "nominal", "sort": "-x", "title": null, "axis": {"domain": false, "ticks": false, "labelFontSize": 13}},
-        "x": {"field": "usd_per_kg", "type": "quantitative", "title": "Import price (US$ per kg)", "axis": {"format": "$.0f", "grid": false}},
-        "x2": {"datum": 0}
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "-x",
+          "title": null,
+          "axis": {
+            "domain": false,
+            "ticks": false,
+            "labelFontSize": 13,
+            "labelFont": "Inter",
+            "titleFont": "Inter",
+            "titleFontSize": 13,
+            "labelColor": "#5B4E49",
+            "titleColor": "#5B4E49",
+            "titleFontWeight": 600
+          }
+        },
+        "x": {
+          "field": "usd_per_kg",
+          "type": "quantitative",
+          "title": "Import price (US$ per kg)",
+          "axis": {
+            "format": "$.0f",
+            "grid": false,
+            "labelFont": "Inter",
+            "titleFont": "Inter",
+            "labelFontSize": 13,
+            "titleFontSize": 13,
+            "labelColor": "#5B4E49",
+            "titleColor": "#5B4E49",
+            "titleFontWeight": 600
+          }
+        },
+        "x2": {
+          "datum": 0
+        }
       }
     },
     {
-      "mark": {"type": "circle", "color": "#2F65A7", "size": 190, "opacity": 1},
+      "mark": {
+        "type": "circle",
+        "color": "#D6538A",
+        "size": 190,
+        "opacity": 1
+      },
       "encoding": {
-        "y": {"field": "country", "type": "nominal", "sort": "-x"},
-        "x": {"field": "usd_per_kg", "type": "quantitative"},
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "-x"
+        },
+        "x": {
+          "field": "usd_per_kg",
+          "type": "quantitative"
+        },
         "tooltip": [
-          {"field": "country", "type": "nominal", "title": "Supplier"},
-          {"field": "usd_per_kg", "type": "quantitative", "title": "US$ per kg", "format": ".2f"},
-          {"field": "import_value_usd_m", "type": "quantitative", "title": "Import value (US$ million)", "format": ".2f"},
-          {"field": "quantity_kg", "type": "quantitative", "title": "Quantity (kg)", "format": ","}
+          {
+            "field": "country",
+            "type": "nominal",
+            "title": "Supplier"
+          },
+          {
+            "field": "usd_per_kg",
+            "type": "quantitative",
+            "title": "US$ per kg",
+            "format": ".2f"
+          },
+          {
+            "field": "import_value_usd_m",
+            "type": "quantitative",
+            "title": "Import value (US$ million)",
+            "format": ".2f"
+          },
+          {
+            "field": "quantity_kg",
+            "type": "quantitative",
+            "title": "Quantity (kg)",
+            "format": ","
+          }
         ]
       }
     },
     {
-      "mark": {"type": "text", "align": "left", "dx": 12, "fontSize": 12, "color": "#1B2B26"},
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 12,
+        "fontSize": 12,
+        "color": "#1B2B26"
+      },
       "encoding": {
-        "y": {"field": "country", "type": "nominal", "sort": "-x"},
-        "x": {"field": "usd_per_kg", "type": "quantitative"},
-        "text": {"field": "usd_per_kg", "type": "quantitative", "format": "$.2f"}
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "-x"
+        },
+        "x": {
+          "field": "usd_per_kg",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "usd_per_kg",
+          "type": "quantitative",
+          "format": "$.2f"
+        }
       }
     },
     {
-      "mark": {"type": "rule", "color": "#176B63", "strokeDash": [5, 4], "strokeWidth": 1.5},
-      "encoding": {"x": {"field": "avg_price", "type": "quantitative", "aggregate": "mean"}}
+      "mark": {
+        "type": "rule",
+        "color": "#28483D",
+        "strokeDash": [
+          5,
+          4
+        ],
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "avg_price",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
     },
     {
-      "mark": {"type": "text", "align": "left", "baseline": "top", "dx": 6, "dy": 2, "fontSize": 12, "fontWeight": 600, "color": "#176B63"},
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "top",
+        "dx": 6,
+        "dy": 2,
+        "fontSize": 12,
+        "fontWeight": 600,
+        "color": "#28483D"
+      },
       "encoding": {
-        "x": {"field": "avg_price", "type": "quantitative", "aggregate": "mean"},
-        "y": {"value": 0},
-        "text": {"value": "Average of the six"}
+        "x": {
+          "field": "avg_price",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "y": {
+          "value": 0
+        },
+        "text": {
+          "value": "Average of the six"
+        }
       }
     }
   ]

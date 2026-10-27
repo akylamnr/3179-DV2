@@ -3,12 +3,11 @@
   "title": {
     "text": "Total Horticulture Production by State",
     "font": "Inter",
-    "fontSize": 18,
+    "fontWeight": 700,
+    "fontSize": 19,
     "anchor": "start",
-    "subtitleFont": "Inter",
-    "subtitleFontSize": 12,
-    "subtitleColor": "#74686D",
-    "offset": 10
+    "offset": 10,
+    "color": "#1f382f"
   },
   "description": "Australian state map with one proportional circle per state, showing farm-gate production value summed across the five ABS horticulture summary categories. Circle size is grouped into three value classes.",
   "width": 350,
@@ -16,9 +15,15 @@
   "background": "transparent",
   "projection": {
     "type": "mercator",
-    "center": [134, -27],
+    "center": [
+      134,
+      -27
+    ],
     "scale": 405,
-    "translate": [175, 180]
+    "translate": [
+      175,
+      180
+    ]
   },
   "layer": [
     {
@@ -148,8 +153,13 @@
             "symbolType": "circle",
             "symbolFillColor": "#D6538A",
             "symbolStrokeColor": "#FFFFFF",
-            "labelFontSize": 10,
-            "titleFontSize": 11
+            "labelFontSize": 13,
+            "titleFontSize": 13,
+            "labelFont": "Inter",
+            "titleFont": "Inter",
+            "labelColor": "#5B4E49",
+            "titleColor": "#5B4E49",
+            "titleFontWeight": 600
           }
         },
         "tooltip": [
@@ -215,7 +225,7 @@
       "mark": {
         "type": "text",
         "font": "Inter",
-        "fontSize": 10,
+        "fontSize": 12,
         "fontWeight": 700,
         "color": "#30272B",
         "dy": 4
@@ -240,13 +250,6 @@
     "font": "Inter",
     "view": {
       "stroke": null
-    },
-    "legend": {
-      "labelFont": "Inter",
-      "titleFont": "Inter",
-      "labelFontSize": 11,
-      "titleFontSize": 11,
-      "padding": 6
     }
   }
 }

@@ -4,12 +4,15 @@
     "text": "Where does Australian horticulture need the most workers?",
     "subtitle": "Total labour use in the peak month · 2023–24 · Number of workers by region",
     "font": "Inter",
-    "fontSize": 16,
+    "fontWeight": 700,
+    "fontSize": 19,
     "anchor": "start",
     "subtitleFont": "Inter",
-    "subtitleFontSize": 11,
+    "subtitleFontSize": 12,
     "subtitleColor": "#74686D",
-    "offset": 10
+    "offset": 10,
+    "color": "#1f382f",
+    "subtitleFontWeight": "normal"
   },
   "description": "Map of ABARES horticulture labour regions with proportional circles showing estimated total workers used in the peak month in 2023-24.",
   "width": 620,
@@ -17,17 +20,31 @@
   "background": "transparent",
   "projection": {
     "type": "mercator",
-    "center": [134, -28],
+    "center": [
+      134,
+      -28
+    ],
     "scale": 700,
-    "translate": [300, 235]
+    "translate": [
+      300,
+      235
+    ]
   },
   "layer": [
     {
       "data": {
         "url": "maps/australia_sa4_labour_regions.topojson",
-        "format": { "type": "topojson", "feature": "regions" }
+        "format": {
+          "type": "topojson",
+          "feature": "regions"
+        }
       },
-      "mark": { "type": "geoshape", "fill": "#DFDEDA", "stroke": "#FFFFFF", "strokeWidth": 0.5 }
+      "mark": {
+        "type": "geoshape",
+        "fill": "#DFDEDA",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.5
+      }
     },
     {
       "data": {
@@ -50,34 +67,84 @@
         "strokeWidth": 1
       },
       "encoding": {
-        "longitude": { "field": "longitude", "type": "quantitative" },
-        "latitude": { "field": "latitude", "type": "quantitative" },
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
         "size": {
           "field": "workers_2023_24",
           "type": "quantitative",
-          "scale": { "type": "linear", "domain": [0, 14100], "range": [0, 2600] },
+          "scale": {
+            "type": "linear",
+            "domain": [
+              0,
+              14100
+            ],
+            "range": [
+              0,
+              2600
+            ]
+          },
           "legend": {
             "title": "Workers in peak month",
             "orient": "bottom-right",
-            "values": [1000, 5000, 10000],
+            "values": [
+              1000,
+              5000,
+              10000
+            ],
             "format": ",.0f",
             "labelFont": "Inter",
             "titleFont": "Inter",
-            "labelFontSize": 10,
-            "titleFontSize": 10,
+            "labelFontSize": 13,
+            "titleFontSize": 13,
             "symbolFillColor": "#D6538A",
-            "symbolOpacity": 0.7
+            "symbolOpacity": 0.7,
+            "labelColor": "#5B4E49",
+            "titleColor": "#5B4E49",
+            "titleFontWeight": 600
           }
         },
-        "order": { "field": "workers_2023_24", "type": "quantitative", "sort": "descending" },
+        "order": {
+          "field": "workers_2023_24",
+          "type": "quantitative",
+          "sort": "descending"
+        },
         "tooltip": [
-          { "field": "region", "type": "nominal", "title": "Region" },
-          { "field": "state", "type": "nominal", "title": "State" },
-          { "field": "workers_2023_24", "type": "quantitative", "title": "Workers in peak month, 2023–24", "format": ",.0f" },
-          { "field": "rse_2023_24_pct", "type": "quantitative", "title": "RSE (%)", "format": ".0f" }
+          {
+            "field": "region",
+            "type": "nominal",
+            "title": "Region"
+          },
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "workers_2023_24",
+            "type": "quantitative",
+            "title": "Workers in peak month, 2023–24",
+            "format": ",.0f"
+          },
+          {
+            "field": "rse_2023_24_pct",
+            "type": "quantitative",
+            "title": "RSE (%)",
+            "format": ".0f"
+          }
         ]
       }
     }
   ],
-  "config": { "font": "Inter", "view": { "stroke": null } }
+  "config": {
+    "font": "Inter",
+    "view": {
+      "stroke": null
+    }
+  }
 }

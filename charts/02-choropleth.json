@@ -1,10 +1,18 @@
-
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Where are cut flowers most important?",
-    "subtitle": "2024-25 · Cut-flower farm-gate value as a share of reported horticulture value",
-    "color" : "#1f382f"
+    "text": "How important are cut flowers to each state?",
+    "subtitle": "2024-25 · Share of state horticulture value, not where flowers are grown",
+    "color": "#1f382f",
+    "font": "Inter",
+    "fontWeight": 700,
+    "fontSize": 19,
+    "anchor": "start",
+    "offset": 10,
+    "subtitleFont": "Inter",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#74686D",
+    "subtitleFontWeight": "normal"
   },
   "description": "The percentage is cut-flower farm-gate value from ABS Table 5 divided by the sum of the five horticulture summary categories reported for each state in ABS Table 1. The Northern Territory and Australian Capital Territory are shown as no data because a complete state denominator is not available in Table 1.",
   "width": 430,
@@ -53,15 +61,28 @@
             "field": "flower_share_pct",
             "type": "quantitative",
             "scale": {
-              "domain": [0, 5.5],
-              "range": ["#FCE7EF", "#D6538A"],
+              "domain": [
+                0,
+                5.5
+              ],
+              "range": [
+                "#FCE7EF",
+                "#D6538A"
+              ],
               "clamp": true
             },
             "legend": {
               "title": "Cut-flower share (%)",
               "format": ".1f",
               "orient": "bottom",
-              "gradientLength": 220
+              "gradientLength": 220,
+              "labelFont": "Inter",
+              "titleFont": "Inter",
+              "labelFontSize": 13,
+              "titleFontSize": 13,
+              "labelColor": "#5B4E49",
+              "titleColor": "#5B4E49",
+              "titleFontWeight": 600
             }
           },
           "value": "#D8D3D5"
@@ -161,20 +182,6 @@
     "font": "Inter",
     "view": {
       "stroke": null
-    },
-    "title": {
-      "font": "Newsreader",
-      "fontSize": 20,
-      "anchor": "start",
-      "subtitleFont": "Inter",
-      "subtitleFontSize": 13,
-      "subtitleColor": "#74686D"
-    },
-    "legend": {
-      "labelFont": "Inter",
-      "titleFont": "Inter",
-      "labelFontSize": 12,
-      "titleFontSize": 12
     }
   }
 }

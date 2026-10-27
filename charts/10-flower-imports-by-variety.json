@@ -5,12 +5,15 @@
     "text": "What types of flowers come from the top six origins?",
     "subtitle": "Selected partner countries · by flower type · 2024 · US$ million",
     "font": "Inter",
-    "fontSize": 18,
+    "fontWeight": 700,
+    "fontSize": 19,
     "anchor": "start",
     "subtitleFont": "Inter",
     "subtitleFontSize": 12,
     "subtitleColor": "#74686D",
-    "offset": 10
+    "offset": 10,
+    "color": "#1f382f",
+    "subtitleFontWeight": "normal"
   },
   "width": 650,
   "height": 280,
@@ -44,8 +47,14 @@
       "title": "Country Origin",
       "axis": {
         "labelAngle": 0,
-        "labelFontSize": 11,
-        "grid": false
+        "labelFontSize": 13,
+        "grid": false,
+        "labelFont": "Inter",
+        "titleFont": "Inter",
+        "titleFontSize": 13,
+        "labelColor": "#5B4E49",
+        "titleColor": "#5B4E49",
+        "titleFontWeight": 600
       }
     },
     "y": {
@@ -59,7 +68,14 @@
       "axis": {
         "format": "$.0f",
         "grid": true,
-        "gridColor": "#E8DFDB"
+        "gridColor": "#E8DFDB",
+        "labelFont": "Inter",
+        "titleFont": "Inter",
+        "labelFontSize": 13,
+        "titleFontSize": 13,
+        "labelColor": "#5B4E49",
+        "titleColor": "#5B4E49",
+        "titleFontWeight": 600
       }
     },
     "color": {
@@ -86,7 +102,13 @@
         "orient": "bottom",
         "direction": "horizontal",
         "title": "Flower type",
-        "labelFontSize": 10
+        "labelFontSize": 13,
+        "labelFont": "Inter",
+        "titleFont": "Inter",
+        "titleFontSize": 13,
+        "labelColor": "#5B4E49",
+        "titleColor": "#5B4E49",
+        "titleFontWeight": 600
       }
     },
     "order": {
@@ -117,20 +139,31 @@
         "title": "Import value (US$ million)",
         "format": ".3f"
       }
-    ]
+    ],
+    "opacity": {
+      "condition": {
+        "param": "flowerType",
+        "value": 1
+      },
+      "value": 0.25
+    }
   },
   "config": {
     "font": "Inter",
     "view": {
       "stroke": null
-    },
-    "axis": {
-      "labelFont": "Inter",
-      "titleFont": "Inter",
-      "labelFontSize": 11,
-      "titleFontSize": 12,
-      "labelColor": "#5B4E49",
-      "titleColor": "#5B4E49"
     }
-  }
+  },
+  "params": [
+    {
+      "name": "flowerType",
+      "select": {
+        "type": "point",
+        "fields": [
+          "variety"
+        ]
+      },
+      "bind": "legend"
+    }
+  ]
 }
