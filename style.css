@@ -1508,18 +1508,3 @@ section h3,
     grid-template-columns: minmax(0, 1fr);
   }
 }
-
-/* Heatmap and lollipop sit flush right in their column */
-#chart11,
-#chart09 {
-  display: flex;
-  justify-content: flex-end;
-}
-
-#chart11 svg,
-#chart09 svg,
-#chart11 .vega-embed,
-#chart09 .vega-embed {
-  width: auto !important;
-  margin-left: auto;
-}

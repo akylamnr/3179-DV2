@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Lollipop chart of the average import price per kilogram of cut flowers (HS 0603) from each top supplier, with the average of all six marked.",
-  "width": 500,
-  "height": 260,
+  "width": 640,
+  "height": 320,
   "background": "transparent",
   "title": {
     "text": "What each supplier's flowers cost per kilogram",

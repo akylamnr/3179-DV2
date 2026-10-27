@@ -23,7 +23,7 @@
   },
   "title": {
     "text": "When does Australia import cut flowers?",
-    "subtitle": "Monthly CIF import value · complete calendar years 2021-2025 · A$ million",
+    "subtitle": "Monthly CIF import value \u00b7 complete calendar years 2021-2025 \u00b7 A$ million",
     "font": "Inter",
     "fontWeight": 700,
     "fontSize": 19,
@@ -123,7 +123,7 @@
             "orient": "bottom",
             "direction": "horizontal",
             "format": ".0f",
-            "gradientLength": 280,
+            "gradientLength": 340,
             "titleFontSize": 13,
             "labelFontSize": 13,
             "labelFont": "Inter",
@@ -176,12 +176,12 @@
           "value": 0.55
         }
       },
-      "width": 560,
-      "height": 190
+      "width": 680,
+      "height": 230
     },
     {
-      "width": 560,
-      "height": 110,
+      "width": 680,
+      "height": 130,
       "transform": [
         {
           "filter": "datum.year == yr"
@@ -231,7 +231,7 @@
           "axis": {
             "grid": false,
             "format": ".0f",
-            "tickCount": 3,
+            "tickCount": 4,
             "labelFont": "Inter",
             "titleFont": "Inter",
             "labelFontSize": 13,
@@ -239,6 +239,12 @@
             "labelColor": "#5B4E49",
             "titleColor": "#5B4E49",
             "titleFontWeight": 600
+          },
+          "scale": {
+            "domain": [
+              0,
+              22
+            ]
           }
         },
         "tooltip": [
