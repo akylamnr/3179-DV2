@@ -1,9 +1,9 @@
 /* Australia's flower paradox */
+
 :root {
   color-scheme: light;
   --cream: #f9f6f7;
   --surface: #fff;
-  --forest: #28483d;
   --forest-dark: #1f382f;
   --teal: #79a99a;
   --leaf: #329481;
@@ -12,7 +12,6 @@
   --rose: #a64470;
   --warm-grey: #e9e5df;
   --text: #30272b;
-  --muted: #74686d;
   --border: #f0e3e8;
   --soft-pink: #fff7fa;
   --shadow: 0 12px 32px rgb(65 42 52 / 6%);
@@ -44,8 +43,6 @@ html {
 
 body {
   margin: 0;
-  background: var(--cream);
-  color: var(--text);
   font-family: "Inter", Arial, sans-serif;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
@@ -113,9 +110,6 @@ a:focus-visible {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: clamp(28px, 4vw, 48px) max(3%, calc((100% - 1400px) / 2));
-  border-bottom: 1px solid var(--border);
-  background: var(--forest);
   text-align: center;
 }
 
@@ -132,7 +126,6 @@ a:focus-visible {
 
 .hero .eyebrow {
   justify-content: center;
-  font-size: 0.76rem;
 }
 
 .hero .eyebrow::after {
@@ -198,10 +191,6 @@ main .section-heading::after {
   font-size: clamp(1rem, 1.5vw, 1.2rem);
   line-height: 1.45;
   text-align: left;
-}
-
-.hero h1 {
-  color: var(--surface);
 }
 
 .hero .eyebrow,
@@ -598,21 +587,12 @@ section > p:not(.eyebrow, .source) {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 6px 22px;
-  padding: 12px 24px;
-  border-bottom: 1px solid var(--warm-grey);
-  background: rgb(244 248 243 / 92%);
   backdrop-filter: blur(8px);
 }
 
 .chapter-nav a {
-  padding: 4px 2px;
   border-bottom: 2px solid transparent;
-  color: var(--forest);
-  font-size: 0.9rem;
-  font-weight: 600;
   text-decoration: none;
-  transition: color 0.2s, border-color 0.2s;
 }
 
 .chapter-nav a:hover,
@@ -810,8 +790,6 @@ section {
 footer.site-footer {
   margin-top: 0;
   padding: clamp(28px, 4vw, 40px) max(7%, calc((100% - 1180px) / 2));
-  background: var(--forest);
-  color: var(--surface);
 }
 
 .footer-grid {
@@ -864,21 +842,14 @@ footer.site-footer {
 }
 
 .site-footer a {
-  color: #ffd6e5;
   text-decoration: underline;
   text-underline-offset: 3px;
   overflow-wrap: anywhere;
   transition: color 0.2s ease;
 }
 
-.site-footer a:hover,
-.site-footer a:focus-visible {
-  color: var(--surface);
-}
-
 .site-footer .footer-date {
   margin-top: 24px;
-  color: #f4e6ed;
   font-size: 0.85rem;
 }
 
@@ -887,6 +858,7 @@ footer.site-footer {
 }
 
 /* Custom chart tooltip: borderless, page-coloured, accent from the hovered mark */
+
 .chart-tooltip {
   --tip-accent: var(--forest);
   position: fixed;
@@ -955,8 +927,8 @@ footer.site-footer {
 
 @media (max-width: 900px) {
   .chart-with-story,
-  .chart-with-story.story-first,
-  .chart-with-story.flip {
+    .chart-with-story.story-first,
+    .chart-with-story.flip {
     grid-template-columns: minmax(0, 1fr);
     gap: 20px;
   }
@@ -968,8 +940,8 @@ footer.site-footer {
 
 @media (max-width: 760px) {
   .chart-pair,
-  .trade-map-layout,
-  .trade-map-layout.flip {
+    .trade-map-layout,
+    .trade-map-layout.flip {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -996,10 +968,6 @@ footer.site-footer {
     width: calc(100% - 32px);
   }
 
-  .hero {
-    padding: 32px 24px;
-  }
-
   section {
     padding: 32px 0;
   }
@@ -1019,13 +987,12 @@ footer.site-footer {
   }
 
   *,
-  *::before,
-  *::after {
+    *::before,
+    *::after {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
   }
 }
-
 
 /* =========================================
    SECTION 6 — DOMESTIC DEMAND KPI CARDS
@@ -1062,59 +1029,26 @@ footer.site-footer {
 }
 
 /* Four-card responsive layout */
-.demand-kpi-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
-}
 
 /* Individual cards */
-.demand-kpi-card {
-  min-width: 0;
-  padding: 24px 20px;
-
-  /* Darker blush surface for better separation */
-  background: #F1E9ED;
-
-  /* Faint outline */
-  border: 1px solid #E2D3DB;
-
-  /* Bold pink accent on the left */
-  border-left: 5px solid #D94F8B;
-
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(65, 42, 52, 0.04);
-}
 
 /* Large percentage */
+
 .demand-kpi-card .demand-kpi-value {
-  margin: 0 0 14px;
-  color: #C44578;
   font-family: "Inter", Arial, sans-serif;
-  font-size: clamp(2rem, 3vw, 2.8rem);
-  font-weight: 700;
-  line-height: 1.1;
 }
 
 /* Card title */
+
 .demand-kpi-card h4 {
-  margin: 0 0 10px;
-  color: #30272b;
   font-family: "Inter", Arial, sans-serif;
-  font-size: 0.98rem;
   font-weight: 700;
-  line-height: 1.4;
 }
 
 /* Card description */
-.demand-kpi-card > p:not(.demand-kpi-value) {
-  margin: 0;
-  color: #30272b;
-  font-size: 0.9rem;
-  line-height: 1.65;
-}
 
 /* Source and citation */
+
 .demand-kpi-source {
   margin: 16px 0 0;
   color: #766B72;
@@ -1129,23 +1063,8 @@ footer.site-footer {
 }
 
 /* Tablet */
-@media (max-width: 850px) {
-  .demand-kpi-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
 
 /* Mobile */
-@media (max-width: 480px) {
-  .demand-kpi-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .demand-kpi-card {
-    padding: 20 px;
-  }
-}
-
 
 /* Warm botanical editorial theme */
 
@@ -1162,12 +1081,14 @@ footer.site-footer {
 }
 
 /* Main page */
+
 body {
   background: var(--page-bg);
   color: var(--body-text);
 }
 
 /* Hero */
+
 .hero {
   background: var(--hero-bg);
   color: var(--forest);
@@ -1176,6 +1097,7 @@ body {
 }
 
 /* Align hero with the main content */
+
 .hero-inner {
   width: 100%;
   max-width: 1170px;
@@ -1183,6 +1105,7 @@ body {
 }
 
 /* Small course label */
+
 .hero .eyebrow {
   margin: 0 0 16px;
   font-size: 0.76rem;
@@ -1192,6 +1115,7 @@ body {
 }
 
 /* Serif title */
+
 .hero h1 {
   max-width: 1050px;
   margin: 0 0 16px;
@@ -1205,6 +1129,7 @@ body {
 }
 
 /* Subtitle */
+
 .hero p {
   max-width: 680px;
   margin: 0;
@@ -1215,12 +1140,14 @@ body {
 }
 
 /* Main section titles */
+
 section h2,
 section h3 {
   color: var(--forest);
 }
 
 /* Explanatory callouts */
+
 .callout {
   background: var(--sage-bg);
   color: var(--body-text);
@@ -1239,32 +1166,6 @@ section h3 {
     font-size: 1rem;
   }
 }
-
-.demand-kpi-card {
-  background: #EEE5D9;
-  border: 1px solid #D8C8B8;
-  border-left: 5px solid #A17855;
-  border-radius: 12px;
-  padding: 24px 20px;
-  box-shadow: 0 4px 12px rgba(65, 42, 52, 0.04);
-}
-
-.demand-kpi-card .demand-kpi-value {
-  color: #78563F;
-  font-size: clamp(2rem, 3vw, 2.8rem);
-  font-weight: 700;
-  line-height: 1.1;
-  margin: 0 0 14px;
-}
-
-.demand-kpi-card h4 {
-  color: #294638;
-}
-
-.demand-kpi-card > p:not(.demand-kpi-value) {
-  color: #5F5148;
-}
-
 
 /* Domestic-demand KPI cards — compact and responsive */
 
@@ -1316,6 +1217,7 @@ section h3 {
 }
 
 /* Tablet: 2 cards per row */
+
 @media (max-width: 900px) {
   .demand-kpi-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1324,6 +1226,7 @@ section h3 {
 }
 
 /* Mobile: 1 card per row */
+
 @media (max-width: 480px) {
   .demand-kpi-grid {
     grid-template-columns: minmax(0, 1fr);
@@ -1333,7 +1236,6 @@ section h3 {
     padding: 16px;
   }
 }
-
 
 .conclusion-text {
   max-width: 68ch;
@@ -1414,6 +1316,7 @@ section h3 {
 }
 
 /* Layout and colour polish */
+
 .intro-columns {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1432,12 +1335,13 @@ section h3 {
 
 @media (max-width: 800px) {
   .intro-columns,
-  .bump-layout {
+    .bump-layout {
     grid-template-columns: minmax(0, 1fr);
   }
 }
 
 /* Chapter bar: soft pill tabs */
+
 .chapter-nav {
   gap: 6px;
   padding: 10px 24px;
@@ -1465,6 +1369,7 @@ section h3 {
 }
 
 /* Footer matches the hero */
+
 footer.site-footer {
   background: var(--hero-bg);
   border-top: 1px solid #D9DBD0;
@@ -1497,6 +1402,7 @@ footer.site-footer {
 }
 
 /* Keep every text line to roughly ten words */
+
 main p:not(.source):not(.eyebrow):not(.subtitle),
 .chart-story p,
 .chart-text,
@@ -1517,6 +1423,7 @@ main p:not(.source):not(.eyebrow):not(.subtitle),
 }
 
 /* Vega-Lite bound slider */
+
 .vega-bindings {
   display: flex;
   align-items: center;
