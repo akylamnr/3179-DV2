@@ -1440,3 +1440,12 @@ main p:not(.source):not(.eyebrow):not(.subtitle),
   width: 220px;
   accent-color: var(--forest);
 }
+
+/* Subheadings (h3) use the sans-serif body font */
+section h3,
+.chart-story h3,
+.chart-card h3,
+.visualization-heading,
+.chart-heading {
+  font-family: "Inter", Arial, sans-serif;
+}
