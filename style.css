@@ -1508,3 +1508,31 @@ section h3,
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Lollipop: chart on top, story text in two columns beneath */
+#imports .chart-with-story.price-stack {
+  display: block;
+}
+
+.price-stack .chart-story {
+  margin-top: 32px;
+  column-count: 2;
+  column-gap: clamp(28px, 4vw, 56px);
+}
+
+.price-stack .chart-story p {
+  max-width: none;
+  break-inside: avoid;
+}
+
+.price-stack .chart-story > p:first-of-type > strong:first-child {
+  font-size: 1.15rem;
+  display: inline;
+  margin: 0;
+}
+
+@media (max-width: 800px) {
+  .price-stack .chart-story {
+    column-count: 1;
+  }
+}
