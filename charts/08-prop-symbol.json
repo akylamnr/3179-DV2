@@ -15,8 +15,8 @@
     "subtitle": "Circle size shows farm-gate production value · 2024–25"
   },
   "description": "Australian state map with one proportional circle per state, showing farm-gate production value summed across the five ABS horticulture summary categories. Circle size is grouped into three value classes.",
-  "width": 350,
-  "height": 360,
+  "width": 430,
+  "height": 440,
   "background": "transparent",
   "projection": {
     "type": "mercator",
@@ -24,10 +24,10 @@
       134,
       -27
     ],
-    "scale": 405,
+    "scale": 520,
     "translate": [
-      175,
-      180
+      215,
+      215
     ]
   },
   "layer": [
@@ -146,9 +146,9 @@
               "A$4b or more"
             ],
             "range": [
-              100,
-              700,
-              1800
+              150,
+              1300,
+              4200
             ]
           },
           "legend": {
@@ -156,7 +156,7 @@
             "orient": "bottom",
             "direction": "horizontal",
             "symbolType": "circle",
-            "symbolFillColor": "#D6538A",
+            "symbolFillColor": "#28483D",
             "symbolStrokeColor": "#FFFFFF",
             "labelFontSize": 13,
             "titleFontSize": 13,
@@ -164,7 +164,9 @@
             "titleFont": "Inter",
             "labelColor": "#1B2B26",
             "titleColor": "#1B2B26",
-            "titleFontWeight": 600
+            "titleFontWeight": 600,
+            "symbolOpacity": 0.82,
+            "columnPadding": 24
           }
         },
         "tooltip": [
@@ -193,47 +195,55 @@
           {
             "code": "WA",
             "longitude": 121.5,
-            "latitude": -27.0
+            "latitude": -28.73,
+            "name": "Western Australia"
           },
           {
             "code": "NT",
             "longitude": 133.5,
-            "latitude": -21.0
+            "latitude": -21.0,
+            "name": "Northern Territory"
           },
           {
             "code": "QLD",
             "longitude": 146.5,
-            "latitude": -24.0
+            "latitude": -28.45,
+            "name": "Queensland"
           },
           {
             "code": "SA",
             "longitude": 135.0,
-            "latitude": -31.5
+            "latitude": -34.41,
+            "name": "South Australia"
           },
           {
             "code": "NSW",
             "longitude": 150.5,
-            "latitude": -34.0
+            "latitude": -36.91,
+            "name": "New South Wales"
           },
           {
             "code": "VIC",
             "longitude": 142.5,
-            "latitude": -38.2
+            "latitude": -42.65,
+            "name": "Victoria"
           },
           {
             "code": "TAS",
             "longitude": 146.5,
-            "latitude": -43.5
+            "latitude": -45.23,
+            "name": "Tasmania"
           }
         ]
       },
       "mark": {
         "type": "text",
         "font": "Inter",
-        "fontSize": 12,
+        "fontSize": 13,
         "fontWeight": 700,
-        "color": "#30272B",
-        "dy": 4
+        "color": "#1B2B26",
+        "stroke": "#F4F2EE",
+        "strokeWidth": 3
       },
       "encoding": {
         "longitude": {
@@ -245,7 +255,7 @@
           "type": "quantitative"
         },
         "text": {
-          "field": "code",
+          "field": "name",
           "type": "nominal"
         }
       }
