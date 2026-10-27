@@ -1453,7 +1453,11 @@ section h3,
 /* Bold lead-in sentence acts as the subheading */
 .chart-story > p:first-of-type > strong:first-child {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   font-size: 1.6rem;
   line-height: 1.2;
+}
+
+.chart-story p {
+  line-height: 1.6;
 }

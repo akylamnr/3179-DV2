@@ -106,7 +106,13 @@
       "symbolOpacity": 0.7,
       "labelColor": "#5B4E49",
       "titleColor": "#5B4E49",
-      "titleFontWeight": 600
+      "titleFontWeight": 600,
+      "rowPadding": 14,
+      "padding": 8,
+      "offset": 10,
+      "titlePadding": 12,
+      "symbolStrokeColor": "#FFFFFF",
+      "labelOffset": 10
      }
     },
     "order": {
