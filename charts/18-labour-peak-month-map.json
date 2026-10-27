@@ -2,21 +2,21 @@
  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
  "title": {
   "text": "Where does Australian horticulture need the most workers?",
-  "subtitle": "Sum of regional peak-month workers per hexagon, 2023–24",
+  "subtitle": "Total labour use in the peak month · 2023–24 · Number of workers by region",
   "font": "Inter",
   "fontWeight": 700,
   "fontSize": 19,
   "anchor": "start",
   "subtitleFont": "Inter",
   "subtitleFontSize": 12,
-  "subtitleColor": "#6b6b6b",
+  "subtitleColor": "#74686D",
   "offset": 10,
   "color": "#1f382f",
   "subtitleFontWeight": "normal"
  },
- "description": "Hexagon-bin map of Australia. Each hexagon sums the estimated workers used in the peak month in 2023-24 across the ABARES labour regions whose centres fall inside it.",
+ "description": "Map of ABARES horticulture labour regions with proportional circles showing estimated total workers used in the peak month in 2023-24.",
  "width": 560,
- "height": 480,
+ "height": 500,
  "background": "transparent",
  "projection": {
   "type": "mercator",
@@ -27,93 +27,115 @@
   "scale": 700,
   "translate": [
    270,
-   225
+   235
   ]
  },
  "layer": [
   {
    "data": {
-    "url": "maps/australia_states.topojson",
+    "url": "maps/australia_sa4_labour_regions.topojson",
     "format": {
      "type": "topojson",
-     "feature": "australia_states"
+     "feature": "regions"
     }
    },
    "mark": {
     "type": "geoshape",
-    "fill": "#F1EFEA",
-    "stroke": "#D9D5CC",
-    "strokeWidth": 0.6
+    "fill": "#DFDEDA",
+    "stroke": "#FFFFFF",
+    "strokeWidth": 0.5
    }
   },
   {
    "data": {
-    "url": "data/labour_peak_month_hexbins.geojson",
+    "url": "data/labour_peak_month_by_region.csv",
     "format": {
-     "type": "json",
-     "property": "features"
+     "type": "csv",
+     "parse": {
+      "longitude": "number",
+      "latitude": "number",
+      "workers_2023_24": "number",
+      "rse_2023_24_pct": "number"
+     }
     }
    },
    "mark": {
-    "type": "geoshape",
+    "type": "circle",
+    "color": "#697875",
+    "opacity": 0.65,
     "stroke": "#FFFFFF",
-    "strokeWidth": 1.5,
-    "opacity": 0.95
+    "strokeWidth": 1
    },
    "encoding": {
-    "color": {
-     "field": "properties.workers",
+    "longitude": {
+     "field": "longitude",
+     "type": "quantitative"
+    },
+    "latitude": {
+     "field": "latitude",
+     "type": "quantitative"
+    },
+    "size": {
+     "field": "workers_2023_24",
      "type": "quantitative",
      "scale": {
-      "type": "threshold",
+      "type": "linear",
       "domain": [
-       2000,
-       5000,
-       10000,
-       20000,
-       30000
+       0,
+       14100
       ],
       "range": [
-       "#F6E8D3",
-       "#EFCF9F",
-       "#E6AE68",
-       "#D9822B",
-       "#B3601C",
-       "#7A3D0E"
+       0,
+       2600
       ]
      },
      "legend": {
-      "title": "Workers",
+      "title": "Workers in peak month",
       "orient": "right",
-      "direction": "vertical",
+      "values": [
+       1000,
+       5000,
+       10000
+      ],
+      "format": ",.0f",
       "labelFont": "Inter",
       "titleFont": "Inter",
-      "labelFontSize": 12,
+      "labelFontSize": 13,
       "titleFontSize": 13,
+      "symbolFillColor": "#697875",
+      "symbolOpacity": 0.7,
       "labelColor": "#5B4E49",
-      "titleColor": "#000",
-      "titleFontWeight": 700,
-      "symbolType": "square",
-      "symbolSize": 200,
-      "format": ",.0f"
+      "titleColor": "#5B4E49",
+      "titleFontWeight": 600
      }
+    },
+    "order": {
+     "field": "workers_2023_24",
+     "type": "quantitative",
+     "sort": "descending"
     },
     "tooltip": [
      {
-      "field": "properties.workers",
-      "type": "quantitative",
-      "title": "Workers",
-      "format": ",.0f"
+      "field": "region",
+      "type": "nominal",
+      "title": "Region"
      },
      {
-      "field": "properties.states",
+      "field": "state",
       "type": "nominal",
       "title": "State"
      },
      {
-      "field": "properties.regions",
-      "type": "nominal",
-      "title": "Regions"
+      "field": "workers_2023_24",
+      "type": "quantitative",
+      "title": "Workers in peak month, 2023–24",
+      "format": ",.0f"
+     },
+     {
+      "field": "rse_2023_24_pct",
+      "type": "quantitative",
+      "title": "RSE (%)",
+      "format": ".0f"
      }
     ]
    }
@@ -124,11 +146,5 @@
   "view": {
    "stroke": null
   }
- },
- "padding": {
-  "left": 5,
-  "right": 5,
-  "top": 5,
-  "bottom": 5
  }
 }
