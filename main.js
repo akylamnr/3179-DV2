@@ -11,11 +11,12 @@ const sharedConfig = {
     font: "Inter",
     fontWeight: 700,
     color: "#1f382f",
-    fontSize: 19,
+    fontSize: 20,
     anchor: "start",
-    offset: 10,
+    offset: 12,
     subtitleFont: "Inter",
-    subtitleFontSize: 12,
+    subtitleFontSize: 14,
+    subtitlePadding: 4,
     subtitleColor: "#74686D"
   },
 

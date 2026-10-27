@@ -2,11 +2,18 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Total Horticulture Production by State",
+    "subtitle": "Farm-gate value of the five horticulture categories · 2024–25",
     "font": "Inter",
-    "fontWeight": 700,
     "fontSize": 20,
+    "fontWeight": 700,
+    "color": "#1f382f",
     "anchor": "start",
-    "color": "#1f382f"
+    "offset": 12,
+    "subtitleFont": "Inter",
+    "subtitleFontSize": 14,
+    "subtitleFontWeight": "normal",
+    "subtitleColor": "#74686D",
+    "subtitlePadding": 4
   },
   "description": "Australian state map with one proportional circle per state, showing farm-gate production value summed across the five ABS horticulture summary categories. Circle size is grouped into three value classes.",
   "width": 350,
@@ -35,9 +42,9 @@
       },
       "mark": {
         "type": "geoshape",
-        "fill": "#D8D5D2",
-        "stroke": "#28483D",
-        "strokeWidth": 0.5
+        "fill": "#ECE6E0",
+        "stroke": "#A8998C",
+        "strokeWidth": 0.6
       }
     },
     {
@@ -88,8 +95,8 @@
                 },
                 {
                   "state": "Victoria",
-                  "longitude": 142.5,
-                  "latitude": -37.0
+                  "longitude": 143.6,
+                  "latitude": -36.6
                 },
                 {
                   "state": "Tasmania",
@@ -113,8 +120,8 @@
         "type": "point",
         "shape": "circle",
         "filled": true,
-        "color": "#28483D",
-        "opacity": 0.22
+        "color": "#5A3A22",
+        "opacity": 0.85
       },
       "encoding": {
         "longitude": {
@@ -150,8 +157,7 @@
             "orient": "bottom",
             "direction": "horizontal",
             "symbolType": "circle",
-            "symbolFillColor": "#D6538A",
-            "symbolStrokeColor": "#FFFFFF",
+            "symbolFillColor": "#5A3A22",
             "labelFontSize": 13,
             "titleFontSize": 13,
             "labelFont": "Inter",
@@ -160,7 +166,9 @@
             "titleColor": "#5B4E49",
             "titleFontWeight": 600,
             "titleLimit": 400,
-            "labelLimit": 200
+            "labelLimit": 200,
+            "symbolOpacity": 0.85,
+            "symbolStrokeWidth": 0
           }
         },
         "tooltip": [
@@ -187,49 +195,51 @@
       "data": {
         "values": [
           {
-            "code": "WA",
-            "longitude": 121.5,
-            "latitude": -27.0
+            "name": "Western\nAustralia",
+            "longitude": 121.6,
+            "latitude": -28.6
           },
           {
-            "code": "NT",
+            "name": "Northern\nTerritory",
             "longitude": 133.5,
-            "latitude": -21.0
+            "latitude": -19.6
           },
           {
-            "code": "QLD",
-            "longitude": 146.5,
-            "latitude": -24.0
+            "name": "Queensland",
+            "longitude": 144.0,
+            "latitude": -26.4
           },
           {
-            "code": "SA",
-            "longitude": 135.0,
-            "latitude": -31.5
+            "name": "South\nAustralia",
+            "longitude": 134.2,
+            "latitude": -33.1
           },
           {
-            "code": "NSW",
-            "longitude": 150.5,
-            "latitude": -34.0
+            "name": "New South\nWales",
+            "longitude": 145.0,
+            "latitude": -32.4
           },
           {
-            "code": "VIC",
-            "longitude": 142.5,
-            "latitude": -38.2
+            "name": "Victoria",
+            "longitude": 144.6,
+            "latitude": -39.7
           },
           {
-            "code": "TAS",
-            "longitude": 146.5,
-            "latitude": -43.5
+            "name": "Tasmania",
+            "longitude": 146.6,
+            "latitude": -44.6
           }
         ]
       },
       "mark": {
         "type": "text",
         "font": "Inter",
-        "fontSize": 12,
+        "fontSize": 11,
         "fontWeight": 700,
-        "color": "#30272B",
-        "dy": 4
+        "color": "#2E2A27",
+        "lineBreak": "\n",
+        "align": "center",
+        "baseline": "middle"
       },
       "encoding": {
         "longitude": {
@@ -241,8 +251,7 @@
           "type": "quantitative"
         },
         "text": {
-          "field": "code",
-          "type": "nominal"
+          "field": "name"
         }
       }
     }

@@ -10,15 +10,16 @@
     "text": "Where Australia's Imported Flowers Come From",
     "subtitle": "Import value in USD million · 2025",
     "font": "Inter",
-    "fontSize": 23,
+    "fontSize": 26,
     "fontWeight": 700,
     "color": "#1f382f",
-    "subtitleFont": "Inter",
-    "subtitleFontSize": 15,
-    "subtitleColor": "#74686D",
     "anchor": "start",
+    "offset": 16,
+    "subtitleFont": "Inter",
+    "subtitleFontSize": 18,
     "subtitleFontWeight": "normal",
-    "offset": 20
+    "subtitleColor": "#74686D",
+    "subtitlePadding": 5
   },
   "data": [
     {
@@ -139,12 +140,12 @@
         "Vietnam"
       ],
       "range": [
-        "#329481",
-        "#EE9F27",
-        "#B695C9",
-        "#8A6E3B",
-        "#A64470",
-        "#B7C75E"
+        "#2E9FD0",
+        "#1F9A55",
+        "#6A4FC0",
+        "#CBC5BF",
+        "#CBC5BF",
+        "#D2A21C"
       ]
     },
     {
@@ -161,13 +162,13 @@
         "Australia"
       ],
       "range": [
-        "#6E9F7F",
-        "#C58A3A",
-        "#D4D2CC",
-        "#35A99A",
-        "#B5B4AF",
-        "#B5B4AF",
-        "#B5B4AF",
+        "#DDD8D3",
+        "#DDD8D3",
+        "#E6E2DE",
+        "#9F9891",
+        "#CBC5BF",
+        "#CBC5BF",
+        "#DDD8D3",
         "#28483D"
       ]
     }

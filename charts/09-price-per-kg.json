@@ -6,17 +6,18 @@
   "background": "transparent",
   "title": {
     "text": "What Each Supplier's Flowers Cost per Kilogram",
-    "subtitle": "Import value divided by weight · 2024.",
+    "subtitle": "Import value divided by weight · 2024",
     "font": "Inter",
+    "fontSize": 20,
     "fontWeight": 700,
-    "fontSize": 19,
     "color": "#1f382f",
     "anchor": "start",
-    "offset": 10,
+    "offset": 12,
     "subtitleFont": "Inter",
-    "subtitleFontSize": 15,
+    "subtitleFontSize": 14,
+    "subtitleFontWeight": "normal",
     "subtitleColor": "#74686D",
-    "subtitleFontWeight": "normal"
+    "subtitlePadding": 4
   },
   "data": {
     "url": "data/flower_import_flows.csv",
@@ -60,7 +61,7 @@
     {
       "mark": {
         "type": "rule",
-        "color": "#D6538A",
+        "color": "#7A9A2E",
         "strokeWidth": 3
       },
       "encoding": {
@@ -105,7 +106,7 @@
     {
       "mark": {
         "type": "circle",
-        "color": "#D6538A",
+        "color": "#7A9A2E",
         "size": 190,
         "opacity": 1
       },

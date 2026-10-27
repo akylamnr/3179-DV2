@@ -1,18 +1,19 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Where Are Flowers Most Prominent in State Horticulture?",
-    "subtitle": "Flower-related farm-gate value as a share of reported horticulture value · 2024–25",
-    "color": "#1f382f",
+    "text": "Where Are Flowers Most Prominent?",
+    "subtitle": "Flower-related share of each state's horticulture value · 2024–25",
     "font": "Inter",
+    "fontSize": 20,
     "fontWeight": 700,
-    "fontSize": 19,
+    "color": "#1f382f",
     "anchor": "start",
-    "offset": 10,
+    "offset": 12,
     "subtitleFont": "Inter",
-    "subtitleFontSize": 13,
+    "subtitleFontSize": 14,
+    "subtitleFontWeight": "normal",
     "subtitleColor": "#74686D",
-    "subtitleFontWeight": "normal"
+    "subtitlePadding": 4
   },
   "description": "The percentage is cut-flower farm-gate value from ABS Table 5 divided by the sum of the five horticulture summary categories reported for each state in ABS Table 1. The Northern Territory and Australian Capital Territory are shown as no data because a complete state denominator is not available in Table 1.",
   "width": 430,
@@ -66,8 +67,8 @@
                 5.5
               ],
               "range": [
-                "#FCE7EF",
-                "#D6538A"
+                "#F1E8DC",
+                "#9C6B43"
               ],
               "clamp": true
             },
@@ -174,6 +175,13 @@
         "text": {
           "field": "Name",
           "type": "nominal"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.Name === 'Western Australia'",
+            "value": "#FFFFFF"
+          },
+          "value": "#2E2A27"
         }
       }
     }

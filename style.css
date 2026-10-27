@@ -261,7 +261,7 @@ section > p:not(.eyebrow, .source) {
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) minmax(250px, 0.9fr);
   gap: clamp(24px, 4vw, 44px);
-  align-items: start;
+  align-items: center;
 }
 
 .trade-map-main,
@@ -270,7 +270,7 @@ section > p:not(.eyebrow, .source) {
 }
 
 .trade-map-aside {
-  padding-top: 51px;
+  padding-top: 0;
 }
 
 .trade-map-main .vega-embed {
@@ -733,9 +733,19 @@ section {
 
 .chart-with-story {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.9fr);
+  /* --story-col narrows the text column on rows with short text so the
+     text runs closer to the chart's height (set per row in index.html). */
+  grid-template-columns: minmax(0, 1.35fr) var(--story-col, minmax(240px, 0.9fr));
   gap: clamp(24px, 4vw, 40px);
   align-items: center;
+}
+
+.story-narrow {
+  --story-col: minmax(240px, 300px);
+}
+
+.story-medium {
+  --story-col: minmax(240px, 340px);
 }
 
 .chart-with-story.story-first {
@@ -743,7 +753,7 @@ section {
 }
 
 .chart-with-story.flip {
-  grid-template-columns: minmax(240px, 0.9fr) minmax(0, 1.35fr);
+  grid-template-columns: var(--story-col, minmax(240px, 0.9fr)) minmax(0, 1.35fr);
 }
 
 .trade-map-layout.flip {
@@ -1506,14 +1516,17 @@ section h3,
 /* Conclusion: four summary points, then the consumer-demand panel */
 #conclusion .conclusion-text {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px 48px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px 40px;
   max-width: none;
-  margin: 0 0 40px;
+  margin: 44px 0 0;
+  padding-top: 32px;
+  border-top: 1px solid var(--warm-grey);
 }
 
 #conclusion .conclusion-text p {
-  max-width: 48ch;
+  max-width: none;
+  margin: 0;
 }
 
 #conclusion .conclusion-text strong:first-child {
@@ -1528,10 +1541,11 @@ section h3,
 
 #conclusion .conclusion-closing {
   max-width: 68ch;
-  margin: 36px 0 0;
+  margin: 32px 0 0;
   color: var(--forest);
-  font-family: "Fraunces", "Newsreader", Georgia, serif;
-  font-size: 1.3rem;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
   line-height: 1.5;
 }
 
@@ -1539,4 +1553,42 @@ section h3,
   #conclusion .conclusion-text {
     grid-template-columns: minmax(0, 1fr);
   }
+}
+
+/* Section dividers: each chapter opens on a full-width band
+   in the hero/footer sage, with a "Section N of 6" label. */
+main > section {
+  padding-top: 0;
+  border-bottom: 0;
+}
+
+main .section-heading {
+  position: relative;
+  margin: 0 0 36px;
+  padding-block: 30px 28px;
+  background: var(--hero-bg);
+  /* paint the band edge to edge without widening the page */
+  box-shadow: 0 0 0 100vmax var(--hero-bg);
+  clip-path: inset(0 -100vmax);
+}
+
+main .section-heading::before {
+  display: block;
+  margin-bottom: 8px;
+  color: #6B7A6F;
+  content: attr(data-kicker);
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+main .section-heading::after {
+  display: none;
+}
+
+main > section + section {
+  margin-top: 28px;
 }

@@ -4,19 +4,20 @@
   "text": "Where Does Australian Horticulture Need The Most Workers?",
   "subtitle": "Total labour use in the peak month · 2023–24 · Number of workers by region",
   "font": "Inter",
+  "fontSize": 20,
   "fontWeight": 700,
-  "fontSize": 22,
-  "anchor": "start",
-  "subtitleFont": "Inter",
-  "subtitleFontSize": 15,
-  "subtitleColor": "#74686D",
-  "offset": 15,
   "color": "#1f382f",
-  "subtitleFontWeight": "normal"
+  "anchor": "start",
+  "offset": 12,
+  "subtitleFont": "Inter",
+  "subtitleFontSize": 14,
+  "subtitleFontWeight": "normal",
+  "subtitleColor": "#74686D",
+  "subtitlePadding": 4
  },
  "description": "Map of ABARES horticulture labour regions with proportional circles showing estimated total workers used in the peak month in 2023-24.",
- "width": 560,
- "height": 500,
+ "width": 465,
+ "height": 415,
  "background": "transparent",
  "projection": {
   "type": "mercator",
@@ -24,10 +25,10 @@
    134,
    -28
   ],
-  "scale": 700,
+  "scale": 580,
   "translate": [
-   270,
-   235
+   224,
+   195
   ]
  },
  "layer": [
@@ -44,6 +45,22 @@
     "fill": "#DFDEDA",
     "stroke": "#FFFFFF",
     "strokeWidth": 0.5
+   }
+  },
+  {
+   "data": {
+    "url": "maps/australia_states.topojson",
+    "format": {
+     "type": "topojson",
+     "feature": "australia_states"
+    }
+   },
+   "mark": {
+    "type": "geoshape",
+    "filled": false,
+    "fill": null,
+    "stroke": "#8C817B",
+    "strokeWidth": 1.1
    }
   },
   {
@@ -86,7 +103,7 @@
       ],
       "range": [
        0,
-       2600
+       1785
       ]
      },
      "legend": {

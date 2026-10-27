@@ -5,19 +5,19 @@
     "text": "Vietnam Climbs to Second Among Australia's Flower Suppliers",
     "subtitle": "Annual import value for fresh-cut flowers and buds (2025 from WITS, HS 0603) · 2017–2025 · Rank 1 = largest",
     "font": "Inter",
+    "fontSize": 20,
     "fontWeight": 700,
-    "fontSize": 23,
-    "anchor": "start",
-    "subtitleFont": "Inter",
-    "subtitleFontSize": 16,
-    "subtitleColor": "#5F5559",
-    "offset": 20,
     "color": "#1f382f",
-    "subtitleFontWeight": "normal"
+    "anchor": "start",
+    "offset": 12,
+    "subtitleFont": "Inter",
+    "subtitleFontSize": 14,
+    "subtitleFontWeight": "normal",
+    "subtitleColor": "#74686D",
+    "subtitlePadding": 4
   },
   "width": 700,
   "height": 300,
- 
   "background": "transparent",
   "data": {
     "url": "data/flower_imports_by_country_year.csv",
@@ -150,12 +150,12 @@
           "Vietnam"
         ],
         "range": [
-          "#329481",
-          "#EE9F27",
-          "#B695C9",
-          "#8A6E3B",
-          "#A64470",
-          "#B7C75E"
+          "#2E9FD0",
+          "#1F9A55",
+          "#6A4FC0",
+          "#BDB6AF",
+          "#BDB6AF",
+          "#D2A21C"
         ]
       },
       "legend": null
