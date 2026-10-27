@@ -1,5 +1,15 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "What Categories Make Up Horticulture?",
+    "subtitle": "Based on farm-gate value (A$ billion) · 2024-25",
+    "font": "Inter",
+    "fontSize": 20,
+    "anchor": "start",
+    "subtitleFont": "Inter",
+    "subtitleFontSize": 13,
+    "subtitleColor": "#74686D"
+  },
   "background": "transparent",
   "width": 320,
   "height": 340,

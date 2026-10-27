@@ -1,0 +1,37 @@
+state,region,longitude,latitude,workers_2023_24,rse_2023_24_pct
+New South Wales,"Capital Region, Illawarra and Southern Highlands",149.407,-35.46,1250,18
+New South Wales,"Central Coast, Hunter Valley and Newcastle",151.026,-32.444,1930,20
+New South Wales,Central West,148.356,-33.217,2320,20
+New South Wales,Coffs Harbour - Grafton,152.774,-29.816,8130,34
+New South Wales,Far West and Murray,144.8,-31.778,3380,14
+New South Wales,"Mid North Coast, New England and North West",150.966,-30.306,3140,44
+New South Wales,Richmond - Tweed,153.064,-28.744,1770,6
+New South Wales,Riverina,146.772,-34.623,3700,12
+New South Wales,Sydney,150.684,-33.748,2390,11
+Victoria,Ballarat and Bendigo,143.926,-36.963,1790,13
+Victoria,"Geelong, Warrnambool and South West",142.633,-37.994,980,13
+Victoria,Hume and Latrobe - Gippsland,146.972,-37.298,5580,25
+Victoria,Melbourne and Mornington Peninsula,145.129,-37.784,11360,14
+Victoria,North West,142.238,-35.868,14100,10
+Victoria,Shepparton,145.168,-36.252,4720,12
+Queensland,"Brisbane, Gold Coast and Logan",153.086,-27.907,560,40
+Queensland,Cairns,145.494,-17.612,4740,15
+Queensland,Darling Downs and Toowoomba,149.392,-27.321,5330,32
+Queensland,"Central, Mackay and Townsville",147.949,-22.257,3420,17
+Queensland,Ipswich and Moreton Bay,152.563,-27.323,2930,17
+Queensland,Outback Qld,142.527,-21.821,3030,19
+Queensland,Sunshine Coast,152.909,-26.589,1960,36
+Queensland,Wide Bay,151.737,-25.639,8660,18
+South Australia,Adelaide - Central and Hills,138.837,-34.971,3460,20
+South Australia,Adelaide,138.618,-34.876,7400,13
+South Australia,Barossa and Outback,135.509,-29.662,4220,9
+South Australia,South East SA,140.105,-35.689,10220,12
+Western Australia,Bunbury,116.004,-33.908,5340,12
+Western Australia,Perth - West,115.788,-31.894,3520,64
+Western Australia,Perth - East,116.096,-32.022,1020,7
+Western Australia,Wheat Belt,117.918,-32.067,3430,25
+Western Australia,Outback WA,122.667,-24.748,850,14
+Tasmania,South East,146.865,-42.623,3010,16
+Tasmania,North East,147.388,-41.497,5750,46
+Tasmania,West,145.562,-41.731,3260,30
+Northern Territory,All,133.369,-19.479,2700,27

@@ -42,7 +42,7 @@
       ],
       "mark": {
         "type": "geoshape",
-        "stroke": "#28483D",
+        "stroke": "#000000",
         "strokeWidth": 0.5
       },
       "encoding": {
@@ -53,7 +53,7 @@
             "type": "quantitative",
             "scale": {
               "domain": [0, 5.5],
-              "range": ["#E5F0E9", "#28483D"],
+              "range": ["#FCE7EF", "#D6538A"],
               "clamp": true
             },
             "legend": {

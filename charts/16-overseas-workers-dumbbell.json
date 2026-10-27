@@ -1,0 +1,67 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Horticulture farms increasingly rely on overseas workers during peak months",
+    "subtitle": "Share of farms using overseas workers in peak months · 2021–22 vs 2023–24",
+    "font": "Inter",
+    "fontSize": 16,
+    "anchor": "start",
+    "subtitleFont": "Inter",
+    "subtitleFontSize": 11,
+    "subtitleColor": "#74686D"
+  },
+  "width": 620,
+  "height": 300,
+  "background": "transparent",
+  "data": {
+    "url": "data/labour_overseas_workers_peak.csv",
+    "format": { "type": "csv", "parse": { "pct_farms": "number", "rse_pct": "number" } }
+  },
+  "encoding": {
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "sort": { "field": "pct_farms", "op": "max", "order": "descending" },
+      "axis": { "title": null, "labelFont": "Inter", "labelFontSize": 11, "ticks": false, "domain": false }
+    },
+    "x": {
+      "field": "pct_farms",
+      "type": "quantitative",
+      "scale": { "domain": [0, 70], "nice": false },
+      "axis": {
+        "title": "Farms using overseas workers in peak months (%)",
+        "tickCount": 7,
+        "labelFont": "Inter",
+        "titleFont": "Inter",
+        "labelFontSize": 10,
+        "titleFontSize": 10,
+        "grid": true,
+        "gridColor": "#E9E5DF",
+        "domainColor": "#8E8078"
+      }
+    },
+    "detail": { "field": "state" },
+    "order": { "field": "year", "type": "nominal" }
+  },
+  "layer": [
+    { "mark": { "type": "line", "color": "#B7AAA6", "strokeWidth": 2 } },
+    {
+      "mark": { "type": "circle", "size": 115, "filled": true, "stroke": "#FFFFFF", "strokeWidth": 1.5 },
+      "encoding": {
+        "color": {
+          "field": "year",
+          "type": "nominal",
+          "scale": { "domain": ["2021–22", "2023–24"], "range": ["#B695C9", "#D6538A"] },
+          "legend": { "title": null, "orient": "top", "direction": "horizontal" }
+        },
+        "tooltip": [
+          { "field": "state", "type": "nominal", "title": "State" },
+          { "field": "year", "type": "nominal", "title": "Year" },
+          { "field": "pct_farms", "type": "quantitative", "title": "Farms (%)", "format": ".1f" },
+          { "field": "rse_pct", "type": "quantitative", "title": "RSE (%)", "format": ".1f" }
+        ]
+      }
+    }
+  ],
+  "config": { "font": "Inter", "view": { "stroke": null } }
+}

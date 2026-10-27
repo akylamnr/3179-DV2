@@ -1,0 +1,105 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "How does each state compare with Australia?",
+    "subtitle": "2023–24 · Percentage points above or below the national figure · Choose a measure below",
+    "font": "Inter",
+    "fontSize": 16,
+    "anchor": "start",
+    "subtitleFont": "Inter",
+    "subtitleFontSize": 11,
+    "subtitleColor": "#74686D",
+    "offset": 10
+  },
+  "width": 560,
+  "height": 260,
+  "background": "transparent",
+  "params": [
+    {
+      "name": "measure_pick",
+      "value": "Overseas workers",
+      "bind": {
+        "input": "select",
+        "name": "Measure: ",
+        "options": ["Overseas workers", "Labour costs", "Hard to recruit", "Accommodation", "Machinery", "Piece rates"]
+      }
+    }
+  ],
+  "data": {
+    "url": "data/labour_state_profile_2023_24.csv",
+    "format": { "type": "csv", "parse": { "measure_order": "number", "value_pct": "number", "rse_pct": "number" } }
+  },
+  "transform": [
+    { "filter": "datum.measure === measure_pick" },
+    { "calculate": "datum.state === 'Australia' ? datum.value_pct : null", "as": "aus_only" },
+    { "joinaggregate": [{ "op": "max", "field": "aus_only", "as": "australia_pct" }] },
+    { "filter": "datum.state !== 'Australia'" },
+    { "calculate": "datum.value_pct - datum.australia_pct", "as": "diff" }
+  ],
+  "encoding": {
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "sort": { "field": "diff", "op": "max", "order": "descending" },
+      "axis": { "title": null, "orient": "left", "labelPadding": 50, "labelFont": "Inter", "labelFontSize": 11, "ticks": false, "domain": false }
+    }
+  },
+  "layer": [
+    {
+      "mark": { "type": "bar", "height": { "band": 0.65 }, "stroke": "#B7AAA6", "strokeWidth": 0.5 },
+      "encoding": {
+        "x": {
+          "field": "diff",
+          "type": "quantitative",
+          "scale": { "nice": true, "padding": 28 },
+          "axis": {
+            "title": "Percentage points vs Australia (0 = national figure)",
+            "format": "+d",
+            "labelFont": "Inter",
+            "titleFont": "Inter",
+            "labelFontSize": 10,
+            "titleFontSize": 10,
+            "grid": true,
+            "gridColor": "#E9E5DF",
+            "domain": false
+          }
+        },
+        "color": {
+          "field": "diff",
+          "type": "quantitative",
+          "scale": { "domainMid": 0, "range": ["#7E4FA3", "#F4EEF0", "#D6538A"] },
+          "legend": { "title": "Points vs Australia", "orient": "top", "direction": "horizontal", "gradientLength": 180, "format": "+d", "titleFont": "Inter", "labelFont": "Inter", "titleFontSize": 10, "labelFontSize": 10 }
+        },
+        "tooltip": [
+          { "field": "state", "type": "nominal", "title": "State" },
+          { "field": "measure", "type": "nominal", "title": "Measure" },
+          { "field": "value_pct", "type": "quantitative", "title": "State (%)", "format": ".1f" },
+          { "field": "australia_pct", "type": "quantitative", "title": "Australia (%)", "format": ".1f" },
+          { "field": "diff", "type": "quantitative", "title": "Difference (pp)", "format": "+.1f" },
+          { "field": "rse_pct", "type": "quantitative", "title": "RSE (%)", "format": ".1f" }
+        ]
+      }
+    },
+    {
+      "mark": { "type": "text", "align": "left", "dx": 4, "font": "Inter", "fontSize": 10, "color": "#2B2226" },
+      "transform": [{ "filter": "datum.diff >= 0" }],
+      "encoding": {
+        "x": { "field": "diff", "type": "quantitative" },
+        "text": { "field": "value_pct", "type": "quantitative", "format": ".1f" }
+      }
+    },
+    {
+      "mark": { "type": "text", "align": "right", "dx": -4, "font": "Inter", "fontSize": 10, "color": "#2B2226" },
+      "transform": [{ "filter": "datum.diff < 0" }],
+      "encoding": {
+        "x": { "field": "diff", "type": "quantitative" },
+        "text": { "field": "value_pct", "type": "quantitative", "format": ".1f" }
+      }
+    },
+    {
+      "mark": { "type": "rule", "color": "#2B2226", "strokeWidth": 1.5 },
+      "encoding": { "x": { "datum": 0 } }
+    }
+  ],
+  "config": { "font": "Inter", "view": { "stroke": null } }
+}

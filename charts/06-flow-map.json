@@ -217,7 +217,7 @@
           "title": "Direction",
           "scale": {
             "domain": ["import", "export"],
-            "range": ["#2F6BFF", "#E84A8A"]
+            "range": ["#2F6BFF", "#E45756"]
           },
           "legend": null
         },
@@ -349,10 +349,10 @@
               "#00A6D6",
               "#E84A8A",
               "#B08D00",
-              "#009E73",
               "#888888",
               "#888888",
-              "#009E73"
+              "#888888",
+              "#888888"
             ]
           },
           "legend": null

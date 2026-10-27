@@ -14,11 +14,11 @@ year,country,variety,import_value_usd_m,classification,is_reported
 2024,Ecuador,Other cut flowers,2.505827,H6,False
 2024,Ecuador,Orchids,0.019181,H6,False
 2024,Ecuador,Carnations,0.263356,H6,False
-2024,Viet Nam,Roses,0.000000,H6,False
-2024,Viet Nam,Chrysanthemums,9.058821,H6,False
-2024,Viet Nam,Other cut flowers,1.378862,H6,False
-2024,Viet Nam,Orchids,1.042898,H6,False
-2024,Viet Nam,Carnations,0.000000,H6,False
+2024,Vietnam,Roses,0.000000,H6,False
+2024,Vietnam,Chrysanthemums,9.058821,H6,False
+2024,Vietnam,Other cut flowers,1.378862,H6,False
+2024,Vietnam,Orchids,1.042898,H6,False
+2024,Vietnam,Carnations,0.000000,H6,False
 2024,Colombia,Roses,2.490153,H6,False
 2024,Colombia,Chrysanthemums,4.757402,H6,False
 2024,Colombia,Other cut flowers,0.826981,H6,False

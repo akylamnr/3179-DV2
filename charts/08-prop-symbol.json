@@ -1,8 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Flowers grown and landed by state",
-    "subtitle": "Production & landed imports · 2024-25 · A$ million",
+    "text": "Total Horticulture Production by State",
     "font": "Inter",
     "fontSize": 18,
     "anchor": "start",
@@ -11,7 +10,7 @@
     "subtitleColor": "#74686D",
     "offset": 10
   },
-  "description": "Two-layer Australian state map: a base boundary layer and a symbol layer containing state labels and paired vertical proportional bars. Bar heights are linearly scaled in screen space by A$ million.",
+  "description": "Australian state map with one proportional circle per state, showing farm-gate production value summed across the five ABS horticulture summary categories. Circle size is grouped into three value classes.",
   "width": 350,
   "height": 360,
   "background": "transparent",
@@ -30,74 +29,20 @@
           "feature": "australia_states"
         }
       },
-      "transform": [
-        {
-          "lookup": "properties.STE_NAME21",
-          "from": {
-            "data": {
-              "url": "data/state_grown_vs_landed.csv",
-              "format": {
-                "type": "csv",
-                "parse": {
-                  "production_fy2025_aud_m": "number",
-                  "imports_landed_fy2025_aud_m": "number"
-                }
-              }
-            },
-            "key": "state",
-            "fields": [
-              "production_fy2025_aud_m",
-              "imports_landed_fy2025_aud_m",
-              "imports_as_pct_of_production_fy2025",
-              "note"
-            ]
-          }
-        }
-      ],
       "mark": {
         "type": "geoshape",
         "fill": "#D8D5D2",
-        "stroke": "#FFFFFF",
-        "strokeWidth": 1.2
-      },
-      "encoding": {
-        "tooltip": [
-          {
-            "field": "properties.STE_NAME21",
-            "type": "nominal",
-            "title": "State or territory"
-          },
-          {
-            "field": "production_fy2025_aud_m",
-            "type": "quantitative",
-            "title": "Production (A$ million)",
-            "format": ".1f"
-          },
-          {
-            "field": "imports_landed_fy2025_aud_m",
-            "type": "quantitative",
-            "title": "Imports landed (A$ million)",
-            "format": ".1f"
-          },
-          {
-            "field": "note",
-            "type": "nominal",
-            "title": "Note"
-          }
-        ]
+        "stroke": "#28483D",
+        "strokeWidth": 0.5
       }
     },
     {
-      "layer": [
-        {
       "data": {
-        "url": "data/state_grown_vs_landed.csv",
+        "url": "data/horticulture_total_by_state.csv",
         "format": {
           "type": "csv",
           "parse": {
-            "production_fy2025_aud_m": "number",
-            "imports_landed_fy2025_aud_m": "number",
-            "imports_as_pct_of_production_fy2025": "number"
+            "total_farm_gate_value_aud_m": "number"
           }
         }
       },
@@ -150,64 +95,61 @@
               ]
             },
             "key": "state",
-            "fields": ["longitude", "latitude"]
+            "fields": [
+              "longitude",
+              "latitude"
+            ]
           }
         },
         {
-          "fold": [
-            "production_fy2025_aud_m",
-            "imports_landed_fy2025_aud_m"
-          ],
-          "as": ["measure", "value_aud_m"]
-        },
-        {
-          "filter": "isValid(datum.value_aud_m)"
-        },
-        {
-          "calculate": "datum.measure === 'production_fy2025_aud_m' ? 'Production' : 'Imports landed'",
-          "as": "series"
-        },
-        {
-          "calculate": "datum.measure === 'production_fy2025_aud_m' ? datum.longitude - 0.65 : datum.longitude + 0.65",
-          "as": "bar_longitude"
-        },
-        {
-          "calculate": "(2 * atan(exp(log(tan(PI / 4 + datum.latitude * PI / 360)) + datum.value_aud_m * 0.9 / 405)) - PI / 2) * 180 / PI",
-          "as": "bar_top_latitude"
+          "filter": "isValid(datum.total_farm_gate_value_aud_m)"
         }
       ],
       "mark": {
-        "type": "rule",
-        "strokeWidth": 8,
-        "strokeCap": "butt"
+        "type": "point",
+        "shape": "circle",
+        "filled": true,
+        "color": "#28483D",
+        "opacity": 0.82
       },
       "encoding": {
         "longitude": {
-          "field": "bar_longitude",
+          "field": "longitude",
           "type": "quantitative"
         },
         "latitude": {
           "field": "latitude",
           "type": "quantitative"
         },
-        "longitude2": {
-          "field": "bar_longitude"
-        },
-        "latitude2": {
-          "field": "bar_top_latitude"
-        },
-        "color": {
-          "field": "series",
-          "type": "nominal",
-          "title": "Measure",
+        "size": {
+          "field": "value_class",
+          "type": "ordinal",
+          "sort": [
+            "Under A$2b",
+            "A$2b to <A$4b",
+            "A$4b or more"
+          ],
           "scale": {
-            "domain": ["Production", "Imports landed"],
-            "range": ["#D6538A", "#2F6BFF"]
+            "domain": [
+              "Under A$2b",
+              "A$2b to <A$4b",
+              "A$4b or more"
+            ],
+            "range": [
+              100,
+              700,
+              1800
+            ]
           },
           "legend": {
+            "title": "Farm-gate value ($A billion)",
             "orient": "bottom",
             "direction": "horizontal",
-            "title": null
+            "symbolType": "circle",
+            "symbolFillColor": "#D6538A",
+            "symbolStrokeColor": "#FFFFFF",
+            "labelFontSize": 10,
+            "titleFontSize": 11
           }
         },
         "tooltip": [
@@ -217,31 +159,20 @@
             "title": "State or territory"
           },
           {
-            "field": "series",
-            "type": "nominal",
-            "title": "Measure"
-          },
-          {
-            "field": "value_aud_m",
+            "field": "total_farm_gate_value_aud_m",
             "type": "quantitative",
-            "title": "Value (A$ million)",
-            "format": ".1f"
+            "title": "Five-category value (A$ million)",
+            "format": ",.1f"
           },
           {
-            "field": "imports_as_pct_of_production_fy2025",
-            "type": "quantitative",
-            "title": "Imports as % of production",
-            "format": ".1f"
-          },
-          {
-            "field": "note",
+            "field": "value_class",
             "type": "nominal",
-            "title": "Note"
+            "title": "Value class"
           }
         ]
       }
-        },
-        {
+    },
+    {
       "data": {
         "values": [
           {
@@ -303,9 +234,7 @@
           "type": "nominal"
         }
       }
-        }
-        ]
-      }
+    }
   ],
   "config": {
     "font": "Inter",

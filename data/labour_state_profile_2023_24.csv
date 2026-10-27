@@ -1,0 +1,49 @@
+state,measure,measure_order,value_pct,rse_pct
+Australia,Overseas workers,1,40.4,2.2
+Australia,Labour costs,2,27.7,1.5
+Australia,Hard to recruit,3,7.7,6.8
+Australia,Accommodation,4,13.4,4.6
+Australia,Machinery,5,35.5,2.6
+Australia,Piece rates,6,27.2,3.4
+Tasmania,Overseas workers,1,57.3,5.4
+Tasmania,Labour costs,2,25.8,4.9
+Tasmania,Hard to recruit,3,11.5,16.9
+Tasmania,Accommodation,4,20.2,12.2
+Tasmania,Machinery,5,38.8,7.8
+Tasmania,Piece rates,6,39.0,9.6
+Western Australia,Overseas workers,1,51.1,5.5
+Western Australia,Labour costs,2,27.0,4.4
+Western Australia,Hard to recruit,3,6.6,20.5
+Western Australia,Accommodation,4,16.6,12.1
+Western Australia,Machinery,5,23.5,10.1
+Western Australia,Piece rates,6,30.9,9.5
+Queensland,Overseas workers,1,49.8,3.7
+Queensland,Labour costs,2,25.7,2.9
+Queensland,Hard to recruit,3,8.7,12.6
+Queensland,Accommodation,4,15.5,8.6
+Queensland,Machinery,5,24.0,6.8
+Queensland,Piece rates,6,18.8,9.4
+Victoria,Overseas workers,1,47.5,5.0
+Victoria,Labour costs,2,33.0,3.2
+Victoria,Hard to recruit,3,7.4,17.7
+Victoria,Accommodation,4,16.6,10.2
+Victoria,Machinery,5,36.8,6.3
+Victoria,Piece rates,6,23.3,8.9
+New South Wales,Overseas workers,1,30.9,4.9
+New South Wales,Labour costs,2,24.3,3.3
+New South Wales,Hard to recruit,3,7.3,13.5
+New South Wales,Accommodation,4,11.5,10.3
+New South Wales,Machinery,5,38.0,4.9
+New South Wales,Piece rates,6,36.9,5.6
+South Australia,Overseas workers,1,26.5,7.9
+South Australia,Labour costs,2,28.9,3.8
+South Australia,Hard to recruit,3,7.2,18.0
+South Australia,Accommodation,4,6.0,18.4
+South Australia,Machinery,5,46.9,5.3
+South Australia,Piece rates,6,27.8,8.1
+Northern Territory,Overseas workers,1,62.2,10.5
+Northern Territory,Labour costs,2,22.6,12.3
+Northern Territory,Hard to recruit,3,10.8,38.7
+Northern Territory,Accommodation,4,45.9,14.6
+Northern Territory,Machinery,5,13.5,34.1
+Northern Territory,Piece rates,6,10.9,47.1

@@ -90,9 +90,12 @@
         ],
         "clamp": true,
         "range": [
-          "#E6F2E9",
-          "#176B63"
-        ]
+        "#F1F6FA",
+        "#C9DDED",
+        "#8AB8D8",
+        "#4C8DB8",
+        "#245C84"
+      ]
       },
       "legend": {
         "orient": "bottom",

@@ -206,3 +206,27 @@ vegaEmbed("#chart11", "charts/11-cut-flower-import-calendar.json", {
 }).catch((error) =>
   handleChartError("#chart11", "charts/11-cut-flower-import-calendar.json", error)
 );
+
+vegaEmbed("#chart16", "charts/16-overseas-workers-dumbbell.json", {
+  actions: false,
+  renderer: "svg",
+  config: sharedConfig
+}).catch(error =>
+  handleChartError("#chart16", "charts/16-overseas-workers-dumbbell.json", error)
+);
+
+vegaEmbed("#chart17", "charts/17-labour-state-diverging.json", {
+  actions: false,
+  renderer: "svg",
+  config: sharedConfig
+}).catch(error =>
+  handleChartError("#chart17", "charts/17-labour-state-diverging.json", error)
+);
+
+vegaEmbed("#chart18", "charts/18-labour-peak-month-map.json", {
+  actions: false,
+  renderer: "svg",
+  config: sharedConfig
+}).catch(error =>
+  handleChartError("#chart18", "charts/18-labour-peak-month-map.json", error)
+);

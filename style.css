@@ -1,7 +1,7 @@
 /* Australia's flower paradox */
 :root {
   color-scheme: light;
-  --cream: #fff7f9;
+  --cream: #f9f6f7;
   --surface: #fff;
   --forest: #28483d;
   --forest-dark: #1f382f;
@@ -427,7 +427,7 @@ section > p:not(.eyebrow, .source) {
 }
 
 .trade-export-line {
-  border-color: #e84a8a;
+  border-color: #E45756;
 }
 
 .state-value-legend-title {
@@ -882,3 +882,313 @@ footer.site-footer {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* =========================================
+   SECTION 6 — DOMESTIC DEMAND KPI CARDS
+   ========================================= */
+
+.demand-barriers {
+  margin: 32px 0 44px;
+}
+
+.demand-barriers-heading {
+  max-width: 760px;
+  margin-bottom: 24px;
+}
+
+.demand-barriers-heading h2 {
+  margin: 0 0 14px;
+  color: #254C40;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.2;
+}
+
+.demand-barriers-heading h3 {
+  margin: 0 0 12px;
+  color: #254C40;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  line-height: 1.3;
+}
+
+.demand-barriers-intro {
+  max-width: 62ch;
+  margin: 0;
+  color: #30272b;
+  line-height: 1.65;
+}
+
+/* Four-card responsive layout */
+.demand-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* Individual cards */
+.demand-kpi-card {
+  min-width: 0;
+  padding: 24px 20px;
+
+  /* Darker blush surface for better separation */
+  background: #F1E9ED;
+
+  /* Faint outline */
+  border: 1px solid #E2D3DB;
+
+  /* Bold pink accent on the left */
+  border-left: 5px solid #D94F8B;
+
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(65, 42, 52, 0.04);
+}
+
+/* Large percentage */
+.demand-kpi-card .demand-kpi-value {
+  margin: 0 0 14px;
+  color: #C44578;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* Card title */
+.demand-kpi-card h4 {
+  margin: 0 0 10px;
+  color: #30272b;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* Card description */
+.demand-kpi-card > p:not(.demand-kpi-value) {
+  margin: 0;
+  color: #30272b;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+/* Source and citation */
+.demand-kpi-source {
+  margin: 16px 0 0;
+  color: #766B72;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.demand-kpi-source a {
+  color: #254C40;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Tablet */
+@media (max-width: 850px) {
+  .demand-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .demand-kpi-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .demand-kpi-card {
+    padding: 20 px;
+  }
+}
+
+
+/* Warm botanical editorial theme */
+
+:root {
+  --forest: #294638;
+  --hero-bg: #E7E8DE;
+  --page-bg: #F5F2EC;
+  --white: #FCFAF6;
+  --body-text: #403B37;
+  --muted: #716A66;
+  --rose-pink: #D94F8B;
+  --border-pink: #E2D3DB;
+  --sage-bg: #EDF0E8;
+}
+
+/* Main page */
+body {
+  background: var(--page-bg);
+  color: var(--body-text);
+}
+
+/* Hero */
+.hero {
+  background: var(--hero-bg);
+  color: var(--forest);
+  padding: 52px 24px 60px;
+  border-bottom: 1px solid #D9DBD0;
+}
+
+/* Align hero with the main content */
+.hero-inner {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+/* Small course label */
+.hero .eyebrow {
+  margin: 0 0 16px;
+  color: var(--rose-pink);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+/* Serif title */
+.hero h1 {
+  max-width: 1050px;
+  margin: 0 0 16px;
+  color: var(--forest);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.8rem, 5vw, 4.4rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  text-align: left;
+}
+
+/* Subtitle */
+.hero p {
+  max-width: 680px;
+  margin: 0;
+  color: #536459;
+  font-size: 1.15rem;
+  line-height: 1.65;
+  text-align: left;
+}
+
+/* Main section titles */
+section h2,
+section h3 {
+  color: var(--forest);
+}
+
+/* Explanatory callouts */
+.callout {
+  background: var(--sage-bg);
+  color: var(--body-text);
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 38px 22px 44px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 9vw, 3.5rem);
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+.demand-kpi-card {
+  background: #EEE5D9;
+  border: 1px solid #D8C8B8;
+  border-left: 5px solid #A17855;
+  border-radius: 12px;
+  padding: 24px 20px;
+  box-shadow: 0 4px 12px rgba(65, 42, 52, 0.04);
+}
+
+.demand-kpi-card .demand-kpi-value {
+  color: #78563F;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 14px;
+}
+
+.demand-kpi-card h4 {
+  color: #294638;
+}
+
+.demand-kpi-card > p:not(.demand-kpi-value) {
+  color: #5F5148;
+}
+
+
+/* Domestic-demand KPI cards — compact and responsive */
+
+.demand-barriers,
+.demand-kpi-grid,
+.demand-kpi-card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+}
+
+.demand-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.demand-kpi-card {
+  min-width: 0;
+  padding: 18px 14px;
+  background: #EEE5D9;
+  border: 1px solid #D8C8B8;
+  border-left: 4px solid #A17855;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(65, 42, 52, 0.035);
+  overflow-wrap: anywhere;
+}
+
+.demand-kpi-card .demand-kpi-value {
+  margin: 0 0 10px;
+  color: #78563F;
+  font-size: clamp(1.8rem, 2.5vw, 2.3rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.demand-kpi-card h4 {
+  margin: 0 0 8px;
+  color: #294638;
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.demand-kpi-card > p:not(.demand-kpi-value) {
+  margin: 0;
+  color: #5F5148;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+/* Tablet: 2 cards per row */
+@media (max-width: 900px) {
+  .demand-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+}
+
+/* Mobile: 1 card per row */
+@media (max-width: 480px) {
+  .demand-kpi-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .demand-kpi-card {
+    padding: 16px;
+  }
+}
+
