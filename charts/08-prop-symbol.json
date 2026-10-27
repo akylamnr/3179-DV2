@@ -114,7 +114,7 @@
         "shape": "circle",
         "filled": true,
         "color": "#28483D",
-        "opacity": 0.82
+        "opacity": 0.22
       },
       "encoding": {
         "longitude": {
