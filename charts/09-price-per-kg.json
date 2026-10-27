@@ -5,8 +5,8 @@
   "height": 260,
   "background": "transparent",
   "title": {
-    "text": "What each supplier's flowers cost per kilogram",
-    "subtitle": "Import value divided by weight, 2024.",
+    "text": "What Each Supplier's Flowers Cost per Kilogram",
+    "subtitle": "Import value divided by weight · 2024.",
     "font": "Inter",
     "fontWeight": 700,
     "fontSize": 19,
@@ -14,7 +14,7 @@
     "anchor": "start",
     "offset": 10,
     "subtitleFont": "Inter",
-    "subtitleFontSize": 12,
+    "subtitleFontSize": 15,
     "subtitleColor": "#74686D",
     "subtitleFontWeight": "normal"
   },
@@ -76,8 +76,8 @@
             "labelFont": "Inter",
             "titleFont": "Inter",
             "titleFontSize": 13,
-            "labelColor": "#5B4E49",
-            "titleColor": "#5B4E49",
+            "labelColor": "#000000",
+            "titleColor": "#000000",
             "titleFontWeight": 600
           }
         },
@@ -92,8 +92,8 @@
             "titleFont": "Inter",
             "labelFontSize": 13,
             "titleFontSize": 13,
-            "labelColor": "#5B4E49",
-            "titleColor": "#5B4E49",
+            "labelColor": "#000000",
+            "titleColor": "#000000",
             "titleFontWeight": 600
           }
         },
@@ -210,7 +210,7 @@
           "value": 0
         },
         "text": {
-          "value": "Average of the six"
+          "value": "Average Cost/kg"
         }
       }
     }

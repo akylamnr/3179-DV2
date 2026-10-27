@@ -1,24 +1,24 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "A custom alluvial diagram of 2025 Australian cut-flower imports, arranged from suppliers through regions to Australia.",
-  "width": 900,
-  "height": 640,
+  "width": 1000,
+  "height": 500,
   "padding": 0,
   "autosize": "pad",
   "background": "transparent",
   "title": {
-    "text": "Where Australia's imported flowers come from",
-    "subtitle": "HS 0603 · Calendar 2025 · Import value in US$ million",
+    "text": "Where Australia's Imported Flowers Come From",
+    "subtitle": "Import value in US$ million · 2025",
     "font": "Inter",
-    "fontSize": 19,
+    "fontSize": 23,
     "fontWeight": 700,
     "color": "#1f382f",
     "subtitleFont": "Inter",
-    "subtitleFontSize": 12,
+    "subtitleFontSize": 15,
     "subtitleColor": "#74686D",
     "anchor": "start",
-    "offset": 10,
-    "subtitleFontWeight": "normal"
+    "subtitleFontWeight": "normal",
+    "offset": 20
   },
   "data": [
     {
@@ -281,7 +281,7 @@
             "value": "Inter"
           },
           "fontSize": {
-            "value": 11
+            "value": 13
           },
           "fontWeight": {
             "value": 600
@@ -321,7 +321,7 @@
             "value": "Inter"
           },
           "fontSize": {
-            "value": 10
+            "value": 15
           },
           "fontWeight": {
             "value": 700

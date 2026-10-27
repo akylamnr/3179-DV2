@@ -2,27 +2,22 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Bump chart ranking Australia's six selected fresh-cut flower suppliers by annual import value. Rank 1 is the largest supplier.",
   "title": {
-    "text": "Malaysia overtakes Kenya as Australia's leading supplier",
-    "subtitle": "Annual import value for fresh-cut flowers and buds (HS 060310) · 2017-2024 · Rank 1 = largest",
+    "text": "Vietnam Climbs to Second Among Australia's Flower Suppliers",
+    "subtitle": "Annual import value for fresh-cut flowers and buds (2025 from WITS, HS 0603) · 2017–2025 · Rank 1 = largest",
     "font": "Inter",
     "fontWeight": 700,
-    "fontSize": 19,
+    "fontSize": 23,
     "anchor": "start",
     "subtitleFont": "Inter",
-    "subtitleFontSize": 12,
-    "subtitleColor": "#74686D",
-    "offset": 10,
+    "subtitleFontSize": 16,
+    "subtitleColor": "#5F5559",
+    "offset": 20,
     "color": "#1f382f",
     "subtitleFontWeight": "normal"
   },
-  "width": 780,
-  "height": 440,
-  "padding": {
-    "left": 10,
-    "right": 105,
-    "top": 8,
-    "bottom": 8
-  },
+  "width": 700,
+  "height": 300,
+ 
   "background": "transparent",
   "data": {
     "url": "data/flower_imports_by_country_year.csv",
@@ -74,7 +69,8 @@
         2021,
         2022,
         2023,
-        2024
+        2024,
+        2025
       ],
       "title": "Year",
       "axis": {
@@ -92,8 +88,8 @@
         "ticks": true,
         "tickSize": 4,
         "tickColor": "#8E8078",
-        "labelColor": "#5B4E49",
-        "titleColor": "#5B4E49",
+        "labelColor": "#1B2B26",
+        "titleColor": "#1B2B26",
         "labelOverlap": false,
         "titleFontWeight": 600
       }
@@ -101,7 +97,7 @@
     "y": {
       "field": "rank",
       "type": "quantitative",
-      "title": "Rank (1 = largest supplier)",
+      "title": "Rank",
       "scale": {
         "domain": [
           0.6,
@@ -122,10 +118,10 @@
         ],
         "format": ".0f",
         "labelFont": "Inter",
-        "labelFontSize": 13,
+        "labelFontSize": 15,
         "labelPadding": 4,
         "titleFont": "Inter",
-        "titleFontSize": 13,
+        "titleFontSize": 15,
         "titlePadding": 7,
         "grid": true,
         "gridColor": "#E8DFDB",
@@ -136,8 +132,8 @@
         "ticks": true,
         "tickSize": 4,
         "tickColor": "#8E8078",
-        "labelColor": "#5B4E49",
-        "titleColor": "#5B4E49",
+        "labelColor": "#1B2B26",
+        "titleColor": "#1B2B26",
         "titleFontWeight": 600
       }
     },
@@ -177,7 +173,8 @@
         2021,
         2022,
         2023,
-        2024
+        2024,
+        2025
       ]
     },
     "opacity": {

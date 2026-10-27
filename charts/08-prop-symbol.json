@@ -4,9 +4,8 @@
     "text": "Total Horticulture Production by State",
     "font": "Inter",
     "fontWeight": 700,
-    "fontSize": 19,
+    "fontSize": 20,
     "anchor": "start",
-    "offset": 10,
     "color": "#1f382f"
   },
   "description": "Australian state map with one proportional circle per state, showing farm-gate production value summed across the five ABS horticulture summary categories. Circle size is grouped into three value classes.",

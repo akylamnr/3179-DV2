@@ -2,17 +2,16 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Australia's 2024 imports from the six leading origin countries, stacked by fresh-cut flower category. Lilies are excluded because their import values are very small.",
   "title": {
-    "text": "What types of flowers come from the top six origins?",
-    "subtitle": "Selected partner countries · by flower type · 2024 · US$ million",
+    "text": "What Types of Flowers Come From the Top Six Origins?",
+    "subtitle": "US$ million · 2024-25",
     "font": "Inter",
     "fontWeight": 700,
-    "fontSize": 19,
+    "fontSize": 22,
     "anchor": "start",
     "subtitleFont": "Inter",
-    "subtitleFontSize": 12,
+    "subtitleFontSize": 15,
     "subtitleColor": "#74686D",
-    "offset": 10,
-    "color": "#1f382f",
+    "offset": 20,
     "subtitleFontWeight": "normal"
   },
   "width": 650,
@@ -52,8 +51,8 @@
         "labelFont": "Inter",
         "titleFont": "Inter",
         "titleFontSize": 13,
-        "labelColor": "#5B4E49",
-        "titleColor": "#5B4E49",
+        "labelColor": "#000000",
+        "titleColor": "#000000",
         "titleFontWeight": 600
       }
     },
@@ -65,6 +64,7 @@
       "scale": {
         "zero": true
       },
+      
       "axis": {
         "format": "$.0f",
         "grid": true,
@@ -73,9 +73,9 @@
         "titleFont": "Inter",
         "labelFontSize": 13,
         "titleFontSize": 13,
-        "labelColor": "#5B4E49",
-        "titleColor": "#5B4E49",
-        "titleFontWeight": 600
+        "titleFontWeight": 600,
+        "labelColor": "#000000",
+        "titleColor": "#000000"
       }
     },
     "color": {
@@ -106,8 +106,8 @@
         "labelFont": "Inter",
         "titleFont": "Inter",
         "titleFontSize": 13,
-        "labelColor": "#5B4E49",
-        "titleColor": "#5B4E49",
+        "labelColor": "#000000",
+        "titleColor": "#000000",
         "titleFontWeight": 600
       }
     },
@@ -138,6 +138,7 @@
         "type": "quantitative",
         "title": "Import value (US$ million)",
         "format": ".3f"
+
       }
     ],
     "opacity": {

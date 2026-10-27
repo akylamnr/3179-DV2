@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "How important are cut flowers to each state?",
-    "subtitle": "2024-25 · Share of state horticulture value, not where flowers are grown",
+    "text": "Where Are Flowers Most Prominent in State Horticulture?",
+    "subtitle": "Flower-related farm-gate value as a share of reported horticulture value · 2024–25",
     "color": "#1f382f",
     "font": "Inter",
     "fontWeight": 700,
@@ -10,7 +10,7 @@
     "anchor": "start",
     "offset": 10,
     "subtitleFont": "Inter",
-    "subtitleFontSize": 12,
+    "subtitleFontSize": 13,
     "subtitleColor": "#74686D",
     "subtitleFontWeight": "normal"
   },

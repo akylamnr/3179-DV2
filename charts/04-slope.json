@@ -57,8 +57,8 @@
             "ticks": true,
             "tickSize": 5,
             "tickColor": "#8E8078",
-            "labelColor": "#5B4E49",
-            "titleColor": "#5B4E49",
+            "labelColor": "#000000",
+        "titleColor": "#000000",
             "labelOverlap": false,
             "titleFontWeight": 600
           }
@@ -101,8 +101,8 @@
             "ticks": true,
             "tickSize": 4,
             "tickColor": "#8E8078",
-            "labelColor": "#5B4E49",
-            "titleColor": "#5B4E49",
+            "labelColor": "#000000",
+        "titleColor": "#000000",
             "titleFontWeight": 600
           }
         },
