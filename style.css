@@ -1536,3 +1536,14 @@ section h3,
     column-count: 1;
   }
 }
+
+/* Lollipop at standard size; two text columns of about ten words per line */
+#chart09 {
+  max-width: 640px;
+}
+
+.price-stack .chart-story {
+  column-width: 52ch;
+  column-gap: 48px;
+  max-width: calc(2 * 52ch + 48px);
+}
