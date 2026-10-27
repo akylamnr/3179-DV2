@@ -43,16 +43,8 @@ const sharedConfig = {
 
 
 // Custom tooltip: borderless, matches the page background, and takes its
-// accent colour from the hovered mark (e.g. a country's colour).
-const COUNTRY_COLOURS = {
-  Malaysia: "#329481", Kenya: "#EE9F27", Ecuador: "#B695C9",
-  Colombia: "#8A6E3B", China: "#A64470", Vietnam: "#B7C75E"
-};
-
+// accent colour from the hovered mark itself (a line, bar, dot or cell).
 function tooltipAccent(item, value) {
-  const country = value && (value.Partner || value.Country);
-  if (country && COUNTRY_COLOURS[country]) return COUNTRY_COLOURS[country];
-
   const toRgb = value => {
     if (typeof value !== "string") return null;
     let m = value.match(/^#([0-9a-f]{6})$/i);
