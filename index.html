@@ -33,10 +33,26 @@
 
   </header>
 
+  <nav class="chapter-nav" aria-label="Story chapters">
+    <a href="#overview">Overview</a>
+    <a href="#where">Where</a>
+    <a href="#trade">Trade</a>
+    <a href="#imports">Imports</a>
+    <a href="#workforce">Workforce</a>
+    <a href="#conclusion">Conclusion</a>
+  </nav>
+
   <main>
     <!-- SECTION 1 -->
-    <section>
+    <section id="overview">
       <h2 class="eyebrow section-heading">1. An Overview of Horticulture</h2>
+
+      <p class="section-lead">
+        <strong>Flowers are one part of a larger industry.</strong> Before looking
+        at them on their own, it helps to see where they
+        sit within Australian horticulture: how large the industry is, and
+        which categories are growing.
+      </p>
 
       <div class="chart-with-story">
 
@@ -58,8 +74,6 @@
 
         <!-- Right: explanation -->
         <aside class="chart-story">
-          <h3>What is horticulture worth?</h3>
-
           <p>
             <strong>Horticulture is a branch of agriculture</strong> that focuses on the growth of fruits, vegetables, nuts, wine grapes
             and flower-related groups.
@@ -99,8 +113,6 @@
 
       <!-- Right: explanation -->
       <aside class="chart-story">
-        <h3>Two ways to measure growth</h3>
-
         <p>
           <strong>Nuts grew fastest proportionally,</strong>
           rising 38.5% from A$1.20 billion to A$1.66 billion.
@@ -125,21 +137,39 @@
     </section>
 
     <!-- SECTION 2 -->
-    
-    <section>
+
+    <section id="where">
       <h2 class="eyebrow section-heading">2. Where do flowers grow?</h2>
-      
-        <div class="intro-columns">
+
+      <div class="intro-columns">
         <p>
-          Australia's flower industry is spread across a diverse horticultural
-          landscape, but its importance varies by state.
+          <strong>Flowers matter differently in every state.</strong> Australia's
+          flower industry is spread across a diverse horticultural landscape. The maps below explore
+          this in two ways: where flower-related production makes up a larger
+          share of horticulture, and which states generate the greatest overall
+          farm-gate value.
+        </p>
+        <p>
+          <strong>Together, the two maps separate share from size.</strong> They reveal the difference between states where flowers
+          play a more prominent role and those with larger horticultural
+          industries overall.
         </p>
       </div>
 
       <div class="chart-pair">
         <article class="chart-card chart-column">
+          <h3 class="chart-heading">Where flowers matter most</h3>
           <div id="chart02" class="vis"></div>
-        
+          <p class="chart-text">
+            <strong>This map shows importance, not volume.</strong>
+            It shows how much flowers matter within each state, not where
+            most flowers are grown. Western Australia is darkest
+            because cut flowers make up 5.1% of its horticulture value
+            (A$71.1 million of A$1,382.3 million). Victoria has the highest
+            cut-flower value (A$114.4 million), but that is only 2.1% of
+            its much larger horticulture total. Hover over a state to see both
+            the dollar value and the share.
+          </p>
           <p class="source">
             Data:
             <a
@@ -158,44 +188,42 @@
         </article>
 
         <article class="chart-card chart-column">
+          <h3 class="chart-heading">Production and imports by state</h3>
           <div id="chart08" class="vis"></div>
-      
-        
+          <p class="chart-text">
+            <strong>For actual volumes, look at the second map.</strong>
+            It pairs each
+            state's cut-flower production (pink) with the imports landed there
+            (green). Both bars use the same scale, so taller bars mean more
+            value. &ldquo;Landed&rdquo; records the state of arrival, not
+            necessarily where the flowers are sold, and missing imports are
+            not treated as zero.
+          </p>
           <p class="source">
             Source: Hort Innovation, <em>Australian Horticulture Statistics
             Handbook 2024/25</em>, All Other Horticulture, pp. 409-411.
           </p>
         </article>
       </div>
-
-      <div class="intro-columns">
-        <p>
-          <Strong>Western Australia</Strong> has the highest flower-related share of reported horticulture value, 
-          meaning flowers, nurseries and turf make up a larger proportion of its horticultural industry. 
-          </p>
-          <p>
-          <Strong>Victoria</Strong>, however, records the highest absolute value for this category at A$114.4 million, and the largest horticulture industry overall.
-        </p>
-        
-      </div>
-
-      
     </section>
 
 
     <!-- SECTION 3 -->
-    <section>
+    <section id="trade">
       <h2 class="eyebrow section-heading">3. Flowers Go Global</h2>
-      <div class="intro-columns">
-      <p>
-        Australia's flower trade moves in both directions: imported commercial flowers
-        supply the local market, while distinctive native varieties reach
-        overseas buyers. 
-      </p>
-      <p class="insight-note">
-        <strong>NOTE: </strong>The flow map uses Australian dollars and financial years;<br>
-        the WITS and Comtrade charts below use US dollars and calendar years.
-      </p>
+
+      <div class="lead-with-note">
+        <p class="section-lead">
+          <strong>Flowers do not stop at the farm gate.</strong> Australia's flower trade moves
+          in both directions: imported commercial flowers supply the local
+          market, while distinctive native varieties reach overseas buyers.
+        </p>
+
+        <p class="note">
+          <strong>Note:</strong> The flow map uses Australian dollars and
+          financial years; the WITS and Comtrade charts below use US dollars
+          and calendar years.
+        </p>
       </div>
 
       <article class="chart-card trade-map-layout">
@@ -228,9 +256,8 @@
           </p>
         </div>
         <aside class="trade-map-aside chart-story">
-          <h3>What moves in and out?</h3>
           <p>
-            The import routes show the five largest suppliers, not all
+            <strong>What moves in and out?</strong> The import routes show the five largest suppliers, not all
             imports. The Handbook reports some small export values only as
             “under A$1 million”; those values are left blank rather than
             estimated. South Korea's 2025 value is the exception and is
@@ -239,45 +266,65 @@
         </aside>
       </article>
 
-      <h3 class="visualization-heading">How have Australia's import sources changed?</h3>
-
-      <article class="chart-card">
-        <div id="chart05" class="vis"></div>
-        <p class="insight-note">
-          Each flow connects an import supplier to its continent and then
-          to Australia. Asia is highlighted in green; other continents are
-          grey. This WITS view uses US dollars and is separate from the
-          Handbook's Australian-dollar financial-year figures above.
-        </p>
-        <p class="source">
-          Source: World Integrated Trade Solution (WITS), Australia imports,
-          HS 0603, 2025. Values are reported in US$ million.
-        </p>
+      <article class="chart-card chart-with-story story-first">
+        <aside class="chart-story">
+          <p>
+            <strong>Asia is the main gateway.</strong> Each flow connects a supplier to its continent and then to
+            Australia. Asia is highlighted in green and the other continents
+            are grey.
+          </p>
+          <p>
+            Because this WITS view uses US dollars, it is separate from the
+            Handbook's Australian-dollar figures above.
+          </p>
+        </aside>
+        <div class="chart-visual">
+          <div id="chart05" class="vis"></div>
+          <p class="source">
+            Source: World Integrated Trade Solution (WITS), Australia imports,
+            HS 0603, 2025. Values are reported in US$ million.
+          </p>
+        </div>
       </article>
 
-      <article class="chart-card">
-        <div id="chart07" class="vis"></div>
-        <p class="source">
+      <article class="chart-card chart-with-story bump-layout">
+        <div class="chart-visual">
+          <div id="chart07" class="vis"></div>
+          <p class="source">
           Source: UN Comtrade, Australia imports, HS 060310, calendar years
           2017-2024. Values are reported in US$ million.
         </p>
+        </div>
+        <div class="chart-story">
+          <p>
+        <strong>The ranking is not fixed.</strong> Looking at each year from 2017 to 2024, the
+        order of the leading origins has shifted. Malaysia overtook Kenya as
+        Australia's largest supplier, and Vietnam climbed from sixth to
+        fourth among these six, rising from US$3.2 million to US$11.5
+        million. Both are Asian suppliers, which hints that something about
+        what Australia buys is changing. Section 4 looks at why.
+      </p>
+        </div>
       </article>
 
-  
+
 
     <!-- SECTION 5 -->
-    <section>
+    <section id="imports">
       <h2 class="eyebrow section-heading">4. Why does Australia import flowers?</h2>
-      
-      <article class="chart-card">
-        <div id="chart10" class="vis"></div>
-        <p class="insight-note">
-          Each bar is one of the six leading origin countries, stacked by
-          flower type. Kenya and Ecuador have large rose segments, while
-          Malaysia and Vietnam have large chrysanthemum segments. Lilies
-          are omitted because their import value is very small.
-        </p>
-        <p class="source">
+
+      <p class="section-lead">
+        <strong>Imports fill the gaps.</strong> Flower Industry Australia
+        estimates that around half of the flowers sold in Australia are
+        imported. Three patterns in the data help explain why: each origin
+        specialises in particular flowers, imports follow the calendar, and
+        overseas flowers are cheap to produce.
+      </p>
+
+      <article class="chart-card chart-with-story">
+        <div class="chart-visual">
+          <div id="chart10" class="vis"></div>
+          <p class="source">
           Source: UN Comtrade, Australia imports by partner and product,
           calendar 2024, HS 060311-060319, H6 classification. Values are in
           US dollars. The six origins are the largest by total value across
@@ -286,11 +333,39 @@
           values should be treated as indicative and the chart does not show
           all Australian imports.
         </p>
+        </div>
+        <div class="chart-story">
+          <p>
+          <strong>Each origin specialises.</strong> Kenya and Ecuador send
+          mostly roses, while Malaysia and Vietnam send mostly
+          chrysanthemums. Colombia mixes both. This is the same pattern
+          behind the bump chart above: the two Asian suppliers that are
+          climbing the ranking are the chrysanthemum specialists. Lilies are
+          omitted because their import value is very small. Click a flower
+          type in the legend to isolate it.
+        </p>
+        </div>
       </article>
 
-      <article class="chart-card">
-        <div id="chart11" class="vis"></div>
-        
+      <article class="chart-card chart-with-story">
+        <div class="chart-visual">
+          <div id="chart11" class="vis"></div>
+          <p class="source">Move the slider to see each year&rsquo;s months.</p>
+        </div>
+        <div class="chart-story">
+          <p>
+          <strong>Imports follow the calendar.</strong> Across 2021&ndash;2025,
+          average monthly import value peaks in April, May and February
+          (about A$14&ndash;15 million, against about A$10 million in most
+          other months). February and May sit around Valentine's Day and
+          Mother's Day. Imports are actually lowest from June to August, but
+          that is a share story rather than a dollar story: a floral designer
+          told the ABC that in the winter months &ldquo;when Australian
+          flowers are very light on, 90 per cent can be imported.&rdquo;
+          Local supply thins out, so imports cover a larger share of a
+          smaller market.
+        </p>
+        </div>
       </article>
 
       <article class="chart-card chart-with-story">
@@ -303,24 +378,40 @@
         </div>
 
         <div class="chart-story">
-          <h3>What does the price tell us?</h3>
           <p>
-            Dividing import value by reported weight estimates the average
-            trade value per kilogram for each supplier. This Comtrade measure
-            is in US dollars for calendar year 2024, so it should not be
-            compared directly with the Handbook's Australian-dollar series.
+            <strong>Price per kilogram adds a final clue.</strong> Dividing
+            import value by reported weight gives the average trade value per
+            kilogram for each supplier, from US$6.75 (Malaysia) to US$9.06
+            (China). This Comtrade measure is in US dollars for calendar year
+            2024, so it should not be compared directly with the Handbook's
+            Australian-dollar series.
+          </p>
+          <p>
+            <strong>Labour is the cost behind the price.</strong> The ABC
+            reports that Australia's imports come mainly from Kenya, Ecuador,
+            China, Malaysia and Colombia, where labour costs are low. Flower
+            Industry Australia says this has contributed to a 40% fall in
+            Australian flower growers over 20 years, and that local growers
+            cannot match what some overseas packers are paid per stem. Tha
+            is the industry's account rather than something these charts
+            measure.
           </p>
           <p class="closing-line">
-            The story is not simply local versus imported. Australian growers
-            supply a substantial domestic industry, imports help meet demand,
-            and selected native flowers reach overseas markets. Different
-            datasets describe different points in that chain, which is why
-            the financial-year Handbook figures and calendar-year Comtrade
-            comparisons are kept distinct.
+            <strong>Labour matters on Australian farms too.</strong> ABARES
+            estimates that labour is 27.7% of operating expenditure on
+            Australian horticulture farms. Only 7.7% report a lot of
+            difficulty recruiting, so cost looks like a bigger pressure than
+            a plain shortage, but 40.4% now use overseas workers in peak
+            months. The next chapter follows the people behind the harvest.
+          </p>
+          <p class="source">
+            Sources: ABC News, <a href="https://www.abc.net.au/news/2025-02-14/imported-flowers-country-of-origin-labelling-laws/104926548" target="_blank" rel="noopener noreferrer">&ldquo;Why your supermarket flowers may have been dipped in weed killer&rdquo;</a>
+            (14 Feb 2025); ABC Landline, <a href="https://www.abc.net.au/news/2020-08-09/imported-flowers-fuelling-biosecurity-fears/12529126" target="_blank" rel="noopener noreferrer">&ldquo;Australia imports most of its cut flowers&rdquo;</a>
+            (9 Aug 2020); ABARES, <em>Labour use in Australian horticulture</em>, 2023&ndash;24, Table 2 (all horticulture, not flowers only).
           </p>
         </div>
       </article>
-      
+
 <!-- Domestic demand: barriers to flower purchases -->
 <div class="demand-barriers" aria-labelledby="demand-barriers-title">
 
@@ -388,60 +479,66 @@
 
       </section>
       <!-- SECTION 6 -->
-    <section>
-      <h2 class="eyebrow section-heading">06 - The workforce behind the harvest</h2>
-      <p>
-        Production also depends on people. ABARES survey estimates show how
-        horticulture farms staff peak seasons and how that differs by state.
+    <section id="workforce">
+      <h2 class="eyebrow section-heading">5. The workforce behind the harvest</h2>
+      <p class="section-lead">
+        <strong>Behind every harvest are people.</strong> If labour is a big
+        reason imported flowers are cheap, it is also a major cost for
+        Australian growers. ABARES survey estimates show how horticulture
+        farms staff their peak seasons. The next three charts move from the
+        national trend to the state differences and then to the regions.
       </p>
 
-      <article class="chart-card">
-        <div id="chart16" class="vis"></div>
-        <p class="insight-note">
+      <article class="chart-card chart-with-story flip">
+        <div class="chart-visual">
+          <div id="chart16" class="vis"></div>
+          <p class="source">
+          Source: ABARES, <em>Labour use in Australian horticulture: Analysis
+          of survey results, 2023&ndash;24</em>, Table 2 (CC BY 4.0). Values
+          are survey estimates; RSE is the relative standard error.
+        </p>
+        </div>
+        <div class="chart-story">
+          <p>
+          <strong>Reliance on overseas workers is climbing.</strong>
           Nationally, the share of farms using overseas workers in peak months
           rose from 25.7% to 40.4% between 2021&ndash;22 and 2023&ndash;24, a
           rise of 14.7 percentage points. Every state increased. Northern
           Territory and Tasmania are highest; their estimates are less precise
           (higher RSE) because they are based on fewer farms.
         </p>
-        <p class="source">
-          Source: ABARES, <em>Labour use in Australian horticulture: Analysis
-          of survey results, 2023&ndash;24</em>, Table 2 (CC BY 4.0). Values
-          are survey estimates; RSE is the relative standard error.
-        </p>
+        </div>
       </article>
 
-      <article class="chart-card">
-        <div id="chart17" class="vis"></div>
-        <p class="insight-note">
-          Use the menu to switch measures. Bars show how far each state sits
-          above (pink) or below (purple) the Australian figure; the deeper the colour, the bigger the gap; the number
-          at the end of each bar is the state's own percentage. For overseas
-          workers in peak months, the Northern Territory, Tasmania and
-          Western Australia are furthest above the national 40.4%, while
-          South Australia and New South Wales are below. The Northern
-          Territory has high RSE on most measures, so read it with caution.
-        </p>
-        <p class="source">
+      <article class="chart-card chart-with-story flip">
+        <div class="chart-visual">
+          <div id="chart17" class="vis"></div>
+          <p class="source">
           Source: ABARES, <em>Labour use in Australian horticulture</em>,
           2023&ndash;24, Table 2. Overseas workers (peak months), hard to
           recruit (&ldquo;lots of difficulty&rdquo;), accommodation provided
           and machinery use are shares of farms; piece rates is a share of
           workers; labour costs is a share of operating expenditure.
         </p>
+        </div>
+        <div class="chart-story">
+          <p>
+          <strong>Every state tells a different story.</strong> Use the menu to
+          switch measures. Bars show how far each state sits
+          above (pink) or below (purple) the Australian figure, and the
+          number at the end of each bar is the state's own percentage. For
+          overseas workers in peak months, the Northern Territory, Tasmania
+          and Western Australia are furthest above the national 40.4%, while
+          South Australia and New South Wales are below. The Northern
+          Territory has high RSE on most measures, so read it with caution.
+        </p>
+        </div>
       </article>
 
-      <article class="chart-card">
-        <div id="chart18" class="vis"></div>
-        <p class="insight-note">
-          Peak-month labour use is concentrated in a few regions: Victoria's
-          North West (14,100 workers), Melbourne and Mornington Peninsula
-          (11,360) and South Australia's South East (10,220) lead. Circles
-          sit at an area-weighted centre of each region, not at individual
-          farms. Several estimates are imprecise: Perth - West has an RSE
-          of 64% and Mid North Coast, New England and North West 44%.
-        </p>
-        <p class="source">
+      <article class="chart-card chart-with-story flip">
+        <div class="chart-visual">
+          <div id="chart18" class="vis"></div>
+          <p class="source">
           Source: ABARES, <em>Labour use in Australian horticulture</em>,
           2023&ndash;24, Table 3 (CC BY 4.0); boundaries: ABS ASGS 2021 SA4,
           grouped into the ABARES regions. Grouping of SA4s into ABARES
@@ -449,66 +546,93 @@
           South East, Mandurah to Bunbury, and Perth is split into East and
           West. ACT is not surveyed.
         </p>
+        </div>
+        <div class="chart-story">
+          <p>
+          <strong>Peak-season demand is concentrated in a few regions.</strong>
+          Victoria's
+          North West (14,100 workers), Melbourne and Mornington Peninsula
+          (11,360) and South Australia's South East (10,220) lead. Circles
+          sit at an area-weighted centre of each region, not at individual
+          farms. Several estimates are imprecise: Perth - West has an RSE
+          of 64% and Mid North Coast, New England and North West 44%.
+        </p>
+        </div>
       </article>
+    </section>
+
+    <section id="conclusion">
+      <h2 class="eyebrow section-heading">6. Conclusion</h2>
+      <div class="conclusion-text">
+        <p>
+          <strong>Flowers are a small slice of a large industry.</strong>
+          Cut flowers make up only a few per cent of horticulture value in
+          every state, and they matter most to Western Australia even though
+          Victoria produces the highest value.
+        </p>
+        <p>
+          <strong>Imports fill the gaps.</strong> Roses arrive from Kenya and
+          Ecuador, chrysanthemums from Malaysia and Vietnam, and imports peak
+          around Valentine&rsquo;s Day and Mother&rsquo;s Day. Low overseas
+          labour costs help keep them cheap, according to industry sources.
+        </p>
+        <p>
+          <strong>People hold the chain together.</strong> On Australian farms
+          labour is a major cost and reliance on overseas workers is rising.
+          Together, the charts show that the flower industry depends on where
+          it grows, what arrives from overseas, and who does the work.
+        </p>
+      </div>
     </section>
 
   </main>
 
-  
+
   <footer class="site-footer">
   <div class="footer-grid">
 
     <div class="footer-sources">
       <h2>Data sources</h2>
-
-      <ul>
-        <li>
-          Australian Bureau of Statistics.
-          <a href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25"
-             target="_blank" rel="noopener noreferrer">
-            Australian Agriculture: Horticulture, 2024–25
-          </a>. Horticulture values by category and state.
-        </li>
-
-        <li>
-          Hort Innovation.
-          <em>Australian Horticulture Statistics Handbook 2024/25</em>,
-          All Other Horticulture, pp. 409-411. Cut-flower production,
-          trade by partner and imports landed by state.
-        </li>
-
-        <li>
-          United Nations Statistics Division.
-          <a href="https://comtradeplus.un.org/TradeFlow"
-             target="_blank" rel="noopener noreferrer">
-            UN Comtrade
-          </a>. International flower trade by partner country and year.
-        </li>
-
-        <li>
-          Australian Bureau of Statistics.
-          <a href="https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files"
-             target="_blank" rel="noopener noreferrer">
-            State and territory boundaries
-          </a>.
-        </li>
-      </ul>
-
-      <h3>Industry context</h3>
-      <ul>
-        <li>
-          <a href="https://www.flowerindustryaustralia.com.au/"
-             target="_blank" rel="noopener noreferrer">
-            Flower Industry Australia
-          </a>
-        </li>
-        <li>
-          <a href="https://www.abc.net.au/news/2025-02-14/imported-flowers-country-of-origin-labelling-laws/104926548"
-             target="_blank" rel="noopener noreferrer">
-            ABC News — Imported flowers and country-of-origin labelling
-          </a>, 14 February 2025.
-        </li>
-      </ul>
+      <p class="sources-intro">Sources for the datasets used in this story. Cleaned and derived datasets are stored in this project&rsquo;s repository.</p>
+      <div class="source-grid">
+        <div class="source-item">
+          <h3>Horticulture value by state</h3>
+          <p>ABS <em>Australian Agriculture: Horticulture, 2024&ndash;25</em>, Table 1: value of production by category, state and territory. <a href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25" target="_blank" rel="noopener noreferrer">Link to data source</a>.</p>
+        </div>
+        <div class="source-item">
+          <h3>Cut-flower production and trade</h3>
+          <p>Hort Innovation, <em>Australian Horticulture Statistics Handbook 2024/25</em>, All Other Horticulture, pp. 409&ndash;411: cut-flower production, exports by partner and imports landed by state. <a href="https://www.horticulture.com.au/growers/help-your-business-grow/research-reports-publications-fact-sheets-and-more/ha18002/" target="_blank" rel="noopener noreferrer">Link to data source</a>.</p>
+        </div>
+        <div class="source-item">
+          <h3>Import flows and prices</h3>
+          <p>UN Comtrade, Australia imports by partner and product (HS 0603), 2017&ndash;2025: origin rankings, variety breakdown, monthly values and unit prices. <a href="https://comtradeplus.un.org/TradeFlow" target="_blank" rel="noopener noreferrer">Link to data source</a>.</p>
+        </div>
+        <div class="source-item">
+          <h3>Import flows (alluvial)</h3>
+          <p>World Integrated Trade Solution (WITS), Australia imports, HS 0603, 2025, in US$ million. <a href="https://wits.worldbank.org/" target="_blank" rel="noopener noreferrer">Link to data source</a>.</p>
+        </div>
+        <div class="source-item">
+          <h3>Agricultural workforce</h3>
+          <p>ABARES, <em>Labour use in Australian horticulture: Analysis of survey results, 2023&ndash;24</em>, Tables 2 and 3 (CC BY 4.0). <a href="https://www.agriculture.gov.au/abares/research-topics/agricultural-workforce/labour-use/2024" target="_blank" rel="noopener noreferrer">Link to data source</a>.</p>
+        </div>
+        <div class="source-item">
+          <h3>Domestic demand</h3>
+          <p>International Fresh Produce Association (IFPA) 2026 survey of 751 Australian consumers, reported by FloralDaily, 28 August 2026. <a href="https://www.floraldaily.com/article/9867446/australian-floral-consumer-is-highly-selective-under-budget-pressure/" target="_blank" rel="noopener noreferrer">Link to data source</a>.</p>
+        </div>
+        <div class="source-item">
+          <h3>Industry context</h3>
+          <p>ABC News, <a href="https://www.abc.net.au/news/2025-02-14/imported-flowers-country-of-origin-labelling-laws/104926548" target="_blank" rel="noopener noreferrer">imported flowers and labelling</a> (14 Feb 2025) and <a href="https://www.abc.net.au/news/2020-08-09/imported-flowers-fuelling-biosecurity-fears/12529126" target="_blank" rel="noopener noreferrer">imports and biosecurity</a> (9 Aug 2020); <a href="https://www.flowerindustryaustralia.com.au/" target="_blank" rel="noopener noreferrer">Flower Industry Australia</a>.</p>
+        </div>
+        <div class="source-item">
+          <h3>State and region boundaries</h3>
+          <p>ABS Australian Statistical Geography Standard (ASGS) Edition 3: state and territory and SA4 digital boundary files. SA4s are grouped into ABARES regions by the author. <a href="https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files" target="_blank" rel="noopener noreferrer">Link to data source</a>.</p>
+        </div>
+        <div class="source-item">
+          <h3>World map boundaries</h3>
+          <p>Country outlines for the trade flow map, from the FIT3179 Vega-Lite course map assets (<code>world_countries.topojson</code>). <a href="https://github.com/vega/vega-datasets" target="_blank" rel="noopener noreferrer">Link to data source</a>.</p>
+        </div>
+      </div>
+      <p class="sources-note">Comtrade and WITS values are in US dollars; ABS and Handbook values are in Australian dollars. Labour figures cover all horticulture, not flowers only.</p>
     </div>
 
     <div class="footer-about">

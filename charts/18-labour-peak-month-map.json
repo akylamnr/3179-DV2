@@ -1,83 +1,150 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Where does Australian horticulture need the most workers?",
-    "subtitle": "Total labour use in the peak month · 2023–24 · Number of workers by region",
-    "font": "Inter",
-    "fontSize": 16,
-    "anchor": "start",
-    "subtitleFont": "Inter",
-    "subtitleFontSize": 11,
-    "subtitleColor": "#74686D",
-    "offset": 10
-  },
-  "description": "Map of ABARES horticulture labour regions with proportional circles showing estimated total workers used in the peak month in 2023-24.",
-  "width": 620,
-  "height": 500,
-  "background": "transparent",
-  "projection": {
-    "type": "mercator",
-    "center": [134, -28],
-    "scale": 700,
-    "translate": [300, 235]
-  },
-  "layer": [
-    {
-      "data": {
-        "url": "maps/australia_sa4_labour_regions.topojson",
-        "format": { "type": "topojson", "feature": "regions" }
-      },
-      "mark": { "type": "geoshape", "fill": "#DFDEDA", "stroke": "#FFFFFF", "strokeWidth": 0.5 }
-    },
-    {
-      "data": {
-        "url": "data/labour_peak_month_by_region.csv",
-        "format": {
-          "type": "csv",
-          "parse": {
-            "longitude": "number",
-            "latitude": "number",
-            "workers_2023_24": "number",
-            "rse_2023_24_pct": "number"
-          }
-        }
-      },
-      "mark": {
-        "type": "circle",
-        "color": "#697875",
-        "opacity": 0.65,
-        "stroke": "#FFFFFF",
-        "strokeWidth": 1
-      },
-      "encoding": {
-        "longitude": { "field": "longitude", "type": "quantitative" },
-        "latitude": { "field": "latitude", "type": "quantitative" },
-        "size": {
-          "field": "workers_2023_24",
-          "type": "quantitative",
-          "scale": { "type": "linear", "domain": [0, 14100], "range": [0, 2600] },
-          "legend": {
-            "title": "Workers in peak month",
-            "orient": "bottom-right",
-            "values": [1000, 5000, 10000],
-            "format": ",.0f",
-            "labelFont": "Inter",
-            "titleFont": "Inter",
-            "labelFontSize": 10,
-            "titleFontSize": 10,
-            "symbolFillColor": "#D6538A",
-            "symbolOpacity": 0.7
-          }
-        },
-        "order": { "field": "workers_2023_24", "type": "quantitative", "sort": "descending" },
-        "tooltip": [
-          { "field": "region", "type": "nominal", "title": "Region" },
-          { "field": "state", "type": "nominal", "title": "State" },
-          { "field": "workers_2023_24", "type": "quantitative", "title": "Workers in peak month, 2023–24", "format": ",.0f" },
-          { "field": "rse_2023_24_pct", "type": "quantitative", "title": "RSE (%)", "format": ".0f" }
-        ]
-      }
-    }
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "title": {
+  "text": "Where does Australian horticulture need the most workers?",
+  "subtitle": "Total labour use in the peak month · 2023–24 · Number of workers by region",
+  "font": "Inter",
+  "fontWeight": 700,
+  "fontSize": 19,
+  "anchor": "start",
+  "subtitleFont": "Inter",
+  "subtitleFontSize": 12,
+  "subtitleColor": "#74686D",
+  "offset": 10,
+  "color": "#1f382f",
+  "subtitleFontWeight": "normal"
+ },
+ "description": "Map of ABARES horticulture labour regions with proportional circles showing estimated total workers used in the peak month in 2023-24.",
+ "width": 560,
+ "height": 500,
+ "background": "transparent",
+ "projection": {
+  "type": "mercator",
+  "center": [
+   134,
+   -28
   ],
-  "config": { "font": "Inter", "view": { "stroke": null } }
+  "scale": 700,
+  "translate": [
+   270,
+   235
+  ]
+ },
+ "layer": [
+  {
+   "data": {
+    "url": "maps/australia_sa4_labour_regions.topojson",
+    "format": {
+     "type": "topojson",
+     "feature": "regions"
+    }
+   },
+   "mark": {
+    "type": "geoshape",
+    "fill": "#DFDEDA",
+    "stroke": "#FFFFFF",
+    "strokeWidth": 0.5
+   }
+  },
+  {
+   "data": {
+    "url": "data/labour_peak_month_by_region.csv",
+    "format": {
+     "type": "csv",
+     "parse": {
+      "longitude": "number",
+      "latitude": "number",
+      "workers_2023_24": "number",
+      "rse_2023_24_pct": "number"
+     }
+    }
+   },
+   "mark": {
+    "type": "circle",
+    "color": "#697875",
+    "opacity": 0.65,
+    "stroke": "#FFFFFF",
+    "strokeWidth": 1
+   },
+   "encoding": {
+    "longitude": {
+     "field": "longitude",
+     "type": "quantitative"
+    },
+    "latitude": {
+     "field": "latitude",
+     "type": "quantitative"
+    },
+    "size": {
+     "field": "workers_2023_24",
+     "type": "quantitative",
+     "scale": {
+      "type": "linear",
+      "domain": [
+       0,
+       14100
+      ],
+      "range": [
+       0,
+       2600
+      ]
+     },
+     "legend": {
+      "title": "Workers in peak month",
+      "orient": "right",
+      "values": [
+       1000,
+       5000,
+       10000
+      ],
+      "format": ",.0f",
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "symbolFillColor": "#697875",
+      "symbolOpacity": 0.7,
+      "labelColor": "#5B4E49",
+      "titleColor": "#5B4E49",
+      "titleFontWeight": 600
+     }
+    },
+    "order": {
+     "field": "workers_2023_24",
+     "type": "quantitative",
+     "sort": "descending"
+    },
+    "tooltip": [
+     {
+      "field": "region",
+      "type": "nominal",
+      "title": "Region"
+     },
+     {
+      "field": "state",
+      "type": "nominal",
+      "title": "State"
+     },
+     {
+      "field": "workers_2023_24",
+      "type": "quantitative",
+      "title": "Workers in peak month, 2023–24",
+      "format": ",.0f"
+     },
+     {
+      "field": "rse_2023_24_pct",
+      "type": "quantitative",
+      "title": "RSE (%)",
+      "format": ".0f"
+     }
+    ]
+   }
+  }
+ ],
+ "config": {
+  "font": "Inter",
+  "view": {
+   "stroke": null
+  }
+ }
 }

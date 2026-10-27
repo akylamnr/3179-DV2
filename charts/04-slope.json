@@ -2,11 +2,12 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Farm-Gate Value of Australia's Horticulture (2020-21, 2024-25)",
-    "offset": 25,
+    "offset": 10,
     "font": "Inter",
-    "fontSize": 20,
+    "fontWeight": 700,
+    "fontSize": 19,
     "anchor": "start",
-    "color" : "#1f382f"
+    "color": "#1f382f"
   },
   "width": 430,
   "height": 340,
@@ -43,11 +44,11 @@
             "orient": "bottom",
             "labelAngle": 0,
             "labelFont": "Inter",
-            "labelFontSize": 10,
+            "labelFontSize": 13,
             "labelPadding": 5,
             "title": "Financial year",
             "titleFont": "Inter",
-            "titleFontSize": 12,
+            "titleFontSize": 13,
             "titlePadding": 7,
             "grid": false,
             "domain": true,
@@ -58,7 +59,8 @@
             "tickColor": "#8E8078",
             "labelColor": "#5B4E49",
             "titleColor": "#5B4E49",
-            "labelOverlap": false
+            "labelOverlap": false,
+            "titleFontWeight": 600
           }
         },
         "y": {
@@ -84,11 +86,11 @@
             ],
             "format": ",.0f",
             "labelFont": "Inter",
-            "labelFontSize": 10,
+            "labelFontSize": 13,
             "labelPadding": 4,
             "title": "Farm-gate value (A$ million)",
             "titleFont": "Inter",
-            "titleFontSize": 12,
+            "titleFontSize": 13,
             "titlePadding": 7,
             "grid": true,
             "gridColor": "#E8DFDB",
@@ -100,7 +102,8 @@
             "tickSize": 4,
             "tickColor": "#8E8078",
             "labelColor": "#5B4E49",
-            "titleColor": "#5B4E49"
+            "titleColor": "#5B4E49",
+            "titleFontWeight": 600
           }
         },
         "color": {
@@ -172,7 +175,7 @@
         "baseline": "middle",
         "dx": 5,
         "font": "Inter",
-        "fontSize": 9,
+        "fontSize": 12,
         "fontWeight": 600,
         "clip": false
       },
@@ -232,22 +235,6 @@
     "font": "Inter",
     "view": {
       "stroke": null
-    },
-    "title": {
-      "font": "Inter",
-      "fontSize": 16,
-      "anchor": "start",
-      "subtitleFont": "Inter",
-      "subtitleFontSize": 11,
-      "subtitleColor": "#74686D"
-    },
-    "axis": {
-      "labelFont": "Inter",
-      "titleFont": "Inter",
-      "labelFontSize": 13,
-      "titleFontSize": 13,
-      "labelColor": "#5B4E49",
-      "titleColor": "#5B4E49"
     }
   }
 }

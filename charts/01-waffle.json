@@ -4,13 +4,15 @@
     "text": "What Categories Make Up Horticulture?",
     "subtitle": "Based on farm-gate value (A$ billion) · 2024-25",
     "font": "Inter",
-    "offset": 15,
-    "fontSize": 20,
-    "color" : "#1f382f",
+    "fontWeight": 700,
+    "offset": 10,
+    "fontSize": 19,
+    "color": "#1f382f",
     "anchor": "start",
     "subtitleFont": "Inter",
-    "subtitleFontSize": 13,
-    "subtitleColor": "#74686D"
+    "subtitleFontSize": 12,
+    "subtitleColor": "#74686D",
+    "subtitleFontWeight": "normal"
   },
   "background": "transparent",
   "width": 320,
@@ -117,12 +119,15 @@
         "direction": "vertical",
         "labelLimit": 220,
         "labelFont": "Inter",
-        "labelFontSize": 12,
+        "labelFontSize": 13,
         "symbolSize": 120,
         "symbolType": "square",
         "padding": 4,
         "titleFont": "Inter",
-        "titleFontSize": 13
+        "titleFontSize": 13,
+        "labelColor": "#5B4E49",
+        "titleColor": "#5B4E49",
+        "titleFontWeight": 600
       }
     },
     "opacity": {
@@ -162,15 +167,6 @@
     "font": "Inter",
     "view": {
       "stroke": null
-    },
-    "axis": {
-      "grid": false,
-      "domain": false,
-      "ticks": false
-    },
-    "legend": {
-      "labelFont": "Inter",
-      "titleFont": "Inter"
     }
   }
 }

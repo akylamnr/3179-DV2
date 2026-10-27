@@ -1,19 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Calendar heatmap of Australian imports for the combined cut-flower commodity in complete calendar years 2021-2025. The source tariff category does not distinguish individual flower varieties.",
-  "title": {
-    "text": "When does Australia import cut flowers?",
-    "subtitle": "Monthly CIF import value · complete calendar years 2021-2025 · A$ million",
-    "font": "Inter",
-    "fontSize": 18,
-    "anchor": "start",
-    "subtitleFont": "Inter",
-    "subtitleFontSize": 12,
-    "subtitleColor": "#74686D",
-    "offset": 10
-  },
-  "width": 560,
-  "height": 220,
+  "description": "Calendar heatmap of Australian imports for the combined cut-flower commodity in complete calendar years 2021-2025. The source tariff category does not distinguish individual flower varieties. Use the year slider to show its monthly values in the bar chart below.",
   "background": "transparent",
   "data": {
     "url": "data/cut_flower_imports_calendar_heatmap.csv",
@@ -28,132 +15,264 @@
       }
     }
   },
-  "mark": {
-    "type": "rect",
-    "stroke": "#FFFFFF",
-    "strokeWidth": 2,
-    "cornerRadius": 3
-  },
-  "encoding": {
-    "x": {
-      "field": "month_name",
-      "type": "ordinal",
-      "sort": [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec"
-      ],
-      "title": "Month",
-      "axis": {
-        "labelAngle": 0,
-        "labelFontSize": 10,
-        "grid": false,
-        "ticks": false,
-        "domain": false
-      }
-    },
-    "y": {
-      "field": "year",
-      "type": "ordinal",
-      "sort": [
-        2021,
-        2022,
-        2023,
-        2024,
-        2025
-      ],
-      "title": null,
-      "axis": {
-        "labelFontSize": 11,
-        "grid": false,
-        "ticks": false,
-        "domain": false
-      }
-    },
-    "color": {
-      "field": "import_value_aud_m",
-      "type": "quantitative",
-      "title": "CIF value (A$ million)",
-      "scale": {
-        "domain": [
-          8,
-          20.5
-        ],
-        "clamp": true,
-        "range": [
-        "#F1F6FA",
-        "#C9DDED",
-        "#8AB8D8",
-        "#4C8DB8",
-        "#245C84"
-      ]
-      },
-      "legend": {
-        "orient": "bottom",
-        "direction": "horizontal",
-        "format": ".0f",
-        "gradientLength": 280,
-        "titleFontSize": 11,
-        "labelFontSize": 10
-      }
-    },
-    "tooltip": [
-      {
-        "field": "year",
-        "type": "ordinal",
-        "title": "Year"
-      },
-      {
-        "field": "month_name",
-        "type": "ordinal",
-        "title": "Month"
-      },
-      {
-        "field": "import_value_aud_m",
-        "type": "quantitative",
-        "title": "Import CIF value (A$ million)",
-        "format": ".2f"
-      },
-      {
-        "field": "quantity_kg",
-        "type": "quantitative",
-        "title": "Reported quantity (kg)",
-        "format": ",.0f"
-      },
-      {
-        "field": "source_rows",
-        "type": "quantitative",
-        "title": "Source records",
-        "format": ",.0f"
-      },
-      {
-        "field": "commodity_code",
-        "type": "nominal",
-        "title": "Commodity code"
-      }
-    ]
-  },
   "config": {
     "font": "Inter",
     "view": {
       "stroke": null
-    },
-    "axis": {
-      "labelFont": "Inter",
-      "titleFont": "Inter",
-      "labelFontSize": 11,
-      "titleFontSize": 12,
-      "labelColor": "#5B4E49",
-      "titleColor": "#5B4E49"
     }
-  }
+  },
+  "title": {
+    "text": "When does Australia import cut flowers?",
+    "subtitle": "Monthly CIF import value · complete calendar years 2021-2025 · A$ million",
+    "font": "Inter",
+    "fontWeight": 700,
+    "fontSize": 19,
+    "anchor": "start",
+    "subtitleFont": "Inter",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#74686D",
+    "offset": 10,
+    "color": "#1f382f",
+    "subtitleFontWeight": "normal"
+  },
+  "spacing": 6,
+  "vconcat": [
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 2,
+        "cornerRadius": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "month_name",
+          "type": "ordinal",
+          "sort": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec"
+          ],
+          "title": "Month",
+          "axis": {
+            "labelAngle": 0,
+            "labelFontSize": 13,
+            "grid": false,
+            "ticks": false,
+            "domain": false,
+            "labelFont": "Inter",
+            "titleFont": "Inter",
+            "titleFontSize": 13,
+            "labelColor": "#5B4E49",
+            "titleColor": "#5B4E49",
+            "titleFontWeight": 600
+          }
+        },
+        "y": {
+          "field": "year",
+          "type": "ordinal",
+          "sort": [
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "title": null,
+          "axis": {
+            "labelFontSize": 13,
+            "grid": false,
+            "ticks": false,
+            "domain": false,
+            "labelFont": "Inter",
+            "titleFont": "Inter",
+            "titleFontSize": 13,
+            "labelColor": "#5B4E49",
+            "titleColor": "#5B4E49",
+            "titleFontWeight": 600
+          }
+        },
+        "color": {
+          "field": "import_value_aud_m",
+          "type": "quantitative",
+          "title": "CIF value (A$ million)",
+          "scale": {
+            "domain": [
+              8,
+              20.5
+            ],
+            "clamp": true,
+            "range": [
+              "#F1F6EF",
+              "#D5E6C8",
+              "#9CC58F",
+              "#4F9A6B",
+              "#28483D"
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "format": ".0f",
+            "gradientLength": 280,
+            "titleFontSize": 13,
+            "labelFontSize": 13,
+            "labelFont": "Inter",
+            "titleFont": "Inter",
+            "labelColor": "#5B4E49",
+            "titleColor": "#5B4E49",
+            "titleFontWeight": 600
+          }
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "month_name",
+            "type": "ordinal",
+            "title": "Month"
+          },
+          {
+            "field": "import_value_aud_m",
+            "type": "quantitative",
+            "title": "Import CIF value (A$ million)",
+            "format": ".2f"
+          },
+          {
+            "field": "quantity_kg",
+            "type": "quantitative",
+            "title": "Reported quantity (kg)",
+            "format": ",.0f"
+          },
+          {
+            "field": "source_rows",
+            "type": "quantitative",
+            "title": "Source records",
+            "format": ",.0f"
+          },
+          {
+            "field": "commodity_code",
+            "type": "nominal",
+            "title": "Commodity code"
+          }
+        ],
+        "opacity": {
+          "condition": {
+            "test": "datum.year == yr",
+            "value": 1
+          },
+          "value": 0.55
+        }
+      },
+      "width": 560,
+      "height": 190
+    },
+    {
+      "width": 560,
+      "height": 110,
+      "transform": [
+        {
+          "filter": "datum.year == yr"
+        }
+      ],
+      "mark": {
+        "type": "bar",
+        "color": "#28483D",
+        "cornerRadiusEnd": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "month_name",
+          "type": "ordinal",
+          "sort": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec"
+          ],
+          "title": null,
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false,
+            "labelFont": "Inter",
+            "titleFont": "Inter",
+            "labelFontSize": 13,
+            "titleFontSize": 13,
+            "labelColor": "#5B4E49",
+            "titleColor": "#5B4E49",
+            "titleFontWeight": 600
+          }
+        },
+        "y": {
+          "field": "import_value_aud_m",
+          "type": "quantitative",
+          "title": "A$ million",
+          "axis": {
+            "grid": false,
+            "format": ".0f",
+            "tickCount": 3,
+            "labelFont": "Inter",
+            "titleFont": "Inter",
+            "labelFontSize": 13,
+            "titleFontSize": 13,
+            "labelColor": "#5B4E49",
+            "titleColor": "#5B4E49",
+            "titleFontWeight": 600
+          }
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "month_name",
+            "type": "ordinal",
+            "title": "Month"
+          },
+          {
+            "field": "import_value_aud_m",
+            "type": "quantitative",
+            "title": "Import value (A$ million)",
+            "format": ".2f"
+          }
+        ]
+      }
+    }
+  ],
+  "params": [
+    {
+      "name": "yr",
+      "value": 2025,
+      "bind": {
+        "input": "range",
+        "min": 2021,
+        "max": 2025,
+        "step": 1,
+        "name": "Year: "
+      }
+    }
+  ]
 }
