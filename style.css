@@ -1461,3 +1461,37 @@ section h3,
 .chart-story p {
   line-height: 1.6;
 }
+
+/* Larger charts and more room between chart blocks */
+.chart-with-story {
+  grid-template-columns: minmax(0, 2fr) minmax(240px, 0.8fr);
+  gap: clamp(28px, 4vw, 56px);
+  margin: clamp(56px, 8vw, 96px) 0;
+}
+
+.chart-with-story.flip {
+  grid-template-columns: minmax(240px, 0.8fr) minmax(0, 2fr);
+}
+
+.chart-with-story.bump-layout {
+  grid-template-columns: minmax(0, 2fr) minmax(240px, 0.8fr);
+}
+
+.chart-with-story .chart-visual .vis {
+  width: 100%;
+}
+
+@media (min-width: 801px) {
+  #workforce .chart-with-story.flip,
+  #imports .chart-with-story.flip {
+    grid-template-columns: minmax(240px, 0.8fr) minmax(0, 2fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .chart-with-story,
+  .chart-with-story.flip,
+  .chart-with-story.bump-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

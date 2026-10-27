@@ -374,3 +374,18 @@ if ("IntersectionObserver" in window) {
       revealer.observe(el);
     });
 }
+
+// Let chart SVGs scale up to fill their column
+(function scaleChartSvgs() {
+  const fit = () =>
+    document.querySelectorAll(".chart-with-story .vis svg:not([viewBox])").forEach((svg) => {
+      const w = parseFloat(svg.getAttribute("width"));
+      const h = parseFloat(svg.getAttribute("height"));
+      if (!w || !h) return;
+      svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
+      svg.style.width = "100%";
+      svg.style.height = "auto";
+    });
+  new MutationObserver(fit).observe(document.body, { childList: true, subtree: true });
+  fit();
+})();
