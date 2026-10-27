@@ -84,7 +84,7 @@
         "x": {
           "field": "usd_per_kg",
           "type": "quantitative",
-          "title": "Import price (US$ per kg)",
+          "title": "Import price (USD per kg)",
           "axis": {
             "format": "$.0f",
             "grid": false,
@@ -128,13 +128,13 @@
           {
             "field": "usd_per_kg",
             "type": "quantitative",
-            "title": "US$ per kg",
+            "title": "USD per kg",
             "format": ".2f"
           },
           {
             "field": "import_value_usd_m",
             "type": "quantitative",
-            "title": "Import value (US$ million)",
+            "title": "Import value (USD million)",
             "format": ".2f"
           },
           {

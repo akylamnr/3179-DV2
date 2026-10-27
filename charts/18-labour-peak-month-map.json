@@ -139,6 +139,138 @@
      }
     ]
    }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "state_label": "Western\nAustralia",
+      "longitude": 122.0,
+      "latitude": -29.0
+     },
+     {
+      "state_label": "Northern\nTerritory",
+      "longitude": 133.6,
+      "latitude": -22.5
+     },
+     {
+      "state_label": "Queensland",
+      "longitude": 143.5,
+      "latitude": -24.8
+     },
+     {
+      "state_label": "South\nAustralia",
+      "longitude": 133.6,
+      "latitude": -27.2
+     },
+     {
+      "state_label": "New South\nWales",
+      "longitude": 146.2,
+      "latitude": -30.0
+     },
+     {
+      "state_label": "Victoria",
+      "longitude": 141.2,
+      "latitude": -39.9
+     },
+     {
+      "state_label": "Tasmania",
+      "longitude": 146.6,
+      "latitude": -44.4
+     }
+    ]
+   },
+   "mark": {
+    "type": "text",
+    "font": "Inter",
+    "fontSize": 11,
+    "fontWeight": 700,
+    "lineBreak": "\n",
+    "align": "center",
+    "baseline": "middle",
+    "stroke": "#FFFFFF",
+    "strokeWidth": 3,
+    "strokeJoin": "round",
+    "color": "#FFFFFF",
+    "opacity": 0.9
+   },
+   "encoding": {
+    "longitude": {
+     "field": "longitude",
+     "type": "quantitative"
+    },
+    "latitude": {
+     "field": "latitude",
+     "type": "quantitative"
+    },
+    "text": {
+     "field": "state_label"
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "state_label": "Western\nAustralia",
+      "longitude": 122.0,
+      "latitude": -29.0
+     },
+     {
+      "state_label": "Northern\nTerritory",
+      "longitude": 133.6,
+      "latitude": -22.5
+     },
+     {
+      "state_label": "Queensland",
+      "longitude": 143.5,
+      "latitude": -24.8
+     },
+     {
+      "state_label": "South\nAustralia",
+      "longitude": 133.6,
+      "latitude": -27.2
+     },
+     {
+      "state_label": "New South\nWales",
+      "longitude": 146.2,
+      "latitude": -30.0
+     },
+     {
+      "state_label": "Victoria",
+      "longitude": 141.2,
+      "latitude": -39.9
+     },
+     {
+      "state_label": "Tasmania",
+      "longitude": 146.6,
+      "latitude": -44.4
+     }
+    ]
+   },
+   "mark": {
+    "type": "text",
+    "font": "Inter",
+    "fontSize": 11,
+    "fontWeight": 700,
+    "lineBreak": "\n",
+    "align": "center",
+    "baseline": "middle",
+    "color": "#30272B"
+   },
+   "encoding": {
+    "longitude": {
+     "field": "longitude",
+     "type": "quantitative"
+    },
+    "latitude": {
+     "field": "latitude",
+     "type": "quantitative"
+    },
+    "text": {
+     "field": "state_label"
+    }
+   }
   }
  ],
  "config": {

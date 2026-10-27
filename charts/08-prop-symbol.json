@@ -129,15 +129,15 @@
           "field": "value_class",
           "type": "ordinal",
           "sort": [
-            "Under A$2b",
-            "A$2b to <A$4b",
-            "A$4b or more"
+            "Under AUD 2 billion",
+            "AUD 2–4 billion",
+            "AUD 4 billion or more"
           ],
           "scale": {
             "domain": [
-              "Under A$2b",
-              "A$2b to <A$4b",
-              "A$4b or more"
+              "Under AUD 2 billion",
+              "AUD 2–4 billion",
+              "AUD 4 billion or more"
             ],
             "range": [
               100,
@@ -146,7 +146,7 @@
             ]
           },
           "legend": {
-            "title": "Farm-gate value ($A billion)",
+            "title": "Farm-gate value (AUD billion)",
             "orient": "bottom",
             "direction": "horizontal",
             "symbolType": "circle",
@@ -158,7 +158,9 @@
             "titleFont": "Inter",
             "labelColor": "#5B4E49",
             "titleColor": "#5B4E49",
-            "titleFontWeight": 600
+            "titleFontWeight": 600,
+            "titleLimit": 400,
+            "labelLimit": 200
           }
         },
         "tooltip": [
@@ -170,7 +172,7 @@
           {
             "field": "total_farm_gate_value_aud_m",
             "type": "quantitative",
-            "title": "Five-category value (A$ million)",
+            "title": "Five-category value (AUD million)",
             "format": ",.1f"
           },
           {

@@ -96,13 +96,13 @@
           {
             "field": "cut_flower_value_m",
             "type": "quantitative",
-            "title": "Cut-flower value (A$ million)",
+            "title": "Cut-flower value (AUD million)",
             "format": ".1f"
           },
           {
             "field": "total_horticulture_value_m",
             "type": "quantitative",
-            "title": "Total horticulture value (A$ million)",
+            "title": "Total horticulture value (AUD million)",
             "format": ",.1f"
           },
           {

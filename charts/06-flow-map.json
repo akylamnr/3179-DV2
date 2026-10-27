@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Two-way map of selected Australian cut-flower imports and exports from the Hort Innovation 2024/25 Handbook. Values are A$ million for financial years ending June. Blank values reported as under A$1m are not plotted.",
+  "description": "Two-way map of selected Australian cut-flower imports and exports from the Hort Innovation 2024/25 Handbook. Values are AUD million for financial years ending June. Blank values reported as under AUD 1 million are not plotted.",
   "title": {
     "text": "Australia's Flowers Move Both Ways",
-    "subtitle": "Selected suppliers and markets (A$ million) · Year ending June",
+    "subtitle": "Selected suppliers and markets (AUD million) · Year ending June",
     "font": "Inter",
     "fontSize": 19,
     "fontWeight": 700,
@@ -244,7 +244,7 @@
         "size": {
           "field": "value_aud_m",
           "type": "quantitative",
-          "title": "Trade value (A$ million)",
+          "title": "Trade value (AUD million)",
           "scale": {
             "domain": [
               0,
@@ -283,7 +283,7 @@
           {
             "field": "value_aud_m",
             "type": "quantitative",
-            "title": "Value (A$ million)",
+            "title": "Value (AUD million)",
             "format": ".1f"
           },
           {

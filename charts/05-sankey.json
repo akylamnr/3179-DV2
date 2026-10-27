@@ -8,7 +8,7 @@
   "background": "transparent",
   "title": {
     "text": "Where Australia's Imported Flowers Come From",
-    "subtitle": "Import value in US$ million · 2025",
+    "subtitle": "Import value in USD million · 2025",
     "font": "Inter",
     "fontSize": 23,
     "fontWeight": 700,
@@ -206,7 +206,7 @@
             "value": 0.82
           },
           "tooltip": {
-            "signal": "{'From': datum.source, 'To': datum.target, 'Continent': datum.region, 'Import value (US$ million)': format(datum.value, ',.2f')}"
+            "signal": "{'From': datum.source, 'To': datum.target, 'Continent': datum.region, 'Import value (USD million)': format(datum.value, ',.2f')}"
           }
         }
       }
@@ -247,7 +247,7 @@
         },
         "hover": {
           "tooltip": {
-            "signal": "{'Supplier or destination': datum.source, 'Continent': datum.region, 'Import value (US$ million)': format(datum.value, ',.2f')}"
+            "signal": "{'Supplier or destination': datum.source, 'Continent': datum.region, 'Import value (USD million)': format(datum.value, ',.2f')}"
           }
         }
       }

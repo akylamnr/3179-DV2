@@ -223,7 +223,7 @@
           {
             "field": "import_value_usd_m",
             "type": "quantitative",
-            "title": "Import value (US$ million)",
+            "title": "Import value (USD million)",
             "format": ",.2f"
           }
         ]

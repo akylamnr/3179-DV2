@@ -74,7 +74,7 @@
             "nice": false,
             "zero": true
           },
-          "title": "Farm-gate value (A$ million)",
+          "title": "Farm-gate value (AUD million)",
           "axis": {
             "orient": "left",
             "values": [
@@ -88,7 +88,7 @@
             "labelFont": "Inter",
             "labelFontSize": 13,
             "labelPadding": 4,
-            "title": "Farm-gate value (A$ million)",
+            "title": "Farm-gate value (AUD million)",
             "titleFont": "Inter",
             "titleFontSize": 13,
             "titlePadding": 7,
@@ -151,7 +151,7 @@
           {
             "field": "value_m",
             "type": "quantitative",
-            "title": "Farm-gate value (A$ million)",
+            "title": "Farm-gate value (AUD million)",
             "format": ",.1f"
           },
           {

@@ -3,7 +3,7 @@
   "description": "Australia's 2024 imports from the six leading origin countries, stacked by fresh-cut flower category. Lilies are excluded because their import values are very small.",
   "title": {
     "text": "What Types of Flowers Come From the Top Six Origins?",
-    "subtitle": "US$ million · 2024-25",
+    "subtitle": "Share of each origin's import value by flower type · 2024",
     "font": "Inter",
     "fontWeight": 700,
     "fontSize": 22,
@@ -28,8 +28,7 @@
     }
   },
   "mark": {
-    "type": "bar",
-    "cornerRadiusEnd": 4
+    "type": "bar"
   },
   "encoding": {
     "x": {
@@ -59,14 +58,16 @@
     "y": {
       "field": "import_value_usd_m",
       "type": "quantitative",
-      "stack": "zero",
-      "title": "Import value (US$ million)",
+      "stack": "normalize",
+      "title": "Share of import value",
       "scale": {
-        "zero": true
+        "domain": [
+          0,
+          1
+        ]
       },
-      
       "axis": {
-        "format": "$.0f",
+        "format": ".0%",
         "grid": true,
         "gridColor": "#E8DFDB",
         "labelFont": "Inter",
@@ -134,11 +135,22 @@
         "title": "Flower type"
       },
       {
+        "field": "share",
+        "type": "quantitative",
+        "title": "Share of origin's imports",
+        "format": ".1%"
+      },
+      {
         "field": "import_value_usd_m",
         "type": "quantitative",
-        "title": "Import value (US$ million)",
-        "format": ".3f"
-
+        "title": "Import value (USD million)",
+        "format": ".2f"
+      },
+      {
+        "field": "country_total",
+        "type": "quantitative",
+        "title": "Origin total (USD million)",
+        "format": ".2f"
       }
     ],
     "opacity": {
@@ -165,6 +177,24 @@
         ]
       },
       "bind": "legend"
+    }
+  ],
+  "transform": [
+    {
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "import_value_usd_m",
+          "as": "country_total"
+        }
+      ],
+      "groupby": [
+        "country"
+      ]
+    },
+    {
+      "calculate": "datum.country_total > 0 ? datum.import_value_usd_m / datum.country_total : 0",
+      "as": "share"
     }
   ]
 }

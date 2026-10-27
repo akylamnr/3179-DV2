@@ -1502,3 +1502,41 @@ section h3,
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Conclusion: four summary points, then the consumer-demand panel */
+#conclusion .conclusion-text {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 48px;
+  max-width: none;
+  margin: 0 0 40px;
+}
+
+#conclusion .conclusion-text p {
+  max-width: 48ch;
+}
+
+#conclusion .conclusion-text strong:first-child {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1.15rem;
+}
+
+#conclusion .demand-barriers-heading h3 {
+  margin-top: 0;
+}
+
+#conclusion .conclusion-closing {
+  max-width: 68ch;
+  margin: 36px 0 0;
+  color: var(--forest);
+  font-family: "Fraunces", "Newsreader", Georgia, serif;
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 800px) {
+  #conclusion .conclusion-text {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

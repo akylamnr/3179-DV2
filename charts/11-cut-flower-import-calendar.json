@@ -23,7 +23,7 @@
   },
   "title": {
     "text": "When Does Australia Import Cut Flowers?",
-    "subtitle": "Monthly CIF import value · A$ million · 2021-2025 ",
+    "subtitle": "Monthly CIF import value · AUD million · 2021-2025 ",
     "font": "Inter",
     "fontWeight": 700,
     "fontSize": 22,
@@ -104,7 +104,7 @@
         "color": {
           "field": "import_value_aud_m",
           "type": "quantitative",
-          "title": "CIF value (A$ million)",
+          "title": "CIF value (AUD million)",
           "scale": {
             "domain": [
               8,
@@ -147,7 +147,7 @@
           {
             "field": "import_value_aud_m",
             "type": "quantitative",
-            "title": "Import CIF value (A$ million)",
+            "title": "Import CIF value (AUD million)",
             "format": ".2f"
           },
           {
@@ -227,7 +227,7 @@
         "y": {
           "field": "import_value_aud_m",
           "type": "quantitative",
-          "title": "A$ million",
+          "title": "AUD million",
           "axis": {
             "grid": false,
             "format": ".0f",
@@ -261,7 +261,7 @@
           {
             "field": "import_value_aud_m",
             "type": "quantitative",
-            "title": "Import value (A$ million)",
+            "title": "Import value (AUD million)",
             "format": ".2f"
           }
         ]
