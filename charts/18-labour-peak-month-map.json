@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Where does Australian horticulture need the most workers?",
-    "subtitle": "Total labour use in the peak month · 2023–24 · Number of workers by region",
+    "subtitle": "Hexagon bins · Sum of regional peak-month workers · 2023–24",
     "font": "Inter",
     "fontWeight": 700,
     "fontSize": 19,
@@ -14,7 +14,7 @@
     "color": "#1f382f",
     "subtitleFontWeight": "normal"
   },
-  "description": "Choropleth of ABARES horticulture labour regions shaded by estimated total workers used in the peak month in 2023-24.",
+  "description": "Hexagon-bin map of Australia. Each hexagon sums the estimated workers used in the peak month in 2023-24 across the ABARES labour regions whose centres fall inside it.",
   "width": 560,
   "height": 480,
   "background": "transparent",
@@ -33,66 +33,45 @@
   "layer": [
     {
       "data": {
-        "url": "maps/australia_sa4_labour_regions.topojson",
+        "url": "maps/australia_states.topojson",
         "format": {
           "type": "topojson",
-          "feature": "regions"
+          "feature": "australia_states"
         }
       },
       "mark": {
         "type": "geoshape",
         "fill": "#F1EFEA",
-        "stroke": "#FFFFFF",
-        "strokeWidth": 0.4
+        "stroke": "#D9D5CC",
+        "strokeWidth": 0.6
       }
     },
     {
       "data": {
-        "url": "maps/australia_sa4_labour_regions.topojson",
+        "url": "data/labour_peak_month_hexbins.geojson",
         "format": {
-          "type": "topojson",
-          "feature": "regions"
+          "type": "json",
+          "property": "features"
         }
       },
-      "transform": [
-        {
-          "lookup": "properties.region",
-          "from": {
-            "data": {
-              "url": "data/labour_peak_month_by_region.csv",
-              "format": {
-                "type": "csv",
-                "parse": {
-                  "workers_2023_24": "number",
-                  "rse_2023_24_pct": "number"
-                }
-              }
-            },
-            "key": "region",
-            "fields": [
-              "workers_2023_24",
-              "rse_2023_24_pct"
-            ]
-          }
-        }
-      ],
       "mark": {
         "type": "geoshape",
         "stroke": "#FFFFFF",
-        "strokeWidth": 0.4
+        "strokeWidth": 1.5,
+        "opacity": 0.95
       },
       "encoding": {
         "color": {
-          "field": "workers_2023_24",
+          "field": "properties.workers",
           "type": "quantitative",
           "scale": {
             "type": "threshold",
             "domain": [
-              1000,
-              2500,
-              4000,
-              6000,
-              10000
+              2000,
+              5000,
+              10000,
+              20000,
+              30000
             ],
             "range": [
               "#F6E8D3",
@@ -121,26 +100,25 @@
         },
         "tooltip": [
           {
-            "field": "properties.region",
-            "type": "nominal",
-            "title": "Region"
+            "field": "properties.workers",
+            "type": "quantitative",
+            "title": "Workers in peak month (sum)",
+            "format": ",.0f"
           },
           {
-            "field": "properties.state",
+            "field": "properties.n_regions",
+            "type": "quantitative",
+            "title": "Regions in hexagon"
+          },
+          {
+            "field": "properties.states",
             "type": "nominal",
             "title": "State"
           },
           {
-            "field": "workers_2023_24",
-            "type": "quantitative",
-            "title": "Workers in peak month, 2023–24",
-            "format": ",.0f"
-          },
-          {
-            "field": "rse_2023_24_pct",
-            "type": "quantitative",
-            "title": "RSE (%)",
-            "format": ".0f"
+            "field": "properties.regions",
+            "type": "nominal",
+            "title": "Regions"
           }
         ]
       }
