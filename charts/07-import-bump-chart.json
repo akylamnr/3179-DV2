@@ -2,11 +2,11 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Bump chart ranking Australia's six selected fresh-cut flower suppliers by annual import value. Rank 1 is the largest supplier.",
   "title": {
-    "text": "Malaysia overtakes Kenya as Australia's leading supplier",
-    "subtitle": "Annual import value for fresh-cut flowers and buds (HS 060310) · 2017-2024 · Rank 1 = largest",
+    "text": "Vietnam climbs to second among Australia's flower suppliers",
+    "subtitle": "Annual import value for fresh-cut flowers and buds (2025 from WITS, HS 0603) · 2017–2025 · Rank 1 = largest",
     "font": "Inter",
     "fontWeight": 700,
-    "fontSize": 19,
+    "fontSize": 20,
     "anchor": "start",
     "subtitleFont": "Inter",
     "subtitleFontSize": 13,
@@ -74,7 +74,8 @@
         2021,
         2022,
         2023,
-        2024
+        2024,
+        2025
       ],
       "title": "Year",
       "axis": {
@@ -177,7 +178,8 @@
         2021,
         2022,
         2023,
-        2024
+        2024,
+        2025
       ]
     },
     "opacity": {
