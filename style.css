@@ -1449,3 +1449,11 @@ section h3,
 .chart-heading {
   font-family: "Inter", Arial, sans-serif;
 }
+
+/* Bold lead-in sentence acts as the subheading */
+.chart-story > p:first-of-type > strong:first-child {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
