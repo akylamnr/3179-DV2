@@ -1397,8 +1397,10 @@ footer.site-footer {
   color: var(--muted);
 }
 
-#workforce .chart-with-story.flip {
-  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 2fr);
+@media (min-width: 801px) {
+  #workforce .chart-with-story.flip {
+    grid-template-columns: minmax(220px, 0.7fr) minmax(0, 2fr);
+  }
 }
 
 /* Keep every text line to roughly ten words */

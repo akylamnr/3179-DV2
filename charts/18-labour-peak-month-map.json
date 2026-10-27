@@ -14,9 +14,9 @@
     "color": "#1f382f",
     "subtitleFontWeight": "normal"
   },
-  "description": "Map of ABARES horticulture labour regions with proportional circles showing estimated total workers used in the peak month in 2023-24.",
-  "width": 620,
-  "height": 500,
+  "description": "Choropleth of ABARES horticulture labour regions shaded by estimated total workers used in the peak month in 2023-24.",
+  "width": 560,
+  "height": 480,
   "background": "transparent",
   "projection": {
     "type": "mercator",
@@ -26,8 +26,8 @@
     ],
     "scale": 700,
     "translate": [
-      300,
-      235
+      270,
+      225
     ]
   },
   "layer": [
@@ -41,87 +41,92 @@
       },
       "mark": {
         "type": "geoshape",
-        "fill": "#DFDEDA",
+        "fill": "#F1EFEA",
         "stroke": "#FFFFFF",
-        "strokeWidth": 0.5
+        "strokeWidth": 0.4
       }
     },
     {
       "data": {
-        "url": "data/labour_peak_month_by_region.csv",
+        "url": "maps/australia_sa4_labour_regions.topojson",
         "format": {
-          "type": "csv",
-          "parse": {
-            "longitude": "number",
-            "latitude": "number",
-            "workers_2023_24": "number",
-            "rse_2023_24_pct": "number"
-          }
+          "type": "topojson",
+          "feature": "regions"
         }
       },
+      "transform": [
+        {
+          "lookup": "properties.region",
+          "from": {
+            "data": {
+              "url": "data/labour_peak_month_by_region.csv",
+              "format": {
+                "type": "csv",
+                "parse": {
+                  "workers_2023_24": "number",
+                  "rse_2023_24_pct": "number"
+                }
+              }
+            },
+            "key": "region",
+            "fields": [
+              "workers_2023_24",
+              "rse_2023_24_pct"
+            ]
+          }
+        }
+      ],
       "mark": {
-        "type": "circle",
-        "color": "#697875",
-        "opacity": 0.65,
+        "type": "geoshape",
         "stroke": "#FFFFFF",
-        "strokeWidth": 1
+        "strokeWidth": 0.4
       },
       "encoding": {
-        "longitude": {
-          "field": "longitude",
-          "type": "quantitative"
-        },
-        "latitude": {
-          "field": "latitude",
-          "type": "quantitative"
-        },
-        "size": {
+        "color": {
           "field": "workers_2023_24",
           "type": "quantitative",
           "scale": {
-            "type": "linear",
+            "type": "threshold",
             "domain": [
-              0,
-              14100
+              1000,
+              2500,
+              4000,
+              6000,
+              10000
             ],
             "range": [
-              0,
-              2600
+              "#F6E8D3",
+              "#EFCF9F",
+              "#E6AE68",
+              "#D9822B",
+              "#B3601C",
+              "#7A3D0E"
             ]
           },
           "legend": {
             "title": "Workers in peak month",
-            "orient": "bottom-right",
-            "values": [
-              1000,
-              5000,
-              10000
-            ],
+            "orient": "right",
+            "direction": "vertical",
             "format": ",.0f",
             "labelFont": "Inter",
             "titleFont": "Inter",
             "labelFontSize": 13,
             "titleFontSize": 13,
-            "symbolFillColor": "#D6538A",
-            "symbolOpacity": 0.7,
             "labelColor": "#5B4E49",
             "titleColor": "#5B4E49",
-            "titleFontWeight": 600
+            "titleFontWeight": 600,
+            "symbolType": "square",
+            "symbolSize": 200
           }
-        },
-        "order": {
-          "field": "workers_2023_24",
-          "type": "quantitative",
-          "sort": "descending"
         },
         "tooltip": [
           {
-            "field": "region",
+            "field": "properties.region",
             "type": "nominal",
             "title": "Region"
           },
           {
-            "field": "state",
+            "field": "properties.state",
             "type": "nominal",
             "title": "State"
           },
@@ -146,5 +151,11 @@
     "view": {
       "stroke": null
     }
+  },
+  "padding": {
+    "left": 5,
+    "right": 5,
+    "top": 5,
+    "bottom": 5
   }
 }
