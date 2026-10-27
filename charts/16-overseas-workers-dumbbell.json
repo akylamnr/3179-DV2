@@ -39,11 +39,11 @@
       "axis": {
         "title": null,
         "labelFont": "Inter",
-        "labelFontSize": 15,
+        "labelFontSize": 18,
         "ticks": false,
         "domain": false,
         "titleFont": "Inter",
-        "titleFontSize": 15,
+        "titleFontSize": 18,
         "labelColor": "#000000",
         "titleColor": "#000000",
         "titleFontWeight": 600
@@ -64,8 +64,8 @@
         "tickCount": 7,
         "labelFont": "Inter",
         "titleFont": "Inter",
-        "labelFontSize": 15,
-        "titleFontSize": 15,
+        "labelFontSize": 18,
+        "titleFontSize": 18,
         "grid": true,
         "gridColor": "#E9E5DF",
         "domainColor": "#8E8078",
@@ -86,7 +86,7 @@
     {
       "mark": {
         "type": "line",
-        "color": "#B7AAA6",
+        "color": "#000000",
         "strokeWidth": 3
       }
     },
@@ -155,7 +155,7 @@
             "empty": false,
             "value": 1
           },
-          "value": 0.55
+          "value": 1
         },
         "size": {
           "condition": {
