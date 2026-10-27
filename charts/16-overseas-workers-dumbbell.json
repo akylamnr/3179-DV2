@@ -44,8 +44,8 @@
         "domain": false,
         "titleFont": "Inter",
         "titleFontSize": 13,
-        "labelColor": "#5B4E49",
-        "titleColor": "#5B4E49",
+        "labelColor": "#1B2B26",
+        "titleColor": "#1B2B26",
         "titleFontWeight": 600
       }
     },
@@ -68,9 +68,9 @@
         "titleFontSize": 13,
         "grid": true,
         "gridColor": "#E9E5DF",
-        "domainColor": "#8E8078",
-        "labelColor": "#5B4E49",
-        "titleColor": "#5B4E49",
+        "domainColor": "#4A3F3A",
+        "labelColor": "#1B2B26",
+        "titleColor": "#1B2B26",
         "titleFontWeight": 600
       }
     },
@@ -120,8 +120,8 @@
             "titleFont": "Inter",
             "labelFontSize": 13,
             "titleFontSize": 13,
-            "labelColor": "#5B4E49",
-            "titleColor": "#5B4E49",
+            "labelColor": "#1B2B26",
+            "titleColor": "#1B2B26",
             "titleFontWeight": 600
           }
         },

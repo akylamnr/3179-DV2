@@ -378,7 +378,7 @@ if ("IntersectionObserver" in window) {
 // Let chart SVGs scale up to fill their column
 (function scaleChartSvgs() {
   const fit = () =>
-    document.querySelectorAll(".chart-with-story .vis svg:not([viewBox])").forEach((svg) => {
+    document.querySelectorAll("#trade .chart-with-story .vis svg:not([viewBox]), #imports .chart-with-story .vis svg:not([viewBox]), #workforce .chart-with-story .vis svg:not([viewBox])").forEach((svg) => {
       const w = parseFloat(svg.getAttribute("width"));
       const h = parseFloat(svg.getAttribute("height"));
       if (!w || !h) return;

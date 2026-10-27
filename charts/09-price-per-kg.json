@@ -95,6 +95,12 @@
             "labelColor": "#5B4E49",
             "titleColor": "#5B4E49",
             "titleFontWeight": 600
+          },
+          "scale": {
+            "domain": [
+              0,
+              11
+            ]
           }
         },
         "x2": {
@@ -152,7 +158,7 @@
         "align": "left",
         "dx": 12,
         "fontSize": 12,
-        "color": "#1B2B26"
+        "color": "#000000"
       },
       "encoding": {
         "y": {
@@ -193,9 +199,9 @@
       "mark": {
         "type": "text",
         "align": "left",
-        "baseline": "top",
+        "baseline": "bottom",
         "dx": 6,
-        "dy": 2,
+        "dy": -4,
         "fontSize": 12,
         "fontWeight": 600,
         "color": "#28483D"
