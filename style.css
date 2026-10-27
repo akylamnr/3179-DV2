@@ -1547,3 +1547,47 @@ section h3,
   column-gap: 48px;
   max-width: calc(2 * 52ch + 48px);
 }
+
+/* Imports intro: lead paragraph with the three patterns as a list */
+.lead-with-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.8fr);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+}
+
+.pattern-list {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pattern-list li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--forest-dark);
+}
+
+.pattern-icon {
+  display: grid;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--forest);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 800px) {
+  .lead-with-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
