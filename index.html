@@ -38,41 +38,46 @@
     <section>
       <h2 class="eyebrow section-heading">1. An Overview of Horticulture</h2>
 
-      <article class="chart-card">
+      <div class="chart-with-story">
 
-        <div class="waffle-layout">
+        <!-- Left: waffle chart -->
+        <div class="chart-visual">
+          <article class="chart-card">
+            <div id="chart01" class="vis waffle-chart"></div>
 
-          <div class="waffle-story">
-            <p>
-              <strong>Horticulture is a branch of agriculture</strong> that focuses on the growth of fruits, vegetables, nuts, wine grapes
-              and flower-related groups.<br><br>
-              Each square in the chart represents approximately 1% of the combined value of the five categories of horticulture in Australia.
+            <p class="source">
+              Source: Australian Bureau of Statistics - ABS,
+              <a
+                href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Table 1: Horticulture summary estimates by Australia, state and territory (2024-25)</a>.
             </p>
-
-            <div class="statistic">
-              <strong>17.3%</strong>
-              <span>
-                of the combined farm-gate value is made up of flowers (2024-25).
-              </span>
-            </div>
-
-      
-          </div>
-
-          <div id="chart01" class="vis waffle-chart"></div>
-
+          </article>
         </div>
 
-        <p class="source">
-          Source: Australian Buraeu of Statistics - ABS, 
-          <a
-            href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Table 1: Horticulture summary estimates by Australia, state and territory (2024-25)</a>.
-        </p>
+        <!-- Right: explanation -->
+        <aside class="chart-story">
+          <h3>What is horticulture worth?</h3>
 
-      </article>
+          <p>
+            <strong>Horticulture is a branch of agriculture</strong> that focuses on the growth of fruits, vegetables, nuts, wine grapes
+            and flower-related groups.
+          </p>
+
+          <p>
+            Each square in the chart represents approximately 1% of the combined value of the five categories of horticulture in Australia.
+          </p>
+
+          <div class="statistic">
+            <strong>17.3%</strong>
+            <span>
+              of the combined farm-gate value is made up of flowers (2024-25).
+            </span>
+          </div>
+        </aside>
+
+      </div>
 
       <div class="chart-with-story">
 
@@ -123,16 +128,18 @@
     
     <section>
       <h2 class="eyebrow section-heading">2. Where do flowers grow?</h2>
+      
+        <div class="intro-columns">
+        <p>
+          Australia's flower industry is spread across a diverse horticultural
+          landscape, but its importance varies by state.
+        </p>
+      </div>
 
       <div class="chart-pair">
         <article class="chart-card chart-column">
           <div id="chart02" class="vis"></div>
-          <p class="insight-note">
-            Victoria stands out as the leading state for cut-flower production,
-            with a reported value of A$114.4 million. The map shows the value
-            produced in one year as a share of the state's five-category
-            horticulture value.
-          </p>
+        
           <p class="source">
             Data:
             <a
@@ -153,33 +160,43 @@
         <article class="chart-card chart-column">
           <div id="chart08" class="vis"></div>
       
-          <p class="insight-note">
-            The paired vertical bars are positioned at approximate state
-            centres: pink shows cut-flower production and blue shows imports
-            landed in 2024-25. Both use the same linear height scale; the
-            graduated key gives reference heights in A$ millions. “Landed”
-            records the state of arrival, not necessarily where flowers are
-            sold. Missing imports are not treated as zero.
-          </p>
+        
           <p class="source">
             Source: Hort Innovation, <em>Australian Horticulture Statistics
             Handbook 2024/25</em>, All Other Horticulture, pp. 409-411.
           </p>
         </article>
       </div>
+
+      <div class="intro-columns">
+        <p>
+          <Strong>Western Australia</Strong> has the highest flower-related share of reported horticulture value, 
+          meaning flowers, nurseries and turf make up a larger proportion of its horticultural industry. 
+          </p>
+          <p>
+          <Strong>Victoria</Strong>, however, records the highest absolute value for this category at A$114.4 million, and the largest horticulture industry overall.
+        </p>
+        
+      </div>
+
+      
     </section>
 
 
     <!-- SECTION 3 -->
     <section>
       <h2 class="eyebrow section-heading">3. Flowers Go Global</h2>
-
+      <div class="intro-columns">
       <p>
-        Australia's flower trade moves in both directions: imported flowers
+        Australia's flower trade moves in both directions: imported commercial flowers
         supply the local market, while distinctive native varieties reach
-        overseas buyers. The maps use Australian dollars and financial years;
+        overseas buyers. 
+      </p>
+      <p class="insight-note">
+        <strong>NOTE: </strong>The flow map uses Australian dollars and financial years;<br>
         the WITS and Comtrade charts below use US dollars and calendar years.
       </p>
+      </div>
 
       <article class="chart-card trade-map-layout">
         <div class="trade-map-main">
@@ -189,20 +206,19 @@
               Reset map
             </button>
           </div>
-        </div>
-        <aside class="trade-map-aside">
           <div class="trade-map-legends">
             <div class="trade-direction-legend" aria-label="Trade direction shown by line color">
               <span class="trade-map-legend-title">Direction</span>
               <span class="trade-direction-key"><i class="trade-direction-line trade-import-line"></i>Imports</span>
               <span class="trade-direction-key"><i class="trade-direction-line trade-export-line"></i>Exports</span>
             </div>
-          <div class="flow-value-legend" aria-label="Trade value shown by line thickness">
-            <span class="flow-value-legend-title">Trade value (A$ million)</span>
-            <span class="flow-value-key"><i class="flow-value-line flow-value-5"></i>5</span>
-            <span class="flow-value-key"><i class="flow-value-line flow-value-10"></i>10</span>
-            <span class="flow-value-key"><i class="flow-value-line flow-value-15"></i>15</span>
-            <span class="flow-value-key"><i class="flow-value-line flow-value-20"></i>20+</span>
+            <div class="flow-value-legend" aria-label="Trade value shown by line thickness">
+              <span class="flow-value-legend-title">Trade value (A$ million)</span>
+              <span class="flow-value-key"><i class="flow-value-line flow-value-5"></i>5</span>
+              <span class="flow-value-key"><i class="flow-value-line flow-value-10"></i>10</span>
+              <span class="flow-value-key"><i class="flow-value-line flow-value-15"></i>15</span>
+              <span class="flow-value-key"><i class="flow-value-line flow-value-20"></i>20+</span>
+            </div>
           </div>
           <p class="source">
             Source: Hort Innovation, <em>Australian Horticulture Statistics
@@ -211,9 +227,8 @@
             2025 value is derived from its reported share.
           </p>
         </div>
-        <div class="chart-story">
+        <aside class="trade-map-aside chart-story">
           <h3>What moves in and out?</h3>
-        
           <p>
             The import routes show the five largest suppliers, not all
             imports. The Handbook reports some small export values only as
@@ -221,7 +236,7 @@
             estimated. South Korea's 2025 value is the exception and is
             flagged in its tooltip.
           </p>
-        </div>
+        </aside>
       </article>
 
       <h3 class="visualization-heading">How have Australia's import sources changed?</h3>

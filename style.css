@@ -262,6 +262,10 @@ section > p:not(.eyebrow, .source) {
   min-width: 0;
 }
 
+.trade-map-aside {
+  padding-top: 70px;
+}
+
 .trade-map-main .vega-embed {
   width: 100%;
 }
@@ -385,9 +389,10 @@ section > p:not(.eyebrow, .source) {
 }
 
 .trade-map-legends {
-  display: grid;
-  gap: 24px;
-  margin: 12px 0 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 40px;
+  margin: 16px 0;
   padding: 16px;
   border-radius: 10px;
   background: #f3f8f5;
@@ -531,22 +536,6 @@ section > p:not(.eyebrow, .source) {
   overflow-wrap: anywhere;
 }
 
-.waffle-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.25fr);
-  gap: clamp(24px, 5vw, 48px);
-  align-items: center;
-}
-
-.waffle-story h3 {
-  max-width: 18ch;
-  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
-}
-
-.waffle-story p {
-  max-width: 440px;
-}
-
 .waffle-chart {
   min-width: 0;
   margin: 0;
@@ -554,7 +543,7 @@ section > p:not(.eyebrow, .source) {
 
 .statistic {
   display: flex;
-  margin: 28px 0;
+  margin: 22px 0 0;
   align-items: center;
   gap: 14px;
 }
@@ -582,12 +571,30 @@ section > p:not(.eyebrow, .source) {
   margin-bottom: 24px;
 }
 
+.intro-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+.intro-columns p {
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .intro-columns {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
 .insight-note {
   margin: 20px 0;
   padding: 16px 18px;
-  border-left: 3px solid var(--teal);
+  border-left: 3px solid #fadb85;
   border-radius: 0 10px 10px 0;
-  background: #f3f8f5;
+  background: #ece2c5f5;
   color: var(--text);
   line-height: 1.65;
 }
@@ -603,7 +610,7 @@ section > p:not(.eyebrow, .source) {
 
 .insight-note strong,
 .chart-story strong {
-  color: var(--forest-dark);
+  color: var(--text);
 }
 
 .annotation-caveat {
@@ -817,28 +824,25 @@ footer.site-footer {
   border-top: 1px solid #f2b9cc;
 }
 
+@media (max-width: 900px) {
+  .chart-with-story {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+}
+
 @media (max-width: 760px) {
-  .waffle-layout,
   .chart-pair,
   .trade-map-layout {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .trade-map-legends {
-    margin-top: 4px;
+  .trade-map-aside {
+    padding-top: 0;
   }
 
   #tradeMapControls .vega-bind {
     flex-basis: 100%;
-  }
-
-  .waffle-story p {
-    max-width: none;
-  }
-
-  .chart-with-story {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 20px;
   }
 
   .footer-grid {

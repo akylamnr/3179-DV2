@@ -47,7 +47,7 @@
             "labelPadding": 5,
             "title": "Financial year",
             "titleFont": "Inter",
-            "titleFontSize": 10,
+            "titleFontSize": 12,
             "titlePadding": 7,
             "grid": false,
             "domain": true,
@@ -88,7 +88,7 @@
             "labelPadding": 4,
             "title": "Farm-gate value (A$ million)",
             "titleFont": "Inter",
-            "titleFontSize": 10,
+            "titleFontSize": 12,
             "titlePadding": 7,
             "grid": true,
             "gridColor": "#E8DFDB",
@@ -244,8 +244,8 @@
     "axis": {
       "labelFont": "Inter",
       "titleFont": "Inter",
-      "labelFontSize": 10,
-      "titleFontSize": 10,
+      "labelFontSize": 13,
+      "titleFontSize": 13,
       "labelColor": "#5B4E49",
       "titleColor": "#5B4E49"
     }

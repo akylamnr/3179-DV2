@@ -1,14 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Total Horticulture Production by State",
+    "text": "Which states have the largest horticulture industries?",
+    "subtitle": "Total farm-gate value (A$ billion) · 2024–25",
     "font": "Inter",
     "fontSize": 18,
     "anchor": "start",
     "subtitleFont": "Inter",
-    "subtitleFontSize": 12,
-    "subtitleColor": "#74686D",
-    "offset": 10
+    "subtitleFontSize": 13,
+    "subtitleColor": "#74686D"
   },
   "description": "Australian state map with one proportional circle per state, showing farm-gate production value summed across the five ABS horticulture summary categories. Circle size is grouped into three value classes.",
   "width": 350,
@@ -149,7 +149,7 @@
             "symbolFillColor": "#D6538A",
             "symbolStrokeColor": "#FFFFFF",
             "labelFontSize": 10,
-            "titleFontSize": 11
+            "titleFontSize": 12
           }
         },
         "tooltip": [
