@@ -125,7 +125,6 @@ a:focus-visible {
 .hero .eyebrow {
   justify-content: center;
   font-size: 0.76rem;
-  color: #ffc4d8;
 }
 
 .hero .eyebrow::after {
@@ -1042,7 +1041,6 @@ body {
 /* Small course label */
 .hero .eyebrow {
   margin: 0 0 16px;
-  color: var(--rose-pink);
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.13em;
