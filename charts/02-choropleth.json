@@ -10,8 +10,8 @@
     "anchor": "start",
     "offset": 10,
     "subtitleFont": "Inter",
-    "subtitleFontSize": 12,
-    "subtitleColor": "#74686D",
+    "subtitleFontSize": 13,
+    "subtitleColor": "#5F5559",
     "subtitleFontWeight": "normal"
   },
   "description": "The percentage is cut-flower farm-gate value from ABS Table 5 divided by the sum of the five horticulture summary categories reported for each state in ABS Table 1. The Northern Territory and Australian Capital Territory are shown as no data because a complete state denominator is not available in Table 1.",
@@ -80,8 +80,8 @@
               "titleFont": "Inter",
               "labelFontSize": 13,
               "titleFontSize": 13,
-              "labelColor": "#5B4E49",
-              "titleColor": "#5B4E49",
+              "labelColor": "#1B2B26",
+              "titleColor": "#1B2B26",
               "titleFontWeight": 600
             }
           },

@@ -14,8 +14,8 @@
     "fontWeight": 700,
     "color": "#1f382f",
     "subtitleFont": "Inter",
-    "subtitleFontSize": 12,
-    "subtitleColor": "#74686D",
+    "subtitleFontSize": 13,
+    "subtitleColor": "#5F5559",
     "anchor": "start",
     "offset": 10,
     "subtitleFontWeight": "normal"

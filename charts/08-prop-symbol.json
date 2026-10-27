@@ -7,7 +7,12 @@
     "fontSize": 19,
     "anchor": "start",
     "offset": 10,
-    "color": "#1f382f"
+    "color": "#1f382f",
+    "subtitleFont": "Inter",
+    "subtitleFontSize": 13,
+    "subtitleColor": "#5F5559",
+    "subtitleFontWeight": "normal",
+    "subtitle": "Circle size shows farm-gate production value · 2024–25"
   },
   "description": "Australian state map with one proportional circle per state, showing farm-gate production value summed across the five ABS horticulture summary categories. Circle size is grouped into three value classes.",
   "width": 350,
@@ -157,8 +162,8 @@
             "titleFontSize": 13,
             "labelFont": "Inter",
             "titleFont": "Inter",
-            "labelColor": "#5B4E49",
-            "titleColor": "#5B4E49",
+            "labelColor": "#1B2B26",
+            "titleColor": "#1B2B26",
             "titleFontWeight": 600
           }
         },

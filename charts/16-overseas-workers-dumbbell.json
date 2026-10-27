@@ -8,8 +8,8 @@
     "fontSize": 19,
     "anchor": "start",
     "subtitleFont": "Inter",
-    "subtitleFontSize": 12,
-    "subtitleColor": "#74686D",
+    "subtitleFontSize": 13,
+    "subtitleColor": "#5F5559",
     "color": "#1f382f",
     "offset": 10,
     "subtitleFontWeight": "normal"

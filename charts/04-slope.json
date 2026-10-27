@@ -7,7 +7,12 @@
     "fontWeight": 700,
     "fontSize": 19,
     "anchor": "start",
-    "color": "#1f382f"
+    "color": "#1f382f",
+    "subtitleFont": "Inter",
+    "subtitleFontSize": 13,
+    "subtitleColor": "#5F5559",
+    "subtitleFontWeight": "normal",
+    "subtitle": "Farm-gate value by horticulture category · A$ billion"
   },
   "width": 430,
   "height": 340,
@@ -57,8 +62,8 @@
             "ticks": true,
             "tickSize": 5,
             "tickColor": "#8E8078",
-            "labelColor": "#5B4E49",
-            "titleColor": "#5B4E49",
+            "labelColor": "#1B2B26",
+            "titleColor": "#1B2B26",
             "labelOverlap": false,
             "titleFontWeight": 600
           }
@@ -101,8 +106,8 @@
             "ticks": true,
             "tickSize": 4,
             "tickColor": "#8E8078",
-            "labelColor": "#5B4E49",
-            "titleColor": "#5B4E49",
+            "labelColor": "#1B2B26",
+            "titleColor": "#1B2B26",
             "titleFontWeight": 600
           }
         },

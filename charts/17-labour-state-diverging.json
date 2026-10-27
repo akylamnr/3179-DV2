@@ -8,8 +8,8 @@
     "fontSize": 19,
     "anchor": "start",
     "subtitleFont": "Inter",
-    "subtitleFontSize": 12,
-    "subtitleColor": "#74686D",
+    "subtitleFontSize": 13,
+    "subtitleColor": "#5F5559",
     "offset": 10,
     "color": "#1f382f",
     "subtitleFontWeight": "normal"
@@ -90,8 +90,8 @@
         "domain": false,
         "titleFont": "Inter",
         "titleFontSize": 13,
-        "labelColor": "#5B4E49",
-        "titleColor": "#5B4E49",
+        "labelColor": "#1B2B26",
+        "titleColor": "#1B2B26",
         "titleFontWeight": 600
       }
     }
@@ -124,8 +124,8 @@
             "grid": true,
             "gridColor": "#E9E5DF",
             "domain": false,
-            "labelColor": "#5B4E49",
-            "titleColor": "#5B4E49",
+            "labelColor": "#1B2B26",
+            "titleColor": "#1B2B26",
             "titleFontWeight": 600
           }
         },
@@ -150,8 +150,8 @@
             "labelFont": "Inter",
             "titleFontSize": 13,
             "labelFontSize": 13,
-            "labelColor": "#5B4E49",
-            "titleColor": "#5B4E49",
+            "labelColor": "#1B2B26",
+            "titleColor": "#1B2B26",
             "titleFontWeight": 600
           }
         },
